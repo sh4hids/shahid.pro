@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "shahid-dot-pro",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "Personal website of Shahidul Islam Majumder",
+  "version": "1.0.0",
+  "author": "Shahidul Islam Majumder <hello@shahid.pro>",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
@@ -43,15 +43,17 @@
     "eslint-plugin-react": "^7.11.1",
     "prettier": "^1.14.2"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://shahid.pro/",
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "shahidul islam majumder",
+    "software engineer"
   ],
   "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/sh4hids/shahid.pro.git"
   },
   "scripts": {
     "dev": "gatsby develop",
