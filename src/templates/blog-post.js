@@ -6,7 +6,7 @@ import Layout from '../components/Layout';
 import SEO from '../components/seo';
 import { rhythm, scale } from '../utils/typography';
 
-import { Title } from '../components/base-kits';
+import { Text } from '../views/kits';
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -17,17 +17,10 @@ class BlogPostTemplate extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
-        <Title>{post.frontmatter.title}</Title>
-        <p
-          style={{
-            ...scale(-1 / 5),
-            display: `block`,
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
-          }}
-        >
-          {post.frontmatter.date}
-        </p>
+        <Text color="#564D80" variant="h1">
+          {post.frontmatter.title}
+        </Text>
+        <Text variant="caption">{post.frontmatter.date}</Text>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{
