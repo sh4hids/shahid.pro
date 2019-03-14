@@ -1,64 +1,147 @@
 import React from 'react';
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
 import { color } from 'styled-system';
+import { isDefined } from '../../utils/object-utils';
+
+const dark = 'rgba(0, 0, 0, .8)';
 
 const H1 = styled.h1`
-  color: ${({ theme }) => theme.colors.dark};
-  font-size: ${({ theme }) => theme.typography.h1.fontSize};
-  line-height: ${({ theme }) => theme.typography.h1.lineHeight};
-  font-weight: ${({ theme }) => theme.typography.h1.fontWeight};
+  color: ${({ theme }) =>
+    isDefined(theme, 'theme.colors.dark') ? theme.colors.dark : dark};
+  font-size: ${({ theme }) =>
+    isDefined(theme, 'theme.typography.h1')
+      ? theme.typography.h1.fontSize
+      : '3.052rem'};
+  line-height: ${({ theme }) =>
+    isDefined(theme, 'theme.typography.h1')
+      ? theme.typography.h1.lineHeight
+      : 1.15};
+  font-weight: ${({ theme }) =>
+    isDefined(theme, 'theme.typography.h1')
+      ? theme.typography.h1.fontWeight
+      : 700};
   ${color};
 `;
 const H2 = styled.h2`
-  color: ${({ theme }) => theme.colors.dark};
-  font-size: ${({ theme }) => theme.typography.h2.fontSize};
-  line-height: ${({ theme }) => theme.typography.h2.lineHeight};
-  font-weight: ${({ theme }) => theme.typography.h2.fontWeight};
+  color: ${({ theme }) =>
+    isDefined(theme, 'theme.colors.dark') ? theme.colors.dark : dark};
+  font-size: ${({ theme }) =>
+    isDefined(theme, 'theme.typography.h2')
+      ? theme.typography.h2.fontSize
+      : '2.441rem'};
+  line-height: ${({ theme }) =>
+    isDefined(theme, 'theme.typography.h2')
+      ? theme.typography.h2.lineHeight
+      : 1.15};
+  font-weight: ${({ theme }) =>
+    isDefined(theme, 'theme.typography.h2')
+      ? theme.typography.h2.fontWeight
+      : 700};
   ${color};
 `;
 const H3 = styled.h3`
-  color: ${({ theme }) => theme.colors.dark};
-  font-size: ${({ theme }) => theme.typography.h3.fontSize};
-  line-height: ${({ theme }) => theme.typography.h3.lineHeight};
-  font-weight: ${({ theme }) => theme.typography.h3.fontWeight};
+  color: ${({ theme }) =>
+    isDefined(theme, 'theme.colors.dark') ? theme.colors.dark : dark};
+  font-size: ${({ theme }) =>
+    isDefined(theme, 'theme.typography.h3')
+      ? theme.typography.h3.fontSize
+      : '1.953rem'};
+  line-height: ${({ theme }) =>
+    isDefined(theme, 'theme.typography.h3')
+      ? theme.typography.h3.lineHeight
+      : 1.15};
+  font-weight: ${({ theme }) =>
+    isDefined(theme, 'theme.typography.h3')
+      ? theme.typography.h3.fontWeight
+      : 700};
   ${color};
 `;
 const H4 = styled.h4`
-  color: ${({ theme }) => theme.colors.dark};
-  font-size: ${({ theme }) => theme.typography.h4.fontSize};
-  line-height: ${({ theme }) => theme.typography.h4.lineHeight};
-  font-weight: ${({ theme }) => theme.typography.h4.fontWeight};
+  color: ${({ theme }) =>
+    isDefined(theme, 'theme.colors.dark') ? theme.colors.dark : dark};
+  font-size: ${({ theme }) =>
+    isDefined(theme, 'theme.typography.h4')
+      ? theme.typography.h4.fontSize
+      : '1.563rem'};
+  line-height: ${({ theme }) =>
+    isDefined(theme, 'theme.typography.h4')
+      ? theme.typography.h4.lineHeight
+      : 1.15};
+  font-weight: ${({ theme }) =>
+    isDefined(theme, 'theme.typography.h4')
+      ? theme.typography.h4.fontWeight
+      : 700};
   ${color};
 `;
 const H5 = styled.h5`
-  color: ${({ theme }) => theme.colors.dark};
-  font-size: ${({ theme }) => theme.typography.h5.fontSize};
-  line-height: ${({ theme }) => theme.typography.h5.lineHeight};
-  font-weight: ${({ theme }) => theme.typography.h5.fontWeight};
+  color: ${({ theme }) =>
+    isDefined(theme, 'theme.colors.dark') ? theme.colors.dark : dark};
+  font-size: ${({ theme }) =>
+    isDefined(theme, 'theme.typography.h5')
+      ? theme.typography.h5.fontSize
+      : '1.25rem'};
+  line-height: ${({ theme }) =>
+    isDefined(theme, 'theme.typography.h5')
+      ? theme.typography.h5.lineHeight
+      : 1.15};
+  font-weight: ${({ theme }) =>
+    isDefined(theme, 'theme.typography.h5')
+      ? theme.typography.h5.fontWeight
+      : 700};
   ${color};
 `;
 
-const H6 = styled.h1`
-  color: ${({ theme }) => theme.colors.dark};
-  font-size: ${({ theme }) => theme.typography.h6.fontSize};
-  line-height: ${({ theme }) => theme.typography.h6.lineHeight};
-  font-weight: ${({ theme }) => theme.typography.h6.fontWeight};
+const H6 = styled.h6`
+  color: ${({ theme }) =>
+    isDefined(theme, 'theme.colors.dark') ? theme.colors.dark : dark};
+  font-size: ${({ theme }) =>
+    isDefined(theme, 'theme.typography.h6')
+      ? theme.typography.h6.fontSize
+      : '1rem'};
+  line-height: ${({ theme }) =>
+    isDefined(theme, 'theme.typography.h6')
+      ? theme.typography.h6.lineHeight
+      : 1.15};
+  font-weight: ${({ theme }) =>
+    isDefined(theme, 'theme.typography.h6')
+      ? theme.typography.h6.fontWeight
+      : 700};
   ${color};
 `;
 
 const P = styled.p`
-  color: ${({ theme }) => theme.colors.dark};
-  font-size: ${({ theme }) => theme.typography.body.fontSize};
-  line-height: ${({ theme }) => theme.typography.body.lineHeight};
-  font-weight: ${({ theme }) => theme.typography.body.fontWeight};
+  color: ${({ theme }) =>
+    isDefined(theme, 'theme.colors.dark') ? theme.colors.dark : dark};
+  font-size: ${({ theme }) =>
+    isDefined(theme, 'theme.typography.body')
+      ? theme.typography.body.fontSize
+      : '1rem'};
+  line-height: ${({ theme }) =>
+    isDefined(theme, 'theme.typography.body')
+      ? theme.typography.body.lineHeight
+      : 1.45};
+  font-weight: ${({ theme }) =>
+    isDefined(theme, 'theme.typography.body')
+      ? theme.typography.body.fontWeight
+      : 400};
   ${color};
 `;
 
 const Caption = styled.p`
-  color: ${({ theme }) => theme.colors.dark};
-  font-size: ${({ theme }) => theme.typography.caption.fontSize};
-  line-height: ${({ theme }) => theme.typography.caption.lineHeight};
-  font-weight: ${({ theme }) => theme.typography.caption.fontWeight};
+  color: ${({ theme }) =>
+    isDefined(theme, 'theme.colors.dark') ? theme.colors.dark : dark};
+  font-size: ${({ theme }) =>
+    isDefined(theme, 'theme.typography.caption')
+      ? theme.typography.caption.fontSize
+      : '0.8rem'};
+  line-height: ${({ theme }) =>
+    isDefined(theme, 'theme.typography.caption')
+      ? theme.typography.caption.lineHeight
+      : 1.45};
+  font-weight: ${({ theme }) =>
+    isDefined(theme, 'theme.typography.caption')
+      ? theme.typography.caption.fontWeight
+      : 400};
   ${color};
 `;
 
@@ -87,4 +170,4 @@ const Text = ({ variant, color, theme, children }) => {
   }
 };
 
-export default withTheme(Text);
+export default Text;
