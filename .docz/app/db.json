@@ -1,0 +1,32 @@
+{
+  "config": {
+    "title": "Shahid Dot Pro",
+    "description": "Personal website of Shahidul Islam Majumder",
+    "menu": [],
+    "ordering": "descending",
+    "version": "1.0.0",
+    "repository": "https://github.com/sh4hids/shahid.pro",
+    "native": false,
+    "codeSandbox": true,
+    "themeConfig": {}
+  },
+  "entries": {
+    "src/docz/kits/text.mdx": {
+      "name": "Text",
+      "route": "/docz",
+      "id": "97b904c300ad15e6c5427889c4bae0c4",
+      "filepath": "src/docz/kits/text.mdx",
+      "link": "https://github.com/sh4hids/shahid.pro/edit/master/src/docz/kits/text.mdx",
+      "slug": "src-docz-kits-text",
+      "order": 0,
+      "menu": null,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "h1",
+          "value": "h1"
+        }
+      ]
+    }
+  }
+}
