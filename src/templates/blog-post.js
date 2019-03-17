@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-
 import Bio from '../components/Bio';
-import Layout from '../components/Layout';
 import SEO from '../components/seo';
-import { rhythm, scale } from '../utils/typography';
+import { DefaultLayout } from '../views/layouts';
 
 import { Text } from '../views/kits';
 
@@ -15,18 +13,14 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext;
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <DefaultLayout>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
         <Text color="dark" variant="h1">
           {post.frontmatter.title}
         </Text>
         <Text variant="caption">{post.frontmatter.date}</Text>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
+        <hr />
         <Bio />
 
         <ul
@@ -53,7 +47,7 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
-      </Layout>
+      </DefaultLayout>
     );
   }
 }
