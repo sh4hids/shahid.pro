@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Grid from 'styled-components-grid';
-import { List, ListItem, URL, Container } from '../kits';
+import { List, ListItem, URL, Container, Image } from '../kits';
+import myLogo from '../../assets/images/shahid.svg';
 
 const HeaderContainer = styled.header`
   height: 60px;
@@ -37,7 +38,7 @@ const MainHeader = () => (
       <Grid halign="justify">
         <Grid.Unit size={1 / 2}>
           <URL variant="gatsby" to="/">
-            Home
+            <Image src={myLogo} width={30} top={12} />
           </URL>
         </Grid.Unit>
         <Grid.Unit size={1 / 2}>
