@@ -12,12 +12,6 @@ const HeaderContainer = styled.header`
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
   margin-bottom: 16px;
 
-  .menu-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
   ul {
     text-align: right;
 
@@ -36,12 +30,12 @@ const MainHeader = () => (
   <HeaderContainer>
     <Container main bg="lighter">
       <Grid halign="justify">
-        <Grid.Unit size={1 / 2}>
+        <Grid.Unit size={{ xs: 1 / 4, sm: 1 / 2, md: 1 / 2, lg: 1 / 2 }}>
           <URL variant="gatsby" to="/">
-            <Image src={myLogo} width={30} top={12} />
+            <Image src={myLogo} alt="shahid-logo" width={30} top={12} />
           </URL>
         </Grid.Unit>
-        <Grid.Unit size={1 / 2}>
+        <Grid.Unit size={{ xs: 3 / 4, sm: 1 / 2, md: 1 / 2, lg: 1 / 2 }}>
           <List>
             <ListItem display="inline">
               <URL variant="gatsby" to="/about">

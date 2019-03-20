@@ -7,6 +7,7 @@ const Container = styled.div`
     css`
       max-width: 740px;
       margin: 0 auto;
+      padding: 0 16px;
     `};
   background-color: ${({ theme }) => theme.colors.light};
   ${color};
