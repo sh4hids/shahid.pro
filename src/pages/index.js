@@ -5,6 +5,7 @@ import Bio from '../components/Bio';
 import SEO from '../components/seo';
 
 import { DefaultLayout } from '../views/layouts';
+import { PostSummaryCard } from '../views/components';
 
 class BlogIndex extends React.Component {
   render() {
@@ -15,23 +16,21 @@ class BlogIndex extends React.Component {
     return (
       <DefaultLayout>
         <SEO
-          title="All posts"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+          title="Home"
+          keywords={[
+            `blog`,
+            `sh4hids`,
+            `javascript`,
+            `react`,
+            `developer`,
+            `software engineer`,
+            `bangladeshi`,
+          ]}
         />
         <Bio />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug;
-          return (
-            <div key={node.fields.slug}>
-              <h3>
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
-          );
+          return <PostSummaryCard key={node.fields.slug} node={node} />;
         })}
       </DefaultLayout>
     );
