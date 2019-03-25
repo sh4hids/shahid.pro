@@ -7,121 +7,95 @@ const dark = 'rgba(0, 0, 0, .8)';
 
 const H1 = styled.h1`
   color: ${({ theme }) =>
-    isDefined(theme, 'theme.colors.dark') ? theme.colors.dark : dark};
+    isDefined(theme, 'colors.dark') ? theme.colors.dark : dark};
   font-size: ${({ theme }) =>
-    isDefined(theme, 'theme.typography.h1')
+    isDefined(theme, 'typography.h1')
       ? theme.typography.h1.fontSize
-      : '3.052rem'};
+      : '3.052em'};
   line-height: ${({ theme }) =>
-    isDefined(theme, 'theme.typography.h1')
-      ? theme.typography.h1.lineHeight
-      : 1.15};
+    isDefined(theme, 'typography.h1') ? theme.typography.h1.lineHeight : 1.15};
   font-weight: ${({ theme }) =>
-    isDefined(theme, 'theme.typography.h1')
-      ? theme.typography.h1.fontWeight
-      : 700};
+    isDefined(theme, 'typography.h1') ? theme.typography.h1.fontWeight : 700};
   ${color};
 `;
 const H2 = styled.h2`
   color: ${({ theme }) =>
-    isDefined(theme, 'theme.colors.dark') ? theme.colors.dark : dark};
+    isDefined(theme, 'colors.dark') ? theme.colors.dark : dark};
   font-size: ${({ theme }) =>
-    isDefined(theme, 'theme.typography.h2')
+    isDefined(theme, 'typography.h2')
       ? theme.typography.h2.fontSize
-      : '2.441rem'};
+      : '2.441em'};
   line-height: ${({ theme }) =>
-    isDefined(theme, 'theme.typography.h2')
-      ? theme.typography.h2.lineHeight
-      : 1.15};
+    isDefined(theme, 'typography.h2') ? theme.typography.h2.lineHeight : 1.15};
   font-weight: ${({ theme }) =>
-    isDefined(theme, 'theme.typography.h2')
-      ? theme.typography.h2.fontWeight
-      : 700};
+    isDefined(theme, 'typography.h2') ? theme.typography.h2.fontWeight : 700};
   ${color};
 `;
 const H3 = styled.h3`
   color: ${({ theme }) =>
-    isDefined(theme, 'theme.colors.dark') ? theme.colors.dark : dark};
+    isDefined(theme, 'colors.dark') ? theme.colors.dark : dark};
   font-size: ${({ theme }) =>
-    isDefined(theme, 'theme.typography.h3')
+    isDefined(theme, 'typography.h3')
       ? theme.typography.h3.fontSize
-      : '1.953rem'};
+      : '1.953em'};
   line-height: ${({ theme }) =>
-    isDefined(theme, 'theme.typography.h3')
-      ? theme.typography.h3.lineHeight
-      : 1.15};
+    isDefined(theme, 'typography.h3') ? theme.typography.h3.lineHeight : 1.15};
   font-weight: ${({ theme }) =>
-    isDefined(theme, 'theme.typography.h3')
-      ? theme.typography.h3.fontWeight
-      : 700};
+    isDefined(theme, 'typography.h3') ? theme.typography.h3.fontWeight : 700};
   ${color};
 `;
 const H4 = styled.h4`
   color: ${({ theme }) =>
-    isDefined(theme, 'theme.colors.dark') ? theme.colors.dark : dark};
+    isDefined(theme, 'colors.dark') ? theme.colors.dark : dark};
   font-size: ${({ theme }) =>
-    isDefined(theme, 'theme.typography.h4')
+    isDefined(theme, 'typography.h4')
       ? theme.typography.h4.fontSize
-      : '1.563rem'};
+      : '1.563em'};
   line-height: ${({ theme }) =>
-    isDefined(theme, 'theme.typography.h4')
-      ? theme.typography.h4.lineHeight
-      : 1.15};
+    isDefined(theme, 'typography.h4') ? theme.typography.h4.lineHeight : 1.15};
   font-weight: ${({ theme }) =>
-    isDefined(theme, 'theme.typography.h4')
-      ? theme.typography.h4.fontWeight
-      : 700};
+    isDefined(theme, 'typography.h4') ? theme.typography.h4.fontWeight : 700};
   ${color};
 `;
 const H5 = styled.h5`
   color: ${({ theme }) =>
-    isDefined(theme, 'theme.colors.dark') ? theme.colors.dark : dark};
+    isDefined(theme, 'colors.dark') ? theme.colors.dark : dark};
   font-size: ${({ theme }) =>
-    isDefined(theme, 'theme.typography.h5')
+    isDefined(theme, 'typography.h5')
       ? theme.typography.h5.fontSize
-      : '1.25rem'};
+      : '1.25em'};
   line-height: ${({ theme }) =>
-    isDefined(theme, 'theme.typography.h5')
-      ? theme.typography.h5.lineHeight
-      : 1.15};
+    isDefined(theme, 'typography.h5') ? theme.typography.h5.lineHeight : 1.15};
   font-weight: ${({ theme }) =>
-    isDefined(theme, 'theme.typography.h5')
-      ? theme.typography.h5.fontWeight
-      : 700};
+    isDefined(theme, 'typography.h5') ? theme.typography.h5.fontWeight : 700};
   ${color};
 `;
 
 const H6 = styled.h6`
   color: ${({ theme }) =>
-    isDefined(theme, 'theme.colors.dark') ? theme.colors.dark : dark};
+    isDefined(theme, 'colors.dark') ? theme.colors.dark : dark};
   font-size: ${({ theme }) =>
-    isDefined(theme, 'theme.typography.h6')
-      ? theme.typography.h6.fontSize
-      : '1rem'};
+    isDefined(theme, 'typography.h6') ? theme.typography.h6.fontSize : '1em'};
   line-height: ${({ theme }) =>
-    isDefined(theme, 'theme.typography.h6')
-      ? theme.typography.h6.lineHeight
-      : 1.15};
+    isDefined(theme, 'typography.h6') ? theme.typography.h6.lineHeight : 1.15};
   font-weight: ${({ theme }) =>
-    isDefined(theme, 'theme.typography.h6')
-      ? theme.typography.h6.fontWeight
-      : 700};
+    isDefined(theme, 'typography.h6') ? theme.typography.h6.fontWeight : 700};
   ${color};
 `;
 
 const P = styled.p`
   color: ${({ theme }) =>
-    isDefined(theme, 'theme.colors.dark') ? theme.colors.dark : dark};
+    isDefined(theme, 'colors.dark') ? theme.colors.dark : dark};
   font-size: ${({ theme }) =>
-    isDefined(theme, 'theme.typography.body')
+    isDefined(theme, 'typography.body')
       ? theme.typography.body.fontSize
-      : '1rem'};
+      : '1em'};
   line-height: ${({ theme }) =>
-    isDefined(theme, 'theme.typography.body')
+    isDefined(theme, 'typography.body')
       ? theme.typography.body.lineHeight
       : 1.45};
   font-weight: ${({ theme }) =>
-    isDefined(theme, 'theme.typography.body')
+    isDefined(theme, 'typography.body')
       ? theme.typography.body.fontWeight
       : 400};
   ${color};
@@ -129,23 +103,59 @@ const P = styled.p`
 
 const Caption = styled.p`
   color: ${({ theme }) =>
-    isDefined(theme, 'theme.colors.dark') ? theme.colors.dark : dark};
+    isDefined(theme, 'colors.dark') ? theme.colors.dark : dark};
   font-size: ${({ theme }) =>
-    isDefined(theme, 'theme.typography.caption')
+    isDefined(theme, 'typography.caption')
       ? theme.typography.caption.fontSize
-      : '0.8rem'};
+      : '0.8em'};
   line-height: ${({ theme }) =>
-    isDefined(theme, 'theme.typography.caption')
+    isDefined(theme, 'typography.caption')
       ? theme.typography.caption.lineHeight
       : 1.45};
   font-weight: ${({ theme }) =>
-    isDefined(theme, 'theme.typography.caption')
+    isDefined(theme, 'typography.caption')
       ? theme.typography.caption.fontWeight
       : 400};
   ${color};
 `;
 
-const Text = ({ variant, color, theme, children }) => {
+const RawHTML = styled.div`
+  p {
+    line-height: 1.45;
+    font-size: 1em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    line-height: 1.15;
+  }
+
+  h1 {
+    font-size: 3.052em;
+  }
+  h2 {
+    font-size: 2.441em;
+  }
+  h3 {
+    font-size: 1.953em;
+  }
+  h4 {
+    font-size: 1.563em;
+  }
+  h5 {
+    font-size: 1.25em;
+  }
+  h6 {
+    font-size: 1em;
+  }
+`;
+
+const Text = ({ variant, color, theme, children, html }) => {
   switch (variant) {
     case 'h1':
       return <H1 color={color}>{children}</H1>;
@@ -161,6 +171,8 @@ const Text = ({ variant, color, theme, children }) => {
       return <H6 color={color}>{children}</H6>;
     case 'caption':
       return <Caption color={color}>{children}</Caption>;
+    case 'raw':
+      return <RawHTML dangerouslySetInnerHTML={{ __html: html }} />;
     default:
       return (
         <P color={color} theme={theme}>

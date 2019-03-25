@@ -27,7 +27,6 @@ class BlogIndex extends React.Component {
             `bangladeshi`,
           ]}
         />
-        <Bio />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug;
           return <PostSummaryCard key={node.fields.slug} node={node} />;

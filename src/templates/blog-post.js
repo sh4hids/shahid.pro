@@ -4,7 +4,7 @@ import Bio from '../components/Bio';
 import SEO from '../components/seo';
 import { DefaultLayout } from '../views/layouts';
 
-import { Text } from '../views/kits';
+import { Container, Text } from '../views/kits';
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -15,38 +15,41 @@ class BlogPostTemplate extends React.Component {
     return (
       <DefaultLayout>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
-        <Text color="dark" variant="h1">
-          {post.frontmatter.title}
-        </Text>
-        <Text variant="caption">{post.frontmatter.date}</Text>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr />
-        <Bio />
+        <Container card>
+          <Text color="dark" variant="h4">
+            {post.frontmatter.title}
+          </Text>
+          <Text variant="caption">{post.frontmatter.date}</Text>
+          <hr />
+          <Text variant="raw" html={post.html} />
+          <hr />
+          <Bio />
 
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
+          <ul
+            style={{
+              display: `flex`,
+              flexWrap: `wrap`,
+              justifyContent: `space-between`,
+              listStyle: `none`,
+              padding: 0,
+            }}
+          >
+            <li>
+              {previous && (
+                <Link to={previous.fields.slug} rel="prev">
+                  ← {previous.frontmatter.title}
+                </Link>
+              )}
+            </li>
+            <li>
+              {next && (
+                <Link to={next.fields.slug} rel="next">
+                  {next.frontmatter.title} →
+                </Link>
+              )}
+            </li>
+          </ul>
+        </Container>
       </DefaultLayout>
     );
   }
