@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Bio from '../components/Bio';
-import SEO from '../components/seo';
+import { SEO } from '../views/components';
 import { DefaultLayout } from '../views/layouts';
 
 import { Container, Text } from '../views/kits';
@@ -23,7 +23,6 @@ class BlogPostTemplate extends React.Component {
           <hr />
           <Text variant="raw" html={post.html} />
           <hr />
-          <Bio />
 
           <ul
             style={{

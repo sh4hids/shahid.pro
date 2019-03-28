@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Grid from 'styled-components-grid';
-import { List, ListItem, URL, Container, Image } from '../kits';
+import { List, ListItem, URL, Container, Image, Text } from '../kits';
 import myLogo from '../../assets/images/shahid.svg';
 
 const HeaderContainer = styled.header`
@@ -9,8 +9,22 @@ const HeaderContainer = styled.header`
   line-height: 60px;
   width: 100%;
   background-color: ${({ theme }) => theme.colors.lighter};
-  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid ${({ theme }) => theme.colors.light};
   margin-bottom: 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  .brand-title {
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    top: 2px;
+
+    @media only screen and (max-width: 576px) {
+      display: none;
+    }
+  }
 
   ul {
     text-align: right;
@@ -24,6 +38,16 @@ const HeaderContainer = styled.header`
       }
     }
   }
+
+  @media only screen and (max-width: 576px) {
+    ul {
+      li {
+        a {
+          padding: 0 8px;
+        }
+      }
+    }
+  }
 `;
 
 const MainHeader = () => (
@@ -32,7 +56,9 @@ const MainHeader = () => (
       <Grid halign="justify">
         <Grid.Unit size={{ xs: 1 / 4, sm: 1 / 2, md: 1 / 2, lg: 1 / 2 }}>
           <URL variant="gatsby" to="/">
-            <Image src={myLogo} alt="shahid-logo" width={30} top={12} />
+            <span className="brand-title"> @</span>
+            <Image src={myLogo} alt="shahid-logo" width={24} top={8} />
+            <span className="brand-title">h4hids</span>
           </URL>
         </Grid.Unit>
         <Grid.Unit size={{ xs: 3 / 4, sm: 1 / 2, md: 1 / 2, lg: 1 / 2 }}>

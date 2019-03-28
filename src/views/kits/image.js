@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { width, height, top } from 'styled-system';
+import { width, height, top, space } from 'styled-system';
 
 const Image = styled.img`
   width: 100%;
@@ -8,6 +8,7 @@ const Image = styled.img`
   ${width};
   ${height};
   ${top};
+  ${space};
 `;
 
 export default Image;

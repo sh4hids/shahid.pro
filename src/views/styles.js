@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-family: ${({ theme }) => theme.typography.fontFamily};
     font-size: ${({ theme }) => theme.typography.fontSize};
+    background-color: ${({ theme }) => theme.colors.light};
     min-height: 100vh;
   }
 
@@ -39,9 +40,13 @@ const GlobalStyle = createGlobalStyle`
   h5 {
     font-size: 1.25em;
   }
-  
+
   h6 {
     font-size: 1em;
+  }
+
+  :not(pre) > code[class*="language-"], pre[class*="language-"] {
+    background-color: #f0f8fb;
   }
 `;
 

@@ -1,11 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 
-import Bio from '../components/Bio';
-import SEO from '../components/seo';
-
-import { DefaultLayout } from '../views/layouts';
-import { PostSummaryCard } from '../views/components';
+import HomePage from '../views/pages/home';
 
 class BlogIndex extends React.Component {
   render() {
@@ -13,26 +9,7 @@ class BlogIndex extends React.Component {
     const siteTitle = data.site.siteMetadata.title;
     const posts = data.allMarkdownRemark.edges;
 
-    return (
-      <DefaultLayout>
-        <SEO
-          title="Home"
-          keywords={[
-            `blog`,
-            `sh4hids`,
-            `javascript`,
-            `react`,
-            `developer`,
-            `software engineer`,
-            `bangladeshi`,
-          ]}
-        />
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug;
-          return <PostSummaryCard key={node.fields.slug} node={node} />;
-        })}
-      </DefaultLayout>
-    );
+    return <HomePage siteTitle={siteTitle} posts={posts} />;
   }
 }
 

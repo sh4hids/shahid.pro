@@ -11,7 +11,9 @@ const DefaultLayout = ({ children }) => (
     <Container>
       <GlobalStyle />
       <MainHeader />
-      <Container main>{children}</Container>
+      <Container main mt={76}>
+        {children}
+      </Container>
     </Container>
   </ThemeProvider>
 );
