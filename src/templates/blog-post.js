@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import Bio from '../components/Bio';
 import { SEO } from '../views/components';
 import { DefaultLayout } from '../views/layouts';
 
