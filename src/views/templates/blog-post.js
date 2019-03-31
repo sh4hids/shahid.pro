@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import { SEO } from '../views/components';
-import { DefaultLayout } from '../views/layouts';
-
-import { Container, Text } from '../views/kits';
+import { SEO, PrevNext, PostMeta } from '../components';
+import { DefaultLayout } from '../layouts';
+import { Container, Text } from '../kits';
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
     const siteTitle = this.props.data.site.siteMetadata.title;
     const { previous, next } = this.props.pageContext;
+    const { readingTime } = post.fields;
 
     return (
       <DefaultLayout>
@@ -18,35 +18,11 @@ class BlogPostTemplate extends React.Component {
           <Text color="dark" variant="h4">
             {post.frontmatter.title}
           </Text>
-          <Text variant="caption">{post.frontmatter.date}</Text>
+          <PostMeta post={post} readingTime={readingTime} />
           <hr />
           <Text variant="raw" html={post.html} />
           <hr />
-
-          <ul
-            style={{
-              display: `flex`,
-              flexWrap: `wrap`,
-              justifyContent: `space-between`,
-              listStyle: `none`,
-              padding: 0,
-            }}
-          >
-            <li>
-              {previous && (
-                <Link to={previous.fields.slug} rel="prev">
-                  ← {previous.frontmatter.title}
-                </Link>
-              )}
-            </li>
-            <li>
-              {next && (
-                <Link to={next.fields.slug} rel="next">
-                  {next.frontmatter.title} →
-                </Link>
-              )}
-            </li>
-          </ul>
+          <PrevNext previous={previous} next={next} />
         </Container>
       </DefaultLayout>
     );
@@ -70,6 +46,12 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+      }
+      fields {
+        slug
+        readingTime {
+          text
+        }
       }
     }
   }

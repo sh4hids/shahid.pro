@@ -20,10 +20,6 @@ const HeaderContainer = styled.header`
     text-transform: uppercase;
     position: relative;
     top: 2px;
-
-    @media only screen and (max-width: 576px) {
-      display: none;
-    }
   }
 
   ul {
@@ -40,12 +36,21 @@ const HeaderContainer = styled.header`
   }
 
   @media only screen and (max-width: 576px) {
+    > div {
+      padding: 0 16px;
+      margin-top: 0;
+    }
+
     ul {
       li {
         a {
           padding: 0 8px;
         }
       }
+    }
+
+    .brand-title {
+      display: none;
     }
   }
 `;
