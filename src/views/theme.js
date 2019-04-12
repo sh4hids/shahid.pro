@@ -61,8 +61,8 @@ export default {
     light: '#EFF1F3',
     lighter: '#FEFFFE',
     error: '#FF3C38',
-    success: '#FFCA1E',
-    warning: '#78BE20',
+    warning: '#FFCA1E',
+    success: '#78BE20',
   },
   space: [0, 4, 8, 16, 32, 64, 128, 256],
   breakpoints: {

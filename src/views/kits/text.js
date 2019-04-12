@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { color } from 'styled-system';
+import { color, textAlign } from 'styled-system';
 import { isDefined } from '../../utils/object-utils';
 
 const dark = 'rgba(0, 0, 0, .8)';
@@ -17,6 +17,7 @@ const H1 = styled.h1`
   font-weight: ${({ theme }) =>
     isDefined(theme, 'typography.h1') ? theme.typography.h1.fontWeight : 700};
   ${color};
+  ${textAlign};
 `;
 const H2 = styled.h2`
   color: ${({ theme }) =>
@@ -30,6 +31,7 @@ const H2 = styled.h2`
   font-weight: ${({ theme }) =>
     isDefined(theme, 'typography.h2') ? theme.typography.h2.fontWeight : 700};
   ${color};
+  ${textAlign};
 `;
 const H3 = styled.h3`
   color: ${({ theme }) =>
@@ -43,6 +45,7 @@ const H3 = styled.h3`
   font-weight: ${({ theme }) =>
     isDefined(theme, 'typography.h3') ? theme.typography.h3.fontWeight : 700};
   ${color};
+  ${textAlign};
 `;
 const H4 = styled.h4`
   color: ${({ theme }) =>
@@ -56,6 +59,7 @@ const H4 = styled.h4`
   font-weight: ${({ theme }) =>
     isDefined(theme, 'typography.h4') ? theme.typography.h4.fontWeight : 700};
   ${color};
+  ${textAlign};
 `;
 const H5 = styled.h5`
   color: ${({ theme }) =>
@@ -69,6 +73,7 @@ const H5 = styled.h5`
   font-weight: ${({ theme }) =>
     isDefined(theme, 'typography.h5') ? theme.typography.h5.fontWeight : 700};
   ${color};
+  ${textAlign};
 `;
 
 const H6 = styled.h6`
@@ -81,6 +86,7 @@ const H6 = styled.h6`
   font-weight: ${({ theme }) =>
     isDefined(theme, 'typography.h6') ? theme.typography.h6.fontWeight : 700};
   ${color};
+  ${textAlign};
 `;
 
 const P = styled.p`
@@ -99,6 +105,7 @@ const P = styled.p`
       ? theme.typography.body.fontWeight
       : 400};
   ${color};
+  ${textAlign};
 `;
 
 const Caption = styled.p`
@@ -117,6 +124,7 @@ const Caption = styled.p`
       ? theme.typography.caption.fontWeight
       : 400};
   ${color};
+  ${textAlign};
 `;
 
 const RawHTML = styled.div`
@@ -155,30 +163,26 @@ const RawHTML = styled.div`
   }
 `;
 
-const Text = ({ variant, color, theme, children, html }) => {
+const Text = ({ variant, children, html, ...props }) => {
   switch (variant) {
     case 'h1':
-      return <H1 color={color}>{children}</H1>;
+      return <H1 {...props}>{children}</H1>;
     case 'h2':
-      return <H2 color={color}>{children}</H2>;
+      return <H2 {...props}>{children}</H2>;
     case 'h3':
-      return <H3 color={color}>{children}</H3>;
+      return <H3 {...props}>{children}</H3>;
     case 'h4':
-      return <H4 color={color}>{children}</H4>;
+      return <H4 {...props}>{children}</H4>;
     case 'h5':
-      return <H5 color={color}>{children}</H5>;
+      return <H5 {...props}>{children}</H5>;
     case 'h6':
-      return <H6 color={color}>{children}</H6>;
+      return <H6 {...props}>{children}</H6>;
     case 'caption':
-      return <Caption color={color}>{children}</Caption>;
+      return <Caption {...props}>{children}</Caption>;
     case 'raw':
       return <RawHTML dangerouslySetInnerHTML={{ __html: html }} />;
     default:
-      return (
-        <P color={color} theme={theme}>
-          {children}
-        </P>
-      );
+      return <P {...props}>{children}</P>;
   }
 };
 

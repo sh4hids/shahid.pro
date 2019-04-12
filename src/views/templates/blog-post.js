@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import { SEO, PrevNext, PostMeta } from '../components';
+import { SEO, PrevNext, PostMeta, TopRibbon } from '../components';
 import { DefaultLayout } from '../layouts';
 import { Container, Text } from '../kits';
 
@@ -12,7 +12,9 @@ class BlogPostTemplate extends React.Component {
     const { readingTime } = post.fields;
 
     return (
-      <DefaultLayout>
+      <DefaultLayout
+        topRibbon={<TopRibbon message="🛠 -- under construction -- 🛠" />}
+      >
         <SEO title={post.frontmatter.title} description={post.excerpt} />
         <Container card>
           <Text color="dark" variant="h4">

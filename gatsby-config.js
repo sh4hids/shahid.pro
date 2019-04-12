@@ -4,6 +4,7 @@ module.exports = {
     author: `Shahidul Islam Majumder`,
     description: `Personal website of Shahidul Islam Majumder`,
     siteUrl: `https://shahid.pro/`,
+    pathPrefix: '/shahid.pro',
     social: {
       twitter: `sh4hids`,
     },

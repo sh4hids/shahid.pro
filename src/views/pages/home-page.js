@@ -1,10 +1,12 @@
 import React from 'react';
 import { DefaultLayout } from '../layouts';
-import { SEO, PostSummaryCard } from '../components';
+import { SEO, PostSummaryCard, TopRibbon } from '../components';
 import { HeroSection } from '../components/home';
 
 const HomePage = ({ siteTitle, posts }) => (
-  <DefaultLayout>
+  <DefaultLayout
+    topRibbon={<TopRibbon message="🛠 -- under construction -- 🛠" />}
+  >
     <SEO
       title="Home"
       keywords={[

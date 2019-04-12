@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { top } from 'styled-system';
 import Grid from 'styled-components-grid';
 import { List, ListItem, URL, Container, Image, Text } from '../kits';
 import myLogo from '../../assets/images/shahid.svg';
@@ -14,6 +15,8 @@ const HeaderContainer = styled.header`
   position: fixed;
   top: 0;
   left: 0;
+
+  ${top};
 
   .brand-title {
     font-weight: bold;
@@ -55,8 +58,8 @@ const HeaderContainer = styled.header`
   }
 `;
 
-const MainHeader = () => (
-  <HeaderContainer>
+const MainHeader = props => (
+  <HeaderContainer {...props}>
     <Container main bg="lighter">
       <Grid halign="justify">
         <Grid.Unit size={{ xs: 1 / 4, sm: 1 / 2, md: 1 / 2, lg: 1 / 2 }}>
