@@ -1,7 +1,7 @@
 import React from 'react';
-import { DefaultLayout } from '../../layouts';
-import { SEO, PostSummaryCard } from '../../components';
-import { HeroSection } from './components';
+import { DefaultLayout } from '../layouts';
+import { SEO, PostSummaryCard } from '../components';
+import { HeroSection } from '../components/home';
 
 const HomePage = ({ siteTitle, posts }) => (
   <DefaultLayout>

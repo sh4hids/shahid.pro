@@ -1,9 +1,9 @@
 import React from 'react';
 import Grid from 'styled-components-grid';
-import { Container, Text } from '../../../kits';
-import { FullBackgroungImage } from '../../../components';
+import { Container, Text } from '../../kits';
+import { FullBackgroungImage } from '../';
 
-import bgImage from '../../../../assets/images/bg.svg';
+import bgImage from '../../../assets/images/bg.svg';
 
 const HeroSection = () => (
   <Container>

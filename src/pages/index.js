@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 
-import HomePage from '../views/pages/home';
+import { HomePage } from '../views/pages';
 
 class BlogIndex extends React.Component {
   render() {
