@@ -31,6 +31,20 @@ const Container = styled.div`
       }
     `};
 
+  ${({ align }) => {
+    switch (align) {
+      case 'verticalSpace':
+        return css`
+          display: flex;
+          flex-direction: column;
+          align-content: space-between;
+          justify-content: space-between;
+        `;
+      default:
+        return '';
+    }
+  }}
+
   ${color};
   ${width};
   ${height};
