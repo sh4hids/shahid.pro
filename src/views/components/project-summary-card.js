@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Container, Text, URL } from '../kits';
+import { Container, Image, Text, URL } from '../kits';
+import arrowIcon from '../../assets/icons/arrow.svg';
 
 const ProjectSummaryCardContainer = styled(Container)`
   @media only screen and (max-width: 576px) {
@@ -12,24 +13,20 @@ const ProjectSummaryCard = ({ project, i }) => (
   <ProjectSummaryCardContainer
     p={24}
     mb={16}
-    bg="secondary"
+    bg="lighter"
     card
     align="verticalSpace"
-    height={200}
+    height={160}
     mr={i % 2 === 0 ? 16 : '0'}
   >
-    <Text variant="h5" color="lighter">
+    <Text variant="h5" color="secondary">
       {project.title}
     </Text>
-    <Text color="lighter">{project.info}</Text>
-    <URL
-      href={project.url}
-      color="lighter"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <Text variant="h6" color="lighter">
-        📎 &nbsp;{project.url.split('com/')[1]}
+    <Text>{project.info}</Text>
+    <URL href={project.url} target="_blank" rel="noopener noreferrer">
+      <Text variant="h6" color="secondary">
+        <Image src={arrowIcon} alt="url-arrow" width={12} top={-1} /> &nbsp;
+        {project.url.split('com/')[1]}
       </Text>
     </URL>
   </ProjectSummaryCardContainer>

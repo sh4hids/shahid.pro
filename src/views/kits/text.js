@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { color, textAlign } from 'styled-system';
+import { color, space, textAlign } from 'styled-system';
 import { isDefined } from '../../utils/object-utils';
 
 const dark = 'rgba(0, 0, 0, .8)';
@@ -17,6 +17,7 @@ const H1 = styled.h1`
   font-weight: ${({ theme }) =>
     isDefined(theme, 'typography.h1') ? theme.typography.h1.fontWeight : 700};
   ${color};
+  ${space};
   ${textAlign};
 `;
 const H2 = styled.h2`
@@ -31,6 +32,7 @@ const H2 = styled.h2`
   font-weight: ${({ theme }) =>
     isDefined(theme, 'typography.h2') ? theme.typography.h2.fontWeight : 700};
   ${color};
+  ${space};
   ${textAlign};
 `;
 const H3 = styled.h3`
@@ -45,6 +47,7 @@ const H3 = styled.h3`
   font-weight: ${({ theme }) =>
     isDefined(theme, 'typography.h3') ? theme.typography.h3.fontWeight : 700};
   ${color};
+  ${space};
   ${textAlign};
 `;
 const H4 = styled.h4`
@@ -59,6 +62,7 @@ const H4 = styled.h4`
   font-weight: ${({ theme }) =>
     isDefined(theme, 'typography.h4') ? theme.typography.h4.fontWeight : 700};
   ${color};
+  ${space};
   ${textAlign};
 `;
 const H5 = styled.h5`
@@ -73,6 +77,7 @@ const H5 = styled.h5`
   font-weight: ${({ theme }) =>
     isDefined(theme, 'typography.h5') ? theme.typography.h5.fontWeight : 700};
   ${color};
+  ${space};
   ${textAlign};
 `;
 
@@ -86,6 +91,7 @@ const H6 = styled.h6`
   font-weight: ${({ theme }) =>
     isDefined(theme, 'typography.h6') ? theme.typography.h6.fontWeight : 700};
   ${color};
+  ${space};
   ${textAlign};
 `;
 
@@ -105,6 +111,7 @@ const P = styled.p`
       ? theme.typography.body.fontWeight
       : 400};
   ${color};
+  ${space};
   ${textAlign};
 `;
 
@@ -124,6 +131,7 @@ const Caption = styled.p`
       ? theme.typography.caption.fontWeight
       : 400};
   ${color};
+  ${space};
   ${textAlign};
 `;
 
