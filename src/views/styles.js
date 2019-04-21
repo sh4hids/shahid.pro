@@ -14,11 +14,14 @@ const GlobalStyle = createGlobalStyle`
     font-size: ${({ theme }) => theme.typography.fontSize};
     background-color: ${({ theme }) => theme.colors.light};
     min-height: 100vh;
+    position: relative;
   }
 
   p {
     line-height: 1.45;
     font-size: 1em;
+    margin: 0;
+    padding: 0;
   }
 
   h1, h2, h3, h4, h5, h6 {

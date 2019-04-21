@@ -2,7 +2,17 @@ import styled, { css } from 'styled-components';
 import { color, width, height, space } from 'styled-system';
 
 const Container = styled.div`
-  height: 100%;
+  height: auto;
+
+  &.main-container {
+    padding-bottom: 228px;
+  }
+
+  @media only screen and (max-width: 576px) {
+    &.main-container {
+      padding-bottom: 364px;
+    }
+  }
 
   ${({ main }) =>
     main &&
@@ -14,6 +24,10 @@ const Container = styled.div`
       @media only screen and (max-width: 576px) {
         padding: 0;
         margin-top: 60px;
+
+        &.footer-container {
+          margin-top: 0;
+        }
       }
     `};
 
@@ -22,7 +36,6 @@ const Container = styled.div`
     css`
       padding: 24px;
       background-color: ${({ theme }) => theme.colors.lighter};
-      margin-bottom: 16px;
       border-radius: 4px;
       border: 1px solid ${({ theme }) => theme.colors.light};
 

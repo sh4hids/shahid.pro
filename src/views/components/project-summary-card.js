@@ -16,7 +16,7 @@ const ProjectSummaryCard = ({ project, i }) => (
     bg="lighter"
     card
     align="verticalSpace"
-    height={160}
+    height={150}
     mr={i % 2 === 0 ? 16 : '0'}
   >
     <Text variant="h5" color="secondary">

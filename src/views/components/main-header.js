@@ -15,6 +15,7 @@ const HeaderContainer = styled.header`
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 10;
 
   ${top};
 

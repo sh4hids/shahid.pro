@@ -25,9 +25,15 @@ const HomePage = ({ siteTitle, posts }) => (
     <Text variant="h4" mt={16} mb={24} textAlign="center">
       Recent posts
     </Text>
-    {posts.map(({ node }) => {
+    {posts.map(({ node }, i) => {
       const title = node.frontmatter.title || node.fields.slug;
-      return <PostSummaryCard key={node.fields.slug} node={node} />;
+      return (
+        <PostSummaryCard
+          key={node.fields.slug}
+          node={node}
+          isLastPost={i === posts.length - 1}
+        />
+      );
     })}
   </DefaultLayout>
 );

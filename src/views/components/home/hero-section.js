@@ -11,7 +11,9 @@ const HeroSection = () => (
       <Grid>
         <Grid.Unit size={{ xs: 1, sm: 1 / 2, md: 1 / 2, lg: 1 / 2 }}>
           <Container p={24} pt={60}>
-            <Text variant="h4">Hi, I'm Shahid...</Text>
+            <Text variant="h4" mb={16}>
+              Hi, I'm Shahid...
+            </Text>
             <Text>
               I am a fullstack JavaScript Developer from Dhaka, Bangladesh. I
               love to work with NodeJS, React, MongoDB and all other related

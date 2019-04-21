@@ -1,9 +1,9 @@
 import React from 'react';
 import { Container, Text, URL } from '../kits';
 
-const PostSummaryCard = ({ node }) => (
-  <Container card>
-    <Text variant="h4">
+const PostSummaryCard = ({ node, isLastPost }) => (
+  <Container card mb={isLastPost ? '' : 16}>
+    <Text variant="h4" mb={8}>
       <URL variant="gatsby" to={node.fields.slug}>
         {node.frontmatter.title || node.fields.slug}
       </URL>
