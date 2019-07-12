@@ -5,9 +5,7 @@ import { HeroSection, ProjectsSection } from '../components/home';
 import { Text } from '../kits';
 
 const HomePage = ({ siteTitle, posts }) => (
-  <DefaultLayout
-    topRibbon={<TopRibbon message="🛠 -- under construction -- 🛠" />}
-  >
+  <DefaultLayout>
     <SEO
       title="Home"
       keywords={[

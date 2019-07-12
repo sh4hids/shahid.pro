@@ -7,6 +7,7 @@ import PrevNext from './prev-next';
 import ProjectSummaryCard from './project-summary-card';
 import SEO from './seo';
 import SocialLink from './social-link';
+import SocialShareSection from './SocialShareSection';
 import TopRibbon from './top-ribbon';
 
 export {
@@ -19,5 +20,6 @@ export {
   ProjectSummaryCard,
   SEO,
   SocialLink,
+  SocialShareSection,
   TopRibbon,
 };

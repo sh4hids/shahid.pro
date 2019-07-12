@@ -19,9 +19,11 @@ const ProjectSummaryCard = ({ project, i }) => (
     height={150}
     mr={i % 2 === 0 ? 16 : '0'}
   >
-    <Text variant="h5" color="secondary">
-      {project.title}
-    </Text>
+    <URL href={project.url} target="_blank" rel="noopener noreferrer">
+      <Text variant="h5" color="secondary">
+        {project.title}
+      </Text>
+    </URL>
     <Text>{project.info}</Text>
     <URL href={project.url} target="_blank" rel="noopener noreferrer">
       <Text variant="h6" color="secondary">

@@ -15,14 +15,14 @@ const PrevNext = ({ previous, next }) => (
     <li>
       {previous && (
         <URL to={previous.fields.slug} rel="prev">
-          ← {previous.frontmatter.title}
+          ☚ {previous.frontmatter.title}
         </URL>
       )}
     </li>
     <li>
       {next && (
         <URL to={next.fields.slug} rel="next">
-          {next.frontmatter.title} →
+          {next.frontmatter.title} ☛
         </URL>
       )}
     </li>
