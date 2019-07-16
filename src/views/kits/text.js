@@ -139,6 +139,16 @@ const RawHTML = styled.div`
   p {
     line-height: 1.45;
     font-size: 1em;
+    margin-bottom: 1em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: ${({ theme }) => theme.colors.secondary || inherit};
   }
 
   h1,
@@ -147,7 +157,7 @@ const RawHTML = styled.div`
   h4,
   h5,
   h6 {
-    margin: 0;
+    margin: 1em 0;
     line-height: 1.15;
   }
 
@@ -168,6 +178,45 @@ const RawHTML = styled.div`
   }
   h6 {
     font-size: 1em;
+  }
+
+  blockquote {
+    font-family: 'Rancho', cursive;
+    font-size: 1.6rem;
+    position: relative;
+    border-top: 2px solid #ffb8b8;
+    border-bottom: 2px solid #ffb8b8;
+    padding: 24px;
+    margin: 32px 0;
+    background: rgb(242, 255, 229);
+    background: linear-gradient(
+      90deg,
+      rgba(242, 255, 229, 1) 0%,
+      rgba(255, 233, 233, 1) 100%,
+      rgba(0, 212, 255, 1) 100%
+    );
+    color: #4c3d3d;
+
+    &::before {
+      content: '“';
+      color: #ffb8b8;
+      font-size: 8rem;
+      position: absolute;
+      left: 50%;
+      top: -3.4rem;
+      transform: translatex(-50%);
+      z-index: 10;
+    }
+
+    &::after {
+      content: '”';
+      color: #ffb8b8;
+      font-size: 8rem;
+      position: absolute;
+      right: 50%;
+      bottom: -7.1rem;
+      transform: translatex(50%);
+    }
   }
 `;
 

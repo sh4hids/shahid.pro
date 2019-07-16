@@ -78,6 +78,9 @@ module.exports = {
           {
             family: `IBM Plex Sans`,
           },
+          {
+            family: `Rancho`,
+          },
         ],
       },
     },
