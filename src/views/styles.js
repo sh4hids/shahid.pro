@@ -53,8 +53,8 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1em;
   }
 
-  :not(pre) > code[class*="language-"], pre[class*="language-"] {
-    background-color: #f0f8fb;
+  pre[class*="language-"] {
+    border-radius: 4px;
   }
 `;
 
