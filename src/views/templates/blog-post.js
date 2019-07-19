@@ -12,8 +12,6 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext;
     const { readingTime } = post.fields;
 
-    console.log(`${siteUrl}${post.fields.slug}`);
-
     return (
       <DefaultLayout>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
