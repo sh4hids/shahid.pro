@@ -3,7 +3,8 @@ module.exports = {
     title: `Shahidul Islam Majumder`,
     author: `Shahidul Islam Majumder`,
     description: `Personal website of Shahidul Islam Majumder`,
-    image: 'https://cdn.staticaly.com/gh/sh4hids/cdn/da07246d/images/bg.svg',
+    image:
+      'https://cdn.statically.io/gh/sh4hids/cdn/3bb074398463bd6f909d4b605ecb01ac9102cc62/images/bg.png',
     siteUrl: `https://shahid.pro`,
     social: {
       twitter: `sh4hids`,
