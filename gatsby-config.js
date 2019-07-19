@@ -4,7 +4,7 @@ module.exports = {
     author: `Shahidul Islam Majumder`,
     description: `Personal website of Shahidul Islam Majumder`,
     image:
-      'https://cdn.statically.io/gh/sh4hids/cdn/3bb074398463bd6f909d4b605ecb01ac9102cc62/images/bg.png',
+      'https://cdn.statically.io/gh/sh4hids/cdn/f9f08008d4f87bad4a4d1e7321ba9b1affee80cc/images/bg.png',
     siteUrl: `https://shahid.pro`,
     social: {
       twitter: `sh4hids`,
