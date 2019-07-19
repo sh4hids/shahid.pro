@@ -26,6 +26,7 @@ const SocialShareButtonContainer = styled.div`
 
   .social-share-button {
     cursor: pointer;
+    outline: none;
   }
 `;
 

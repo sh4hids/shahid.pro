@@ -23,18 +23,22 @@ And we are showing the response on our blog details page like this:
 <h4>Author: {res.author.name || 'Anonymous'}</h4>
 ```
 
-Everything will work fine if the `author` key has values. For some (wired) reason if the `author` key has `null` value, then our code will break. We can get an error like `Uncaught TypeError: Cannot read property 'xyz' of undefined`.
+Everything will work fine if the `author` key has values. For some (wired) reason if the `author` key has `null` value, then our code will break. We might get an error like:
+
+```
+Uncaught TypeError: Cannot read property xyz of undefined.
+```
 
 To avoid this kind of situation we can create a helper function to check whether a key of an object (on any level) exists or not. Here's how I implemented the function:
 
 ```javascript
 //object-helper.js
-
 export const isDefined = (ref, path) => {
   let name;
   let keys = path.split('.');
 
-  if (!ref || typeof ref !== 'object') return false; //check if reference object exists or not
+  //check if the reference object exists or not
+  if (!ref || typeof ref !== 'object') return false;
 
   while ((name = keys.shift())) {
     if (!ref.hasOwnProperty(name)) return false;

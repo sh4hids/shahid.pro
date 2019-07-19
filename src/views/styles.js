@@ -55,6 +55,16 @@ const GlobalStyle = createGlobalStyle`
 
   pre[class*="language-"] {
     border-radius: 4px;
+    background: rgb(255,255,255);
+    background: linear-gradient(135deg, rgba(233,250,255,0.1) 0%, rgba(255,230,232,.5) 100%, rgba(255,255,255,0.1) 100%);
+    margin-bottom: 1rem;
+  }
+
+  :not(pre) > code[class*="language-"] {
+    padding: 0.1em .5em 0 0.5em;
+    border-radius: 4px;
+    background: rgba(219,84,97,.2);
+    border: none;
   }
 `;
 

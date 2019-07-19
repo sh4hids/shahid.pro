@@ -8,8 +8,11 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
     const siteTitle = this.props.data.site.siteMetadata.title;
+    const siteUrl = this.props.data.site.siteMetadata.siteUrl;
     const { previous, next } = this.props.pageContext;
     const { readingTime } = post.fields;
+
+    console.log(`${siteUrl}${post.fields.slug}`);
 
     return (
       <DefaultLayout>
@@ -21,11 +24,15 @@ class BlogPostTemplate extends React.Component {
           <PostMeta post={post} readingTime={readingTime} />
           <hr />
           <Text variant="raw" html={post.html} />
-          <hr />
-          <PrevNext previous={previous} next={next} />
+          {(previous || next) && (
+            <>
+              <hr />
+              <PrevNext previous={previous} next={next} />
+            </>
+          )}
           <hr />
           <SocialShareSection
-            url={`${process.env.PUBLIC_URL}/${post.fields.slug}`}
+            url={`${siteUrl}/${post.fields.slug}`}
             title={post.frontmatter.title}
           />
         </Container>
@@ -42,6 +49,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+        siteUrl
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
