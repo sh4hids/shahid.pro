@@ -86,10 +86,10 @@ module.exports = {
       },
     },
     {
-       resolve: '@debiki/gatsby-plugin-talkyard',
-       options: {
-         talkyardServerUrl: 'https://comments-for-shahid-pro.talkyard.net'
-       }
-     },
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `shahid-pro`
+      }
+    },
   ],
 };
