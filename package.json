@@ -8,8 +8,8 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
+    "@debiki/gatsby-plugin-talkyard": "^0.5.8",
     "babel-plugin-styled-components": "^1.10.0",
-    "disqus-react": "^1.0.6",
     "gatsby": "^2.3.24",
     "gatsby-image": "^2.0.22",
     "gatsby-plugin-feed": "^2.0.8",

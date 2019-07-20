@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import { DiscussionEmbed } from 'disqus-react';
+import TalkyardCommentsIframe from '@debiki/gatsby-plugin-talkyard';
 import { PostMeta, PrevNext, SEO, SocialShareSection } from '../components';
 import { DefaultLayout } from '../layouts';
 import { Container, Text } from '../kits';
@@ -39,7 +39,7 @@ class BlogPostTemplate extends React.Component {
             title={post.frontmatter.title}
           />
           <hr />
-          <DiscussionEmbed {...disqusConfig} />
+          <TalkyardCommentsIframe discussionId={post.frontmatter.discussionId} />
         </Container>
       </DefaultLayout>
     );
@@ -64,6 +64,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        discussionId
       }
       fields {
         slug

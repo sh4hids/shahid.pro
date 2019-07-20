@@ -1,6 +1,7 @@
 ---
 title: JavaScript Object Key Existence Check (on any level)
 date: '2019-07-18T10:16:14.794Z'
+discussionId: 'javascript-object-key-existence-check'
 ---
 
 In our day to day life of coding (specially in JavaScript) sometimes we need to check whether a key of an object exists or not. It can be on any level. For example, let's imagine we have an API response where we can get the details of a blog post.
