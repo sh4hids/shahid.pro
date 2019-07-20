@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import { DiscussionEmbed } from 'disqus-react';
 import { PostMeta, PrevNext, SEO, SocialShareSection } from '../components';
 import { DefaultLayout } from '../layouts';
 import { Container, Text } from '../kits';
@@ -11,6 +12,10 @@ class BlogPostTemplate extends React.Component {
     const siteUrl = this.props.data.site.siteMetadata.siteUrl;
     const { previous, next } = this.props.pageContext;
     const { readingTime } = post.fields;
+    const disqusConfig = {
+     shortname: process.env.GATSBY_DISQUS_NAME,
+     config: { identifier: post.fields.slug, title: post.frontmatter.title },
+    }
 
     return (
       <DefaultLayout>
@@ -33,6 +38,8 @@ class BlogPostTemplate extends React.Component {
             url={`${siteUrl}/${post.fields.slug}`}
             title={post.frontmatter.title}
           />
+          <hr />
+          <DiscussionEmbed {...disqusConfig} />
         </Container>
       </DefaultLayout>
     );

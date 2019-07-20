@@ -15,7 +15,7 @@ import {
 
 const SocialShareContainer = styled.div`
   text-align: center;
-  padding-top: 12px;
+  padding: 12px 0;
 `;
 
 const SocialShareButtonContainer = styled.div`
