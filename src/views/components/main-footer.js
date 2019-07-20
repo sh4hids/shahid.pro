@@ -29,13 +29,13 @@ const MainFooter = () => (
         <Grid.Unit size={{ xs: 1, sm: 1 / 2 }}>
           <Container p={16}>
             <Text variant="h6" mb={16}>
-              About
+              About Me
             </Text>
             <Text variant="caption">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-              suscipit, nemo accusantium laboriosam quasi, mollitia. Placeat
-              recusandae minima excepturi, officia, voluptas illum, nostrum
-              voluptatem, at non nemo culpa sapiente enim!
+            I am a fullstack JavaScript Developer from Dhaka, Bangladesh. I love to
+            work with NodeJS, React, MongoDB and all other related technologies. When
+            I am not coding, I like to read books and spend time with friends and
+            brothers.
             </Text>
           </Container>
         </Grid.Unit>

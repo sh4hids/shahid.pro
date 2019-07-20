@@ -3,7 +3,7 @@ import { Container, Divider, Text, URL } from '../kits';
 
 const PostSummaryCard = ({ node, isLastPost }) => (
   <Container card mb={isLastPost ? 8 : 16}>
-    <Text variant="h4" mb={8}>
+    <Text variant="h5" mb={8}>
       <URL variant="gatsby" to={node.fields.slug}>
         {node.frontmatter.title || node.fields.slug}
       </URL>
