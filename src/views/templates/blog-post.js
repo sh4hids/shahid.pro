@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
+import { Disqus, CommentCount } from 'gatsby-plugin-disqus';
 import { PostMeta, PrevNext, SEO, SocialShareSection } from '../components';
 import { DefaultLayout } from '../layouts';
 import { Container, Text } from '../kits';
@@ -16,7 +16,7 @@ class BlogPostTemplate extends React.Component {
       url: `${siteUrl}/${post.fields.slug}`,
       identifier: post.fields.slug,
       title: post.frontmatter.title,
-    }
+    };
 
     return (
       <DefaultLayout>
