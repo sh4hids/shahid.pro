@@ -18,6 +18,8 @@ class BlogPostTemplate extends React.Component {
       title: post.frontmatter.title,
     };
 
+    console.log(this.props.pageContext);
+
     return (
       <DefaultLayout>
         <SEO title={post.frontmatter.title} description={post.excerpt} />

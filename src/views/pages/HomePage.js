@@ -21,7 +21,7 @@ const HomePage = ({ siteTitle, posts }) => (
     <HeroSection />
     <ProjectsSection />
     <Text variant="h4" mt={16} mb={24} textAlign="center">
-      Recent posts
+      {posts.length ? 'Recent posts' : 'No post yet...'}
     </Text>
     {posts.map(({ node }, i) => {
       const title = node.frontmatter.title || node.fields.slug;

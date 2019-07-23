@@ -1,6 +1,8 @@
 ---
 title: Add Disqus Commenting on Gatsby Site in 3 Steps
 date: '2019-07-20T14:27:34.226Z'
+published: true
+language: 'en'
 ---
 
 It's great to have a comment section on any blog site. People can easily express their opinion regarding a blog post. It creates an opportunity for knowledge sharing. In this tiny post, I'll try to go through the easiest steps of adding `Disqus` commenting on any `Gatsby.js` site. So, let's start...
@@ -12,6 +14,7 @@ $ npm install -S gatsby-plugin-disqus
 ```
 
 ###### Step 2: Configure plugin
+
 Add this code to your `gatsby-config.js` file's plugins section:
 
 ```javascript
@@ -19,10 +22,10 @@ plugins: [
   {
     resolve: `gatsby-plugin-disqus`,
     options: {
-      shortname: `your-disqus-short-code`
-    }
-  }
-]
+      shortname: `your-disqus-short-code`,
+    },
+  },
+];
 ```
 
 ###### Step 3: Use `Disqus` component in your `blog-post` template file
@@ -41,7 +44,7 @@ const disqusConfig = {
   url: `${siteUrl}/${post.fields.slug}`,
   identifier: post.fields.slug,
   title: post.frontmatter.title,
-}
+};
 ```
 
 Finally add the `Disqus` component where ever you want:

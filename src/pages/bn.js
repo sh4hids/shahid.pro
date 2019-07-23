@@ -25,7 +25,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
-        frontmatter: { language: { eq: "en" }, published: { eq: true } }
+        frontmatter: { language: { eq: "bn" }, published: { eq: true } }
       }
     ) {
       edges {

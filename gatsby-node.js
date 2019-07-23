@@ -19,6 +19,8 @@ exports.createPages = ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                language
+                published
               }
             }
           }
@@ -30,13 +32,46 @@ exports.createPages = ({ graphql, actions }) => {
       throw result.errors;
     }
 
+    function getPreviousPost({ posts, post, index }) {
+      if (index === posts.length - 1) {
+        return null;
+      } else {
+        for (var i = index + 1; i < posts.length; i++) {
+          if (
+            posts[i].node.frontmatter.language ===
+              post.node.frontmatter.language &&
+            posts[i].node.frontmatter.published
+          ) {
+            return posts[i].node;
+          }
+        }
+      }
+      return null;
+    }
+
+    function getNextPost({ posts, post, index }) {
+      if (index === 0) {
+        return null;
+      } else {
+        for (var i = index - 1; i >= 0; i--) {
+          if (
+            posts[i].node.frontmatter.language ===
+              post.node.frontmatter.language &&
+            posts[i].node.frontmatter.published
+          ) {
+            return posts[i].node;
+          }
+        }
+      }
+      return null;
+    }
+
     // Create blog posts pages.
     const posts = result.data.allMarkdownRemark.edges;
 
     posts.forEach((post, index) => {
-      const previous =
-        index === posts.length - 1 ? null : posts[index + 1].node;
-      const next = index === 0 ? null : posts[index - 1].node;
+      const previous = getPreviousPost({ posts, post, index });
+      const next = getNextPost({ posts, post, index });
 
       createPage({
         path: post.node.fields.slug,
