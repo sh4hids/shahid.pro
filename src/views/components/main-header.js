@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { top } from 'styled-system';
 import Grid from 'styled-components-grid';
+import { injectIntl, Link, FormattedMessage } from 'gatsby-plugin-intl';
 import { List, ListItem, URL, Container, Image, Text } from '../kits';
 import myLogo from '../../assets/images/shahid.svg';
 
@@ -64,7 +65,10 @@ const MainHeader = props => (
     <Container main bg="lighter">
       <Grid halign="justify">
         <Grid.Unit size={{ xs: 1 / 4, sm: 1 / 2, md: 1 / 2, lg: 1 / 2 }}>
-          <URL variant="gatsby" to="/">
+          <URL
+            variant="gatsby"
+            to={props.intl.formatMessage({ id: 'baseUrl' })}
+          >
             <span className="brand-title"> @</span>
             <Image src={myLogo} alt="shahid-logo" width={24} top={8} />
             <span className="brand-title">h4hids</span>
@@ -74,17 +78,17 @@ const MainHeader = props => (
           <List>
             <ListItem display="inline">
               <URL variant="gatsby" to="/about">
-                About
+                {props.intl.formatMessage({ id: 'mainMenu.about' })}
               </URL>
             </ListItem>
             <ListItem display="inline">
               <URL variant="gatsby" to="/blog">
-                Blog
+                {props.intl.formatMessage({ id: 'mainMenu.blog' })}
               </URL>
             </ListItem>
             <ListItem display="inline">
               <URL variant="gatsby" to="/projects">
-                Projects
+                {props.intl.formatMessage({ id: 'mainMenu.projects' })}
               </URL>
             </ListItem>
           </List>
@@ -94,4 +98,4 @@ const MainHeader = props => (
   </HeaderContainer>
 );
 
-export default MainHeader;
+export default injectIntl(MainHeader);

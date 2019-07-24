@@ -1,22 +1,25 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import { injectIntl, FormattedMessage } from 'gatsby-plugin-intl';
 
 import { HomePage } from '../views/pages';
 
 class BlogIndex extends React.Component {
   render() {
-    const { data } = this.props;
+    const { data, intl } = this.props;
     const siteTitle = data.site.siteMetadata.title;
     const posts = data.allMarkdownRemark.edges;
+
+    console.log(data);
 
     return <HomePage siteTitle={siteTitle} posts={posts} />;
   }
 }
 
-export default BlogIndex;
+export default injectIntl(BlogIndex);
 
 export const pageQuery = graphql`
-  query {
+  query BlogPostByLanguage($language: String!) {
     site {
       siteMetadata {
         title
@@ -25,7 +28,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
-        frontmatter: { language: { eq: "en" }, published: { eq: true } }
+        frontmatter: { language: { eq: $language }, published: { eq: true } }
       }
     ) {
       edges {

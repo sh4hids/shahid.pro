@@ -53,7 +53,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-116687591-1"
+        trackingId: 'UA-116687591-1',
       },
     },
     `gatsby-plugin-feed`,
@@ -88,8 +88,17 @@ module.exports = {
     {
       resolve: `gatsby-plugin-disqus`,
       options: {
-        shortname: `shahid-pro`
-      }
+        shortname: `shahid-pro`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-intl`,
+      options: {
+        path: `${__dirname}/src/intl`,
+        languages: [`en`, `bn`],
+        defaultLanguage: `bn`,
+        redirect: true,
+      },
     },
   ],
 };

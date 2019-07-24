@@ -1,0 +1,9 @@
+{
+  "title": "",
+  "baseUrl": "/",
+  "mainMenu": {
+    "about": "About",
+    "blog": "Blog",
+    "projects": "Projects"
+  }
+}
