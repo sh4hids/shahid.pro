@@ -13,8 +13,8 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext;
     const { readingTime } = post.fields;
     const disqusConfig = {
-      url: `${siteUrl}/${post.fields.slug}`,
-      identifier: post.fields.slug,
+      url: `${siteUrl}/${post.frontmatter.language}${post.fields.slug}`,
+      identifier: `/${post.frontmatter.language}${post.fields.slug}`,
       title: post.frontmatter.title,
     };
 
@@ -36,7 +36,7 @@ class BlogPostTemplate extends React.Component {
           )}
           <hr />
           <SocialShareSection
-            url={`${siteUrl}/${post.fields.slug}`}
+            url={`${siteUrl}${post.fields.slug}`}
             title={post.frontmatter.title}
           />
           <hr />
@@ -65,6 +65,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        language
       }
       fields {
         slug

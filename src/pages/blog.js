@@ -15,13 +15,18 @@ class Blog extends React.Component {
 export default Blog;
 
 export const pageQuery = graphql`
-  query {
+  query BlogPostByLanguage($language: String!) {
     site {
       siteMetadata {
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: {
+        frontmatter: { language: { eq: $language }, published: { eq: true } }
+      }
+    ) {
       edges {
         node {
           excerpt

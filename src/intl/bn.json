@@ -5,5 +5,10 @@
     "about": "পরিচিতি",
     "blog": "ব্লগ",
     "projects": "প্রজেক্ট"
+  },
+  "sectionTitle": {
+    "projects": "ওপেন সোর্স প্রজেক্ট",
+    "recentPost": "সাম্প্রতিক লেখা",
+    "noPostYet": "কোনো লেখা নেই..."
   }
 }

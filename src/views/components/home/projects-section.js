@@ -1,5 +1,6 @@
 import React from 'react';
 import Grid from 'styled-components-grid';
+import { injectIntl, FormattedMessage } from 'gatsby-plugin-intl';
 import { Text } from '../../kits';
 import { ProjectSummaryCard } from '../';
 
@@ -30,11 +31,11 @@ const data = [
   },
 ];
 
-const ProjectsSection = () => (
+const ProjectsSection = ({ intl }) => (
   <Grid>
     <Grid.Unit>
       <Text variant="h4" mt={24} mb={24} textAlign="center">
-        Open Source Projects
+        {intl.formatMessage({ id: 'sectionTitle.projects' })}
       </Text>
     </Grid.Unit>
     {data.map((project, i) => (
@@ -45,4 +46,4 @@ const ProjectsSection = () => (
   </Grid>
 );
 
-export default ProjectsSection;
+export default injectIntl(ProjectsSection);

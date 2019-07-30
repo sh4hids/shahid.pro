@@ -10,8 +10,6 @@ class BlogIndex extends React.Component {
     const siteTitle = data.site.siteMetadata.title;
     const posts = data.allMarkdownRemark.edges;
 
-    console.log(data);
-
     return <HomePage siteTitle={siteTitle} posts={posts} />;
   }
 }
@@ -19,7 +17,7 @@ class BlogIndex extends React.Component {
 export default injectIntl(BlogIndex);
 
 export const pageQuery = graphql`
-  query BlogPostByLanguage($language: String!) {
+  query AllPostByLanguage($language: String!) {
     site {
       siteMetadata {
         title
@@ -40,6 +38,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            language
           }
         }
       }

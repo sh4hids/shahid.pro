@@ -96,7 +96,7 @@ module.exports = {
       options: {
         path: `${__dirname}/src/intl`,
         languages: [`en`, `bn`],
-        defaultLanguage: `bn`,
+        defaultLanguage: `en`,
         redirect: true,
       },
     },

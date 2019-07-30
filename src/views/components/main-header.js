@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { top } from 'styled-system';
 import Grid from 'styled-components-grid';
-import { injectIntl, Link, FormattedMessage } from 'gatsby-plugin-intl';
+import { injectIntl, FormattedMessage } from 'gatsby-plugin-intl';
 import { List, ListItem, URL, Container, Image, Text } from '../kits';
 import myLogo from '../../assets/images/shahid.svg';
 
@@ -77,18 +77,27 @@ const MainHeader = props => (
         <Grid.Unit size={{ xs: 3 / 4, sm: 1 / 2, md: 1 / 2, lg: 1 / 2 }}>
           <List>
             <ListItem display="inline">
-              <URL variant="gatsby" to="/about">
+              <URL variant="gatsby" to={`${props.intl.locale}/about`}>
                 {props.intl.formatMessage({ id: 'mainMenu.about' })}
               </URL>
             </ListItem>
             <ListItem display="inline">
-              <URL variant="gatsby" to="/blog">
+              <URL variant="gatsby" to={`${props.intl.locale}/blog`}>
                 {props.intl.formatMessage({ id: 'mainMenu.blog' })}
               </URL>
             </ListItem>
             <ListItem display="inline">
-              <URL variant="gatsby" to="/projects">
+              <URL variant="gatsby" to={`${props.intl.locale}/projects`}>
                 {props.intl.formatMessage({ id: 'mainMenu.projects' })}
+              </URL>
+            </ListItem>
+            <ListItem display="inline">
+              <URL
+                variant="gatsby"
+                to={props.intl.locale === 'en' ? '/bn' : '/en'}
+                color="dark"
+              >
+                {props.intl.locale === 'en' ? 'bn' : 'en'}
               </URL>
             </ListItem>
           </List>

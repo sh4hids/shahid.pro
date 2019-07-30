@@ -5,5 +5,10 @@
     "about": "About",
     "blog": "Blog",
     "projects": "Projects"
+  },
+  "sectionTitle": {
+    "projects": "Open Source Projects",
+    "recentPost": "Recent Posts",
+    "noPostYet": "No post yet..."
   }
 }

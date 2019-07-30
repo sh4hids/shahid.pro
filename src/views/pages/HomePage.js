@@ -1,10 +1,11 @@
 import React from 'react';
+import { injectIntl, FormattedMessage } from 'gatsby-plugin-intl';
 import { DefaultLayout } from '../layouts';
 import { SEO, PostSummaryCard, TopRibbon } from '../components';
 import { HeroSection, ProjectsSection } from '../components/home';
 import { Text } from '../kits';
 
-const HomePage = ({ siteTitle, posts }) => (
+const HomePage = ({ siteTitle, posts, intl }) => (
   <DefaultLayout>
     <SEO
       title="Home"
@@ -21,7 +22,9 @@ const HomePage = ({ siteTitle, posts }) => (
     <HeroSection />
     <ProjectsSection />
     <Text variant="h4" mt={16} mb={24} textAlign="center">
-      {posts.length ? 'Recent posts' : 'No post yet...'}
+      {posts.length
+        ? intl.formatMessage({ id: 'sectionTitle.recentPost' })
+        : intl.formatMessage({ id: 'sectionTitle.noPostYet' })}
     </Text>
     {posts.map(({ node }, i) => {
       const title = node.frontmatter.title || node.fields.slug;
@@ -36,4 +39,4 @@ const HomePage = ({ siteTitle, posts }) => (
   </DefaultLayout>
 );
 
-export default HomePage;
+export default injectIntl(HomePage);
