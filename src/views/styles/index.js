@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
+import { SolaimanLipi } from './font-faces';
 
 const GlobalStyle = createGlobalStyle`
+  ${SolaimanLipi};
 
   html {
     scroll-behavior: smooth;
