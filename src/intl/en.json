@@ -10,5 +10,8 @@
     "projects": "Open Source Projects",
     "recentPost": "Recent Posts",
     "noPostYet": "No post yet..."
+  },
+  "about": {
+    "title": "Hi, I'm Shahid..."
   }
 }

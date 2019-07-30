@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${({ theme }) => theme.typography.fontFamily};
     font-size: ${({ theme }) => theme.typography.fontSize};
     background-color: ${({ theme }) => theme.colors.light};
-    min-height: 100vh;
+    min-height: calc(100vh - 76px);
     position: relative;
   }
 
