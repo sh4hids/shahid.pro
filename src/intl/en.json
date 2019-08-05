@@ -2,6 +2,7 @@
   "title": "",
   "baseUrl": "/en",
   "mainMenu": {
+    "home": "Home",
     "about": "About",
     "blog": "Blog",
     "projects": "Projects"

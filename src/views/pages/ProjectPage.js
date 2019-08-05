@@ -1,13 +1,14 @@
 import React from 'react';
+import { injectIntl, FormattedMessage } from 'gatsby-plugin-intl';
 import { DefaultLayout } from '../layouts';
 import { SEO, PostSummaryCard, TopRibbon } from '../components';
 import { ProjectsSection } from '../components/home';
 import { Text } from '../kits';
 
-const ProjectPage = ({ siteTitle, posts }) => (
+const ProjectPage = ({ siteTitle, posts, intl }) => (
   <DefaultLayout>
     <SEO
-      title="About"
+      title={intl.formatMessage({ id: 'mainMenu.projects' })}
       keywords={[
         `blog`,
         `sh4hids`,
@@ -22,4 +23,4 @@ const ProjectPage = ({ siteTitle, posts }) => (
   </DefaultLayout>
 );
 
-export default ProjectPage;
+export default injectIntl(ProjectPage);

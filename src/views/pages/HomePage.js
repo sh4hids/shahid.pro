@@ -8,7 +8,7 @@ import { Text } from '../kits';
 const HomePage = ({ siteTitle, posts, intl }) => (
   <DefaultLayout>
     <SEO
-      title="Home"
+      title={intl.formatMessage({ id: 'mainMenu.home' })}
       keywords={[
         `blog`,
         `sh4hids`,
@@ -21,7 +21,7 @@ const HomePage = ({ siteTitle, posts, intl }) => (
     />
     <HeroSection />
     <ProjectsSection />
-    <Text variant="h4" mt={16} mb={24} textAlign="center">
+    <Text variant="h4" mb={24} textAlign="center">
       {posts.length
         ? intl.formatMessage({ id: 'sectionTitle.recentPost' })
         : intl.formatMessage({ id: 'sectionTitle.noPostYet' })}

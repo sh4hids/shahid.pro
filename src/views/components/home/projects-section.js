@@ -34,7 +34,7 @@ const data = [
 const ProjectsSection = ({ intl }) => (
   <Grid>
     <Grid.Unit>
-      <Text variant="h4" mt={24} mb={24} textAlign="center">
+      <Text variant="h4" mt={8} mb={24} textAlign="center">
         {intl.formatMessage({ id: 'sectionTitle.projects' })}
       </Text>
     </Grid.Unit>

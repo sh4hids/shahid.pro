@@ -2,6 +2,7 @@
   "title": "",
   "baseUrl": "/bn",
   "mainMenu": {
+    "home": "নীড়পাতা",
     "about": "পরিচিতি",
     "blog": "ব্লগ",
     "projects": "প্রজেক্ট"
