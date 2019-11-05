@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import { BlogPage } from '../views/pages';
+import { injectIntl, FormattedMessage } from 'gatsby-plugin-intl';
 
 class Blog extends React.Component {
   render() {
-    const { data } = this.props;
+    const { data, pageContext } = this.props;
     const siteTitle = data.site.siteMetadata.title;
     const posts = data.allMarkdownRemark.edges;
 
@@ -12,10 +13,10 @@ class Blog extends React.Component {
   }
 }
 
-export default Blog;
+export default injectIntl(Blog);
 
 export const pageQuery = graphql`
-  query BlogPostByLanguage($language: String!) {
+  query AllPostByLanguageBlog($language: String!) {
     site {
       siteMetadata {
         title
@@ -36,6 +37,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            language
           }
         }
       }

@@ -36,6 +36,12 @@ const HeaderContainer = styled.header`
         height: 100%;
         padding: 0 16px;
         font-weight: 500;
+
+        span.language {
+          padding: 2px 5px;
+          background: ${({ theme }) => theme.colors.light};
+          border-radius: 4px;
+        }
       }
     }
   }
@@ -97,7 +103,9 @@ const MainHeader = props => (
                 to={props.intl.locale === 'en' ? '/bn' : '/en'}
                 color="dark"
               >
-                {props.intl.locale === 'en' ? 'bn' : 'en'}
+                <span className="language">
+                  {props.intl.locale === 'en' ? 'bn' : 'en'}
+                </span>
               </URL>
             </ListItem>
           </List>

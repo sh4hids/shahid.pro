@@ -17,7 +17,7 @@ class BlogIndex extends React.Component {
 export default injectIntl(BlogIndex);
 
 export const pageQuery = graphql`
-  query AllPostByLanguage($language: String!) {
+  query AllPostByLanguageHome($language: String!) {
     site {
       siteMetadata {
         title
