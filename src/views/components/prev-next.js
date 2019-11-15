@@ -8,6 +8,18 @@ const PrevNextContainer = styled.ul`
   justify-content: space-between;
   list-style: none;
   padding: 0;
+  text-align: center;
+
+  li {
+    width: 100%;
+
+    &:first-child {
+      a {
+        display: block;
+        margin-bottom: 16px;
+      }
+    }
+  }
 `;
 
 const PrevNext = ({ previous, next }) => (

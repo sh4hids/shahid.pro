@@ -29,7 +29,7 @@ const success = chalk.bold.green.inverse;
       .replace(/\s+/g, '-')
       .toLowerCase();
     const createdOn = new Date();
-    const blogPostFolder = `./content/blog/${language}/${slug}`;
+    const blogPostFolder = `./content/blog/${slug}`;
 
     if (!fs.existsSync(blogPostFolder)) {
       fs.mkdirSync(blogPostFolder, {
