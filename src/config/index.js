@@ -8,6 +8,8 @@ const config = {
   seoImage: '/images/seo.png',
   heroImage: '',
   titleSeparator: '|',
+  urlDateFormat: 'yyyy/MM/dd',
+  displayDateFormat: 'MMMM dd , yyyy',
   pathPrefix: '/',
   blogPath: 'blog',
   blogTitle: 'Blog',
