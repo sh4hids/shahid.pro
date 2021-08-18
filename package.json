@@ -12,7 +12,8 @@
     "start": "npm run develop",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json)\"",
-    "format": "npm run prettier -- --write"
+    "format": "npm run prettier -- --write",
+    "create-post": "node ./scripts/create-post"
   },
   "repository": {
     "type": "git",
@@ -30,12 +31,16 @@
   },
   "homepage": "https://github.com/sh4hids/shahid.pro#readme",
   "dependencies": {
-    "@sh4hids/gatsby-theme-open-sourcerer": "^0.2.0",
+    "@sh4hids/gatsby-theme-open-sourcerer": "^0.2.6",
     "gatsby": "^3.11.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "prettier": "^2.3.2"
+    "chalk": "^2.4.2",
+    "inquirer": "^7.3.3",
+    "json-to-pretty-yaml": "^1.2.2",
+    "prettier": "^2.3.2",
+    "yamljs": "^0.3.0"
   }
 }

@@ -12,6 +12,8 @@ It's great to have a comment section on any blog site. People can easily express
 
 ### Step 1: Install gatsby-plugin-disqus
 
+Instead of configuring everything by ourselves manually, we'll use a plugin called [gatsby-plugin-disqus](https://github.com/tterb/gatsby-plugin-disqus). Now, install the plugin by running the following command:
+
 ```bash
 $ npm install -S gatsby-plugin-disqus
 ```
@@ -25,7 +27,7 @@ plugins: [
   {
     resolve: `gatsby-plugin-disqus`,
     options: {
-      shortname: `your-disqus-short-code`,
+      shortname: `your-disqus-short-code`, // collect from your disqus dashboard
     },
   },
 ];

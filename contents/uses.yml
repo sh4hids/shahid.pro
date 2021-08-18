@@ -1,5 +1,5 @@
 title: Uses
-metaDescription: Irure aute esse adipisicing aliqua nostrud laboris.
+metaDescription: Following are some of the tools I regularly use as a developer. As technology moves very fast, some of these might get replaced by some other new shiny ones. I'll try o keep this list updated.
 pageType: Uses
 contents:
   - name: Operating Systems
@@ -12,4 +12,31 @@ contents:
     items:
       - 'Atom (Theme: Horizon)'
       - 'VS Code (Theme: Horizon)'
-  
+      - 'NeoVim (Theme: Tokyo Night)'
+      - 'Zsh (with oh-my-zsh)'
+      - 'Coding Font: FiraCode Nerd Font Mono'
+  - name: Personal Management
+    type: Uses
+    items:
+      - 'Google Keep (for shopping lists, short notes)'
+      - 'iA Writer (for taking notes on mobile)'
+      - 'Joplin (for todos, notes, writings and cheetsheets)'
+      - 'Deskaide (for pomodoro)'
+  - name: API Debugging
+    type: Uses
+    items:
+      - 'Insomnia'
+      - 'Postman'
+  - name: Designing
+    type: Uses
+    items:
+      - 'Gimp (for photo manipulation)'
+      - 'Inkscap (for vector design)'
+      - 'Figma (for UI/UX design)'
+      - 'Figma-Linux (desktop app for Figma)'
+  - name: Browsers
+    type: Uses
+    items:
+      - Brave (primary)
+      - Chrome (secondary)
+      - Firefox (use for testing)
