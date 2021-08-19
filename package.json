@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/sh4hids/shahid.pro#readme",
   "dependencies": {
-    "@sh4hids/gatsby-theme-open-sourcerer": "^0.2.6",
+    "@sh4hids/gatsby-theme-open-sourcerer": "^0.2.7",
     "gatsby": "^3.11.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
