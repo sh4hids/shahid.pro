@@ -12,7 +12,7 @@ contents:
     items:
       - 'Atom (Theme: Horizon)'
       - 'VS Code (Theme: Horizon)'
-      - 'NeoVim (Theme: Tokyo Night)'
+      - 'Neovim (Theme: Tokyo Night)'
       - 'Zsh (with oh-my-zsh)'
       - 'Coding Font: FiraCode Nerd Font Mono'
   - name: Personal Management
