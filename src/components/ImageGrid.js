@@ -65,8 +65,8 @@ const LightboxDialog = styled(DialogOverlay)`
       position: absolute;
       top: 16px;
       right: 16px;
-      color: ${({ theme }) => theme.colors.dark[1]};
-      background-color: ${({ theme }) => theme.colors.light[1]};
+      color: ${({ theme }) => theme.colors.text1};
+      background-color: ${({ theme }) => theme.colors.bg1};
       border-radius: 50%;
       width: 32px;
       height: 32px;
@@ -87,8 +87,8 @@ const LightboxDialog = styled(DialogOverlay)`
       }
 
       button {
-        color: ${({ theme }) => theme.colors.dark[1]};
-        background-color: ${({ theme }) => theme.colors.light[1]};
+        color: ${({ theme }) => theme.colors.text1};
+        background-color: ${({ theme }) => theme.colors.bg1};
         border-radius: 50%;
         position: absolute;
         top: 42%;
