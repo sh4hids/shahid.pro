@@ -1,30 +1,37 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
+import { ImageGrid } from '../components';
 
 import { Text } from '@sh4hids/gatsby-theme-open-sourcerer/src/components';
 import { DefaultLayout } from '@sh4hids/gatsby-theme-open-sourcerer/src/layouts';
 
-const About = () => {
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     site {
-  //       siteMetadata {
-  //         author {
-  //           summary
-  //         }
-  //       }
-  //     }
-  //   }
-  // `);
+const Gallery = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allFlowersJson {
+        nodes {
+          image {
+            childImageSharp {
+              fluid(maxWidth: 1920) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          id
+          name
+        }
+      }
+    }
+  `);
 
-  // const { author } = data.site.siteMetadata || {};
+  const { nodes: flowers } = data.allFlowersJson || {};
 
   return (
     <DefaultLayout title="Gallery" description="" url="/gallery/">
       <Text variant="h2">My Flower Collection</Text>
-      <Text>coming soon...</Text>
+      <ImageGrid images={flowers} />
     </DefaultLayout>
   );
 };
 
-export default About;
+export default Gallery;

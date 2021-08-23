@@ -31,10 +31,16 @@
   },
   "homepage": "https://github.com/sh4hids/shahid.pro#readme",
   "dependencies": {
-    "@sh4hids/gatsby-theme-open-sourcerer": "^0.2.7",
+    "@reach/dialog": "^0.16.0",
+    "@sh4hids/gatsby-theme-open-sourcerer": "^0.2.9",
     "gatsby": "^3.11.1",
+    "gatsby-image": "^3.11.0",
+    "gatsby-plugin-sharp": "^3.12.0",
+    "gatsby-transformer-json": "^3.12.0",
+    "gatsby-transformer-sharp": "^3.12.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-masonry-css": "^1.0.16"
   },
   "devDependencies": {
     "chalk": "^2.4.2",

@@ -8,5 +8,22 @@ module.exports = {
         ...config,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: 'gallery',
+        path: `${__dirname}/contents/gallery`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `galleryImages`,
+        path: `${__dirname}/contents/gallery/images`,
+      },
+    },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-transformer-json`,
   ],
 };

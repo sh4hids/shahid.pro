@@ -74,9 +74,9 @@ const About = () => {
       <Text>
         I like to spend my free time with my family (that's why my future goal
         is to join a fully remote team). My favorite hobby is gardening, and I
-        also like to keep pets. I have a rooftop garden and few pairs of
-        pigeons. Every day I spend some time in the morning and evening in my
-        garden. You can see my flower collections <a href="/gallery/">here</a>.
+        also like to keep pets. I have a rooftop garden. Every day I spend some
+        time in the morning and evening in my garden. You can see glimpses of my
+        garden <a href="/gallery/">here</a>.
       </Text>
     </DefaultLayout>
   );
