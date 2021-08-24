@@ -5,7 +5,7 @@ const config = {
   siteLogo: '',
   contentPath: 'contents',
   headerLogoText: 'sh4hids',
-  seoImage: '/images/seo.png',
+  seoImage: '/images/seo.jpg',
   heroImage: '',
   titleSeparator: '|',
   urlDateFormat: 'yyyy/MM/dd',
