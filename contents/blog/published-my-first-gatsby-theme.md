@@ -46,4 +46,4 @@ You can customize each part of the theme either by customizing the configuration
 > To shadow a theme, we have to skip the `src` folder in the shadow theme.
 > <br> <br>- [issues/14134](https://github.com/gatsbyjs/gatsby/issues/14134#issuecomment-510310389)
 
-Hope you'll find the theme useful. If you use and like the theme, please give a star and make a PR to add the theme on [showcase section](https://github.com/sh4hids/gatsby-theme-open-sourcerer#sites-built-with-this-theme).
+Hope you'll find the theme useful. If you use and like the theme, please give a star and make a PR to add your site on [showcase section](https://github.com/sh4hids/gatsby-theme-open-sourcerer#sites-built-with-this-theme).

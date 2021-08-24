@@ -8,6 +8,8 @@ const BrandLogoWrapper = styled.a`
   text-decoration: none;
   color: ${({ theme }) => theme.colors.text1};
   font-size: ${({ theme }) => theme.fontSizes.h5}px;
+  position: relative;
+  top: -2px;
 
   img {
     width: 30px;
