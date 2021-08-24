@@ -1,0 +1,39 @@
+title: Projects
+metaDescription: Following are some of my open-source projects. If you want to contribute,  follow the given links. You can find contribution guides for each project on the project's readme.
+pageType: Projects
+contents:
+  - name: Book Manager
+    type: Project
+    description: A simple personal library management application built with Electron, React, and NeDB.
+    url: https://github.com/bdTechies/book-manager
+    githubRepo: 'bdTechies/book-manager'
+
+  - name: bangla-calendar
+    type: Project
+    description: A small JavaScript library to convert any valid JavaScript date to Bangla date.
+    url: https://github.com/sh4hids/bangla-calendar
+    githubRepo: 'sh4hids/bangla-calendar'
+
+  - name: prozuktischool.com
+    type: Project
+    description: An open source blogging platform built with Gatsby for Bangladeshi programmers.
+    url: https://github.com/bdTechies/prozuktischool.com
+    githubRepo: 'bdTechies/prozuktischool.com'
+
+  - name: Deskaide
+    type: Project
+    description: An electron based desktop application to help managing pc usage.
+    url: https://github.com/deskaide/deskaide
+    githubRepo: 'deskaide/deskaide'
+
+  - name: prayertiming-cli
+    type: Project
+    description: A command line tool to show Muslim prayer times based on coordinates.
+    url: https://github.com/sh4hids/prayertiming-cli
+    githubRepo: 'sh4hids/prayertiming-cli'
+
+  - name: gatsby-theme-open-sourcerer
+    type: Project
+    description: A configurable minimal gatsby portfolio theme for open source developers.
+    url: https://github.com/sh4hids/gatsby-theme-open-sourcerer
+    githubRepo: 'sh4hids/gatsby-theme-open-sourcerer'
