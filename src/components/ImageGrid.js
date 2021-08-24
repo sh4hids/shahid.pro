@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Masonry from 'react-masonry-css';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { DialogOverlay, DialogContent } from '@reach/dialog';
 import '@reach/dialog/styles.css';
 import {
@@ -22,7 +22,7 @@ const Wrapper = styled.div`
 
   /* Style your items */
   .image-gallery-grid_column > div {
-    background: grey;
+    background: ${({ theme }) => theme.colors.bg2};
     margin-bottom: 16px;
     box-shadow: ${({ theme }) => theme.elevations[0]};
     border-radius: 8px;
@@ -135,7 +135,10 @@ const ImageGrid = ({ images = [] }) => {
                 setShowLightbox(true);
               }}
             >
-              <Img alt={name} fluid={image.childImageSharp.fluid} />
+              <GatsbyImage
+                alt={name}
+                image={image.childImageSharp.gatsbyImageData}
+              />
             </ImageButton>
           ))}
         </Masonry>
@@ -149,7 +152,10 @@ const ImageGrid = ({ images = [] }) => {
           className="image-lightbox-content"
           aria-label="lightbox-content"
         >
-          <Img fluid={images[currentImage].image.childImageSharp.fluid} />
+          <GatsbyImage
+            alt={images[currentImage].name}
+            image={images[currentImage].image.childImageSharp.gatsbyImageData}
+          />
 
           <button
             type="button"

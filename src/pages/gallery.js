@@ -12,9 +12,7 @@ const Gallery = () => {
         nodes {
           image {
             childImageSharp {
-              fluid(maxWidth: 1920) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(layout: FULL_WIDTH)
             }
           }
           id
