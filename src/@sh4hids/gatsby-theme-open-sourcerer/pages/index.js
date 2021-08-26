@@ -85,7 +85,7 @@ const IndexPage = () => {
 
   return (
     <DefaultLayout
-      title=""
+      title="Home"
       description={author.summary}
       heroTitle={
         author.nickName ? `Hi, I am ${author.nickName}...` : 'Hello there...'
