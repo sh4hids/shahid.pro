@@ -23,7 +23,7 @@ const formatLinks = (links = {}) => {
 };
 
 const Wrapper = styled(Box)`
-  background-color: ${({ theme }) => theme.colors.bg1};
+  background-color: var(--color-bg-1);
   box-shadow: ${({ theme }) => theme.elevations[0]};
 `;
 
