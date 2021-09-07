@@ -119,10 +119,10 @@ const ImageGrid = ({ images = [] }) => {
       <Wrapper>
         <Masonry
           breakpointCols={{
-            default: 2,
-            1100: 2,
-            700: 2,
-            500: 1,
+            default: 3,
+            1100: 3,
+            700: 3,
+            500: 2,
           }}
           className="image-gallery-grid"
           columnClassName="image-gallery-grid_column"
