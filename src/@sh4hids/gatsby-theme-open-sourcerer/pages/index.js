@@ -81,7 +81,7 @@ const IndexPage = () => {
   const { blogPath, author, postPerPage } = data.site.siteMetadata;
   const projects = contents.slice(0, 4);
   let { nodes: flowers } = data.allFlowersJson || {};
-  flowers = flowers.slice(0, 4);
+  flowers = flowers.slice(0, 6);
 
   return (
     <DefaultLayout
