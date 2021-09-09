@@ -10,7 +10,7 @@ function initGTM() {
 
   script.type = 'text/javascript';
   script.async = true;
-  script.src = `https://www.googletagmanager.com/gtm.js?id=${process.env.GA_TRACKING_ID}`;
+  script.src = `https://www.googletagmanager.com/gtm.js?id=${process.env.GATSBY_GA_TRACKING_ID}`;
 
   script.onload = () => {
     window.dataLayer.push({
