@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 // eslint-disable-next-line consistent-return
 function initGTM() {
   if (window.isGTMLoaded) {
@@ -13,11 +14,14 @@ function initGTM() {
   script.src = `https://www.googletagmanager.com/gtag/js?id=${process.env.GATSBY_GA_TRACKING_ID}`;
 
   script.onload = () => {
-    window.dataLayer.push({
-      event: 'gtm.js',
-      'gtm.start': new Date().getTime(),
-      'gtm.uniqueEventId': 0,
-    });
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      // eslint-disable-next-line prefer-rest-params
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-152534577-1');
   };
 
   document.head.appendChild(script);
