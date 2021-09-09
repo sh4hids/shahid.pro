@@ -1,4 +1,6 @@
-# gatsby-starter-open-sourcerer
+# shahid.pro
+
+Hi, I am Shahid from Dhaka, Bangladesh. This is the source code of my personal website. It is based on the theme [gatsby-theme-open-sourcerer](https://github.com/sh4hids/gatsby-theme-open-sourcerer)
 
 ## Quick Start
 

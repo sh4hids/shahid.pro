@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Masonry from 'react-masonry-css';
+import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { DialogOverlay, DialogContent } from '@reach/dialog';
 import '@reach/dialog/styles.css';
@@ -122,7 +123,7 @@ const ImageGrid = ({ images = [] }) => {
             default: 3,
             1100: 3,
             700: 3,
-            500: 2,
+            500: 3,
           }}
           className="image-gallery-grid"
           columnClassName="image-gallery-grid_column"
@@ -189,6 +190,19 @@ const ImageGrid = ({ images = [] }) => {
       </LightboxDialog>
     </>
   );
+};
+
+ImageGrid.defaultProps = {
+  images: [],
+};
+
+ImageGrid.propTypes = {
+  images: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string,
+    })
+  ),
 };
 
 export default ImageGrid;
