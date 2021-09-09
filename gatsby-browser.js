@@ -35,7 +35,7 @@ function loadGTM(event) {
 exports.onClientEntry = () => {
   document.onreadystatechange = () => {
     if (document.readyState !== 'loading') {
-      setTimeout(initGTM, 3030);
+      setTimeout(initGTM, 3500);
     }
   };
 
