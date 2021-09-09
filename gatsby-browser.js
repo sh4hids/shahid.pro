@@ -21,7 +21,7 @@ function initGTM() {
     }
     gtag('js', new Date());
 
-    gtag('config', 'UA-152534577-1');
+    gtag('config', `${process.env.GATSBY_GA_TRACKING_ID}`);
   };
 
   document.head.appendChild(script);
