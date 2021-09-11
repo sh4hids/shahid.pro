@@ -23,8 +23,6 @@ const Post = ({ pageContext, data }) => {
     title: post.title,
   };
 
-  console.log(disqusConfig);
-
   return (
     <DefaultLayout
       title={post.title}
