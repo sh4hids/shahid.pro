@@ -46,6 +46,7 @@ const IndexPage = () => {
         limit: 4
         filter: { frontmatter: { isPublished: { eq: true } } }
       ) {
+        totalCount
         edges {
           node {
             id
@@ -78,8 +79,10 @@ const IndexPage = () => {
 
   const { contents = [] } = data.allYamlPage.nodes[0] || {};
   const posts = data.allMarkdownRemark.edges;
-  const { blogPath, author, postPerPage } = data.site.siteMetadata;
+  const totalPosts = data.allMarkdownRemark.totalCount || 0;
+  const { blogPath, author } = data.site.siteMetadata;
   const projects = contents.slice(0, 4);
+
   let { nodes: flowers } = data.allFlowersJson || {};
   flowers = flowers.slice(0, 6);
 
@@ -120,7 +123,7 @@ const IndexPage = () => {
               key={post.node.id}
             />
           ))}
-          {posts.length >= postPerPage ? (
+          {totalPosts > 4 ? (
             <Box textAlign="center" mt={4}>
               <LinkButton to={`/${blogPath}/`}>See More Posts</LinkButton>
             </Box>
@@ -138,7 +141,7 @@ const IndexPage = () => {
           </Text>
           <ImageGrid images={flowers} />
           <Box textAlign="center" my={4}>
-            <LinkButton to={`/gallery/`}>See More Photos</LinkButton>
+            <LinkButton to="/gallery/">See More Photos</LinkButton>
           </Box>
         </>
       ) : (
