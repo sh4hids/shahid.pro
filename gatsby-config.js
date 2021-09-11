@@ -30,7 +30,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts-with-attributes`,
       options: {
         fonts: [
-          `Fira Sans\:400,400i,500,700`, // you can also specify font weights and styles
+          `Fira Sans:400,400i,500,700`, // you can also specify font weights and styles
         ],
         display: 'swap',
         attributes: {
@@ -38,6 +38,12 @@ module.exports = {
           onLoad: "this.onload=null;this.rel='stylesheet'",
           as: 'style',
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `shahid-pro`,
       },
     },
   ],
