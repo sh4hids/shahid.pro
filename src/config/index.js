@@ -36,7 +36,7 @@ const config = {
   },
   footer: {
     title: 'Words of Thanks',
-    description: `<p>Hello there, thank you very much for visiting my site. If you like anything on the site and want to know how it’s made, you can check the source code on <a href="https://github.com/sh4hids/shahid.pro">github</a>.</p>`,
+    description: `<p>Hello there, thank you very much for visiting my site. If you like anything on this site and want to know how it’s made, you can check the source code on <a href="https://github.com/sh4hids/shahid.pro">github</a>.</p>`,
     copyright: `© ${new Date().getFullYear()} Shahidul Islam Majumder. All Rights Reserved.`,
   },
 };
