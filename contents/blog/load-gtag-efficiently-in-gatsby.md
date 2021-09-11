@@ -1,11 +1,10 @@
 ---
-slug: 'delay-loading-of-google-analytics-gtag-in-gatsby-site'
-title: 'Delay Loading Of Google Analytics (gtag) In Gatsby Site'
+slug: 'load-gtag-efficiently-in-gatsby'
+title: 'Load Google Analytics (gtag) Efficiently in Gatsby Site'
 isPublished: true
 publishedAt: '2021-09-11'
 tags:
   - 'gatsby'
-  - 'google analytics'
   - 'github actions'
 ---
 
