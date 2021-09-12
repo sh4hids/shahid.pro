@@ -7,7 +7,7 @@ import logo from '../../../assets/images/logo.svg';
 const BrandLogoWrapper = styled.a`
   text-decoration: none;
   color: var(--color-text-0);
-  font-size: ${({ theme }) => theme.fontSizes.h5}px;
+  font-size: ${({ theme }) => theme.fontSizes.h5};
   position: relative;
   top: -2px;
 
@@ -36,14 +36,12 @@ const BrandLogoWrapper = styled.a`
   }
 `;
 
-const BrandLogo = () => {
-  return (
-    <BrandLogoWrapper href="/">
-      <span className="brand-text-left">@</span>
-      <Image src={logo} alt="s" />
-      <span className="brand-text-right">h4hids</span>
-    </BrandLogoWrapper>
-  );
-};
+const BrandLogo = () => (
+  <BrandLogoWrapper href="/">
+    <span className="brand-text-left">@</span>
+    <Image src={logo} alt="s" />
+    <span className="brand-text-right">h4hids</span>
+  </BrandLogoWrapper>
+);
 
 export default BrandLogo;
