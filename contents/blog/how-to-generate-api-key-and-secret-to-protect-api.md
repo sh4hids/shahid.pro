@@ -65,7 +65,6 @@ I hope you've got a general guideline about generating API keys and secrets. To 
 Resources:
 
 - [https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/](https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/)
-- [https://stackoverflow.com/questions/62908969/password-hashing-in-nodejs-using-built-in-crypto](https://stackoverflow.com/questions/62908969/password-hashing-in-nodejs-using-built-in-crypto)
 - [https://stackoverflow.com/questions/55009503/how-services-generate-and-use-public-and-secret-api-keys](https://stackoverflow.com/questions/55009503/how-services-generate-and-use-public-and-secret-api-keys)
 - [https://stackoverflow.com/questions/14412132/whats-the-best-approach-for-generating-a-new-api-key](https://stackoverflow.com/questions/14412132/whats-the-best-approach-for-generating-a-new-api-key)
 - [https://security.stackexchange.com/questions/180345/do-i-need-to-hash-or-encrypt-api-keys-before-storing-them-in-a-database](https://security.stackexchange.com/questions/180345/do-i-need-to-hash-or-encrypt-api-keys-before-storing-them-in-a-database)
