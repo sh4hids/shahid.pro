@@ -10,7 +10,7 @@ tags:
 
 I have used a lot of third-party APIs for the last four years. Most of them provided keys and secrets (API key/Client ID, API/Client secret) to access the API. I was also planning to develop some services where I would provide APIs. So, I was wondering how to generate API keys and API secrets for my services.
 
-I started researching and read a lot of articles and StackOverflow questions regarding this topic. I will try to summarize what I have learned about generating API keys and secrets in this post.
+I started researching and read a lot of articles and StackOverflow questions regarding this topic. I found out that there are some common rules. I will try to summarize what I have learned about generating API keys and secrets in this post.
 
 ## API Key or Client ID
 
