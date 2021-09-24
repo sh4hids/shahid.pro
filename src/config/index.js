@@ -34,6 +34,7 @@ const config = {
       twitter: 'https://twitter.com/sh4hids',
     },
   },
+  utterancesCommentRepo: 'sh4hids/shahid.pro-comments',
   footer: {
     title: 'Words of Thanks',
     description: `<p>Hello there, thank you very much for visiting my site. If you like anything on this site and want to know how it’s made, you can check the source code on <a href="https://github.com/sh4hids/shahid.pro">github</a>.</p>`,
