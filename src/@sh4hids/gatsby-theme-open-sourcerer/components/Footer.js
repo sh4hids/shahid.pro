@@ -7,6 +7,7 @@ import {
   Container,
   Text,
   SocialLinks,
+  Image,
 } from '@sh4hids/gatsby-theme-open-sourcerer/src/components';
 
 const formatLinks = (links = {}) => {
@@ -66,6 +67,22 @@ const Footer = () => {
               {footer.title}
             </Text>
             <Text variant="raw" html={footer.description} />
+            <Text>
+              Like anything in my site and want to buy me a coffee? please
+              follow the link 👇
+            </Text>
+            <a
+              href="https://www.buymeacoffee.com/sh4hids"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Image
+                src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png"
+                alt="Buy Me A Coffee"
+                height={[60, 60, 48]}
+                width="auto"
+              />
+            </a>
           </Box>
           <Box width={[1, 1, 1 / 2]} p={3}>
             <Text fontSize="h6" fontWeight="bold" lineHeight="heading">

@@ -13,6 +13,7 @@ const config = {
   pathPrefix: '/',
   blogPath: 'blog',
   blogTitle: 'Blog',
+  baseEditUrl: 'https://github.com/sh4hids/shahid.pro/edit/main/contents/blog',
   postPerPage: 8,
   socialShareTitle: '-: SHARE :-',
   manifest: {
