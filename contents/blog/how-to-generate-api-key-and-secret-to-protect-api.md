@@ -25,7 +25,7 @@ function generateKey(size = 32, format = 'base64') {
 }
 
 console.log(generateKey());
-// will generate somethinh like:
+// will generate something like:
 // 0NY4IrzHgLnRZUCWpxSnXLpn+Qjb1YfEj0UmnQaJiTw=
 ```
 

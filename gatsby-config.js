@@ -31,6 +31,7 @@ module.exports = {
       options: {
         fonts: [
           `Fira Sans:400,400i,500,700`, // you can also specify font weights and styles
+          `Fira Code:400,500,700`, // you can also specify font weights and styles
         ],
         display: 'swap',
         attributes: {
