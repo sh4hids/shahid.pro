@@ -1,5 +1,5 @@
 ---
-slug: 'setting-up-es-lint-and-prettier-in-a-node-project'
+slug: 'setting-up-eslint-and-prettier-in-a-node-project'
 title: 'Setting Up ESLint And Prettier In A Node Project'
 isPublished: true
 publishedAt: '2021-10-29'
