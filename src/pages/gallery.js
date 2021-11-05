@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { ImageGrid } from '../components';
-
 import { Text } from '@sh4hids/gatsby-theme-open-sourcerer/src/components';
 import { DefaultLayout } from '@sh4hids/gatsby-theme-open-sourcerer/src/layouts';
+
+import { ImageGrid } from '../components';
 
 const Gallery = () => {
   const data = useStaticQuery(graphql`
