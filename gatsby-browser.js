@@ -1,3 +1,4 @@
+require('./src/styles/fonts.css');
 /* eslint-disable no-undef */
 // eslint-disable-next-line consistent-return
 function initGTM() {
