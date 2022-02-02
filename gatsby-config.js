@@ -26,21 +26,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-json`,
-    {
-      resolve: `gatsby-plugin-google-fonts-with-attributes`,
-      options: {
-        fonts: [
-          `Fira Sans:400,400i,500,700`, // you can also specify font weights and styles
-          `Fira Code:400,500,700`, // you can also specify font weights and styles
-        ],
-        display: 'swap',
-        attributes: {
-          rel: 'stylesheet preload prefetch',
-          onLoad: "this.onload=null;this.rel='stylesheet'",
-          as: 'style',
-        },
-      },
-    },
     `gatsby-plugin-advanced-sitemap`,
   ],
 };
