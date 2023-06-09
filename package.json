@@ -38,7 +38,7 @@
   "dependencies": {
     "@reach/dialog": "^0.16.0",
     "@sh4hids/gatsby-theme-open-sourcerer": "^1.0.2",
-    "gatsby": "^4.0.1",
+    "gatsby": "^4.25.7",
     "gatsby-plugin-advanced-sitemap": "^1.5.4",
     "gatsby-plugin-image": "^2.0.0",
     "gatsby-plugin-sharp": "^4.0.1",
