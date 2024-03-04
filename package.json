@@ -1,73 +1,31 @@
 {
-  "name": "shahid.pro",
-  "version": "2.0.0",
-  "private": true,
-  "description": "My personal protfolio based on @sh4hids/gatsby-theme-open-sourcerer",
-  "main": "index.js",
-  "scripts": {
-    "develop": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "start": "npm run develop",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json)\"",
-    "create-post": "node ./scripts/create-post",
-    "format": "npm run prettier -- --write",
-    "check-format": "npm run prettier -- --list-different",
-    "lint": "eslint --ignore-path .gitignore --ext .js",
-    "validate": "npm-run-all --parallel check-format lint",
-    "lint-staged": "lint-staged",
-    "prepare": "husky install"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sh4hids/shahid.pro.git"
-  },
-  "keywords": [
-    "gatsby starter",
-    "gatsby",
-    "gatsby theme"
-  ],
-  "author": "Shahidul Islam Majumder <hello@shahid.pro>",
-  "license": "0BSD",
-  "bugs": {
-    "url": "https://github.com/sh4hids/shahid.pro/issues"
-  },
-  "homepage": "https://github.com/sh4hids/shahid.pro#readme",
-  "dependencies": {
-    "@reach/dialog": "^0.16.0",
-    "@sh4hids/gatsby-theme-open-sourcerer": "^1.0.2",
-    "gatsby": "^4.0.1",
-    "gatsby-plugin-advanced-sitemap": "^1.5.4",
-    "gatsby-plugin-image": "^2.0.0",
-    "gatsby-plugin-sharp": "^4.0.1",
-    "gatsby-transformer-json": "^4.0.0",
-    "gatsby-transformer-sharp": "^4.0.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-masonry-css": "^1.0.16"
-  },
-  "devDependencies": {
-    "chalk": "^4.1.2",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.24.2",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.25.1",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "husky": "^7.0.2",
-    "inquirer": "^8.1.2",
-    "json-to-pretty-yaml": "^1.2.2",
-    "lint-staged": "^11.1.2",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^2.4.0",
-    "prop-types": "^15.7.2",
-    "react-is": "^17.0.2",
-    "styled-components": "^5.3.1",
-    "url-join": "^4.0.1",
-    "yamljs": "^0.3.0"
-  }
+    "name": "2024.shahid.pro",
+    "type": "module",
+    "version": "0.0.1",
+    "scripts": {
+        "dev": "astro dev",
+        "start": "astro dev",
+        "build": "astro check && astro build",
+        "preview": "astro preview",
+        "astro": "astro"
+    },
+    "dependencies": {
+        "@astrojs/check": "^0.5.6",
+        "@astrojs/tailwind": "^5.1.0",
+        "astro": "^4.4.9",
+        "tailwindcss": "^3.4.1",
+        "typescript": "^5.3.3"
+    },
+    "devDependencies": {
+        "@tailwindcss/typography": "^0.5.10",
+        "@typescript-eslint/parser": "^7.1.0",
+        "eslint": "^8.57.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-astro": "^0.31.4",
+        "eslint-plugin-jsx-a11y": "^6.8.0",
+        "prettier": "^3.2.5",
+        "prettier-plugin-astro": "^0.13.0",
+        "prettier-plugin-tailwindcss": "^0.5.11",
+        "tailwind-merge": "^2.2.1"
+    }
 }

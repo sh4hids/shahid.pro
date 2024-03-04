@@ -1,0 +1,85 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import { cn } from '@/utils/class-names';
+
+const TextVariants = {
+    body: 'body',
+    h1: 'h1',
+    h2: 'h2',
+    h3: 'h3',
+    h4: 'h4',
+    h5: 'h5',
+    h6: 'h6',
+    label1: 'label1',
+    label2: 'label2',
+    display: 'display',
+} as const;
+
+const TextElements = {
+    p: 'p',
+    h1: 'h1',
+    h2: 'h2',
+    h3: 'h3',
+    h4: 'h4',
+    h5: 'h5',
+    h6: 'h6',
+    span: 'span',
+} as const;
+
+interface Props extends HTMLAttributes<keyof typeof TextElements> {
+    variant?: keyof typeof TextVariants;
+    element?: keyof typeof TextElements;
+}
+
+const { variant = TextVariants.body, element, ...rest } = Astro.props;
+
+const getTextElement = (variant: keyof typeof TextVariants) => {
+    if (variant === TextVariants.h1) {
+        return 'h1';
+    }
+
+    if (variant === TextVariants.h2) {
+        return 'h2';
+    }
+
+    if (variant === TextVariants.h3) {
+        return 'h3';
+    }
+
+    if (variant === TextVariants.h4) {
+        return 'h4';
+    }
+
+    if (variant === TextVariants.h5) {
+        return 'h5';
+    }
+
+    if (variant === TextVariants.h6) {
+        return 'h6';
+    }
+
+    return 'p';
+};
+
+const TextElement = (element ||
+    getTextElement(variant)) as keyof typeof TextElements;
+
+const baseClasses = 'pt-4';
+
+const variantClasses: Record<keyof typeof TextVariants, string> = {
+    label2: 'text-xs font-bold leading-snug',
+    label1: 'text-sm font-bold leading-snug',
+    body: 'text-base font-normal leading-relaxed',
+    h6: 'text-base font-bold leading-snug',
+    h5: 'text-lg font-bold leading-snug',
+    h4: 'text-xl font-bold leading-snug',
+    h3: 'text-2xl font-bold leading-snug',
+    h2: 'text-3xl font-bold leading-snug',
+    h1: 'text-4xl font-bold leading-snug',
+    display: 'text-5xl font-bold leading-snug',
+};
+---
+
+<TextElement class={cn(rest.class, baseClasses, variantClasses[variant])}>
+    <slot />
+</TextElement>
