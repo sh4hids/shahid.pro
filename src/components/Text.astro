@@ -80,6 +80,6 @@ const variantClasses: Record<keyof typeof TextVariants, string> = {
 };
 ---
 
-<TextElement class={cn(rest.class, baseClasses, variantClasses[variant])}>
+<TextElement class={cn(baseClasses, variantClasses[variant], rest.class)}>
     <slot />
 </TextElement>

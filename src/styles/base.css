@@ -63,7 +63,7 @@
         --theme-bg-1: 63 63 70;
         --theme-bg-2: 24 24 27;
         --theme-text: 244 244 245;
-        --theme-accent: 129 140 248;
+        --theme-accent: 79 70 229;
     }
 
     html {
@@ -71,6 +71,6 @@
     }
 
     body {
-        @apply bg-nutral-0 mx-auto flex  min-h-screen flex-col  font-mono text-sm font-normal text-textColor antialiased;
+        @apply mx-auto flex min-h-screen  flex-col bg-nutral-0  font-mono text-sm font-normal text-textColor antialiased;
     }
 }

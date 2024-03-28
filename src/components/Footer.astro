@@ -1,0 +1,47 @@
+---
+import {Coffee,LinkedinLogo,FacebookLogo, Copyright, GithubLogo, TwitterLogo} from '@phosphor-icons/react'
+import Text from './Text.astro'
+import { BrandNames, replaceAll } from '@/utils/string-helper';
+---
+
+<footer class="w-full py-16 border-t border-nutral-1 supports-backdrop-blur:bg-nutral-1/95 bg-nutral-0/90">
+  <div class="mx-auto max-w-4xl grid gap-6 grid-cols-12">
+    <div class="col-span-7">
+      <Text variant="h5">Word of Thanks</Text>
+      <Text>Hello there, thank you very much for visiting my site. If you like anything on this site and want to know how it’s made, you can check the source code on <a href="https://github.com/sh4hids">{replaceAll('github', BrandNames)}</a>.</Text>
+      <Text>Like anything in my site and want to buy me a coffee? please follow the link 👇</Text>
+      <a
+              href="https://www.buymeacoffee.com/sh4hids"
+              target="_blank"
+              rel="noreferrer"
+        class="inline-block mt-6 w-auto py-2 px-4 bg-accent rounded-md *:text-textColor"
+            >
+      <Coffee className="inline w-4 h-4 relative top-[-2px] mr-2" /> <Text class="inline pt-0 ">Buy me a coffee</Text>
+            </a>
+    </div>
+    <div class="col-span-5">
+      <Text variant="h5">Social Links</Text>
+      <ul class="pt-4 text-base *:pb-2 last:*:pb-0">
+        <li>
+          <GithubLogo className="inline w-4 h-4" />
+          <a class="text-textColor" href="https://github.com/sh4hids" target="_blank" rel="noopener noreferrer">github.com/sh4hids</a>
+        </li>
+        <li>
+          <TwitterLogo className="inline w-4 h-4" />
+          <a class="text-textColor" href="https://twitter.com/sh4hids"target="_blank" rel="noopener noreferrer">twitter.com/sh4hids</a>
+        </li>
+        <li>
+          <FacebookLogo className="inline w-4 h-4" />
+          <a class="text-textColor" href="https://fb.com/sh4hids"target="_blank" rel="noopener noreferrer">facebook.com/sh4hids</a>
+        </li>
+        <li>
+          <LinkedinLogo className="inline w-4 h-4" />
+          <a class="text-textColor" href="https://www.linkedin.com/in/sh4hids/"target="_blank" rel="noopener noreferrer">linkedin.com/in/sh4hids</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-span-12 pt-4">
+<Text><Copyright className="inline w-4 h-4 relative top-[-2px]" /> 2018 - present Shahidul Islam Majumder. All Rights Reserved.</Text>
+    </div>
+  </div>
+</footer>
