@@ -1,26 +1,93 @@
 /** @type {import('tailwindcss').Config} */
 
-const defaultTheme = require('tailwindcss/defaultTheme');
+import defaultTheme from 'tailwindcss/defaultTheme';
+import plugin from 'tailwindcss/plugin';
 
 export default {
     content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+    darkMode: ['class', '[data-theme="dark"]'],
+    corePlugins: {
+        aspectRatio: false,
+        touchAction: false,
+        ringOffsetWidth: false,
+        ringOffsetColor: false,
+        scrollSnapType: false,
+        borderOpacity: false,
+        textOpacity: false,
+        fontVariantNumeric: false,
+    },
     theme: {
         extend: {
+            colors: {
+                'nutral-0': 'rgb(var(--theme-bg-0) / <alpha-value>)',
+                'nutral-1': 'rgb(var(--theme-bg-1) / <alpha-value>)',
+                'nutral-2': 'rgb(var(--theme-bg-2) / <alpha-value>)',
+                textColor: 'rgb(var(--theme-text) / <alpha-value>)',
+                accent: 'rgb(var(--theme-accent) / <alpha-value>)',
+                brand: {
+                    50: '#EEF2FF',
+                    100: '#E0E7FF',
+                    200: '#C7D2FE',
+                    300: '#A5B4FC',
+                    400: '#818CF8',
+                    500: '#6366F1',
+                    600: '#4F46E5',
+                    700: '#4338CA',
+                    800: '#3730A3',
+                    900: '#312E81',
+                    950: '#1E1B4B',
+                },
+            },
             fontFamily: {
                 mono: ['Rec Mono Semicasual', ...defaultTheme.fontFamily.mono],
             },
             fontSize: {
-                xs: ['0.64rem', '1.6'],
-                sm: ['0.8rem', '1.6'],
-                base: ['1rem', '1.6'],
-                lg: ['1.25rem', '1.6'],
-                xl: ['1.563rem', '1.6'],
-                '2xl': ['1.953rem', '1.6'],
-                '3xl': ['2.441rem', '1.6'],
-                '4xl': ['3.052rem', '1.6'],
-                '5xl': ['3.815rem', '1.6'],
+                xs: ['0.64rem', defaultTheme.lineHeight.relaxed],
+                sm: ['0.8rem', defaultTheme.lineHeight.relaxed],
+                base: ['1rem', defaultTheme.lineHeight.relaxed],
+                lg: ['1.25rem', defaultTheme.lineHeight.relaxed],
+                xl: ['1.563rem', defaultTheme.lineHeight.relaxed],
+                '2xl': ['1.953rem', defaultTheme.lineHeight.relaxed],
+                '3xl': ['2.441rem', defaultTheme.lineHeight.relaxed],
+                '4xl': ['3.052rem', defaultTheme.lineHeight.relaxed],
+                '5xl': ['3.815rem', defaultTheme.lineHeight.relaxed],
             },
         },
     },
-    plugins: [require('@tailwindcss/typography')],
+    plugins: [
+        require('@tailwindcss/typography'),
+        plugin(function ({ addBase, theme }) {
+            addBase({
+                p: {
+                    fontSize: theme('fontSize.base'),
+                    lineHeight: theme('lineHeight.relaxed'),
+                },
+                h1: {
+                    fontSize: theme('fontSize.4xl'),
+                    lineHeight: theme('lineHeight.snug'),
+                },
+                h2: {
+                    fontSize: theme('fontSize.3xl'),
+                    lineHeight: theme('lineHeight.snug'),
+                },
+                h3: {
+                    fontSize: theme('fontSize.2xl'),
+                    lineHeight: theme('lineHeight.snug'),
+                },
+                h4: {
+                    fontSize: theme('fontSize.xl'),
+                    lineHeight: theme('lineHeight.snug'),
+                },
+                h5: {
+                    fontSize: theme('fontSize.lg'),
+                    lineHeight: theme('lineHeight.snug'),
+                },
+                h6: {
+                    fontSize: theme('fontSize.base'),
+                    lineHeight: theme('lineHeight.snug'),
+                },
+                a: { color: 'rgb(var(--theme-accent))' },
+            });
+        }),
+    ],
 };

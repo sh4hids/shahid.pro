@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets';
+
+import ToggleTheme from './ThemeToggle.astro';
+import logo from '../assets/images/logo-base.svg';
+---
+
+<header
+    class="border-nutral-1 supports-backdrop-blur:bg-nutral-1/95 bg-nutral-0/90 sticky top-0 z-40 w-full border-b p-8 backdrop-blur"
+>
+    <div class="mx-auto flex max-w-4xl justify-between">
+        <a
+            href="/"
+            class="flex items-center text-lg text-textColor hover:text-accent"
+        >
+            <Image src={logo} alt="logo" class="size-6" />hahid</a
+        >
+        <nav
+            class="*:inline-block *:pr-6 *:text-lg *:text-textColor last:*:pr-0 hover:*:text-accent"
+        >
+            <a href="/home">Home</a>
+            <a href="/about">About</a>
+            <a href="/projects">Projects</a>
+            <a href="/blog"> Blog </a>
+            <a href="/uses">Uses</a>
+        </nav>
+        <div class="flex items-center *:pr-4 last:*:pr-0">
+            <p class="relative top-0.5 mr-6">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="absolute start-1/2 top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 scale-100 opacity-100 transition-all"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    ><path
+                        d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+                    ></path></svg
+                >
+            </p>
+            <ToggleTheme />
+        </div>
+    </div>
+</header>

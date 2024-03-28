@@ -24,4 +24,53 @@
         font-style: normal;
         font-display: swap;
     }
+
+    @font-face {
+        font-family: 'Rec Mono Semicasual';
+        src:
+            local('Rec Mono Semicasual Bold Italic'),
+            local('RecMonoSemicasual-BoldItalic'),
+            url('/fonts/RecMonoSemicasual-BoldItalic.woff2') format('woff2');
+        font-weight: bold;
+        font-style: italic;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Rec Mono Semicasual';
+        src:
+            local('Rec Mono Semicasual Italic'),
+            local('RecMonoSemicasual-Italic'),
+            url('/fonts/RecMonoSemicasual-Italic.woff2') format('woff2');
+        font-weight: normal;
+        font-style: italic;
+        font-display: swap;
+    }
+
+    :root,
+    :root[data-theme='light'] {
+        color-scheme: light;
+        --theme-bg-0: 244 244 245;
+        --theme-bg-1: 212 212 216;
+        --theme-bg-2: 250 250 250;
+        --theme-text: 39 39 42;
+        --theme-accent: 79 70 229;
+    }
+
+    :root[data-theme='dark'] {
+        color-scheme: dark;
+        --theme-bg-0: 39 39 42;
+        --theme-bg-1: 63 63 70;
+        --theme-bg-2: 24 24 27;
+        --theme-text: 244 244 245;
+        --theme-accent: 129 140 248;
+    }
+
+    html {
+        @apply scroll-smooth;
+    }
+
+    body {
+        @apply bg-nutral-0 mx-auto flex  min-h-screen flex-col  font-mono text-sm font-normal text-textColor antialiased;
+    }
 }
