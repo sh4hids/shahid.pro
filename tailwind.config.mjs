@@ -19,11 +19,16 @@ export default {
     theme: {
         extend: {
             colors: {
-                'nutral-0': 'rgb(var(--theme-bg-0) / <alpha-value>)',
-                'nutral-1': 'rgb(var(--theme-bg-1) / <alpha-value>)',
-                'nutral-2': 'rgb(var(--theme-bg-2) / <alpha-value>)',
+                'surface-0': 'rgb(var(--theme-bg-0) / <alpha-value>)',
+                'surface-1': 'rgb(var(--theme-bg-1) / <alpha-value>)',
+                'surface-2': 'rgb(var(--theme-bg-2) / <alpha-value>)',
                 textColor: 'rgb(var(--theme-text) / <alpha-value>)',
-                accent: 'rgb(var(--theme-accent) / <alpha-value>)',
+                'fg-0': 'rgb(var(--theme-text-0) / <alpha-value>)',
+                'fg-1': 'rgb(var(--theme-text-1) / <alpha-value>)',
+                'fg-2': 'rgb(var(--theme-text-2) / <alpha-value>)',
+                'accent-0': 'rgb(var(--theme-accent-0) / <alpha-value>)',
+                'accent-1': 'rgb(var(--theme-accent-1) / <alpha-value>)',
+                primary: 'rgb(var(--theme-primary) / <alpha-value>)',
                 brand: {
                     50: '#EEF2FF',
                     100: '#E0E7FF',
@@ -86,7 +91,6 @@ export default {
                     fontSize: theme('fontSize.base'),
                     lineHeight: theme('lineHeight.snug'),
                 },
-                a: { color: 'rgb(var(--theme-accent))' },
             });
         }),
     ],
