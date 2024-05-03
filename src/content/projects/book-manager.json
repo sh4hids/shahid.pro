@@ -1,0 +1,9 @@
+{
+    "name": "book-manager",
+    "description": "A simple personal library management application built with Electron, NeDB and React.",
+    "url": "https://github.com/bdTechies/book-manager",
+    "github": "https://github.com/bdTechies/book-manager",
+    "createdAt": "2023-11-02T01:11:23.742Z",
+    "updatedAt": "2023-11-02T01:11:23.742Z",
+    "isPublished": true
+}

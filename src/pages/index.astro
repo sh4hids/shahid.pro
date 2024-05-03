@@ -1,113 +1,27 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import Text from '@/components/Text.astro';
+import HeroSection from '@/components/HeroSection.astro';
+import GridSection from '@/components/GridSection.astro';
+import ProjectGrid from '@/components/ProjectGrid.astro';
 
-import { BrandNames, replaceAll } from '@/utils/string-helper';
+import { getAllProjects } from '@/data/projects';
+import LinkButton from '@/components/LinkButton.astro';
+
+const projects = await getAllProjects();
 ---
 
 <BaseLayout meta={{ title: 'Home' }}>
     <div class="mx-auto my-8 max-w-3xl">
-        <Text variant="display" class="text-accent-0">
-            A Visual Type Scale
-        </Text>
-        <Text>
-            What looked like a small patch of purple grass, above five feet
-            square, was moving across the sand in their direction.
-        </Text>
-        <Text>
-            When it came near enough he perceived that it was not grass; there
-            were no blades, but only purple roots. The roots were revolving, for
-            each small plant in the whole patch, like the spokes of a rimless
-            wheel
-            <a href="http://github.com/">{replaceAll('github', BrandNames)}</a>.
-        </Text>
-        <Text variant="h1">A Visual Type Scale</Text>
-        <Text>
-            What looked like a small patch of purple grass, above five feet
-            square, was moving across the sand in their direction.
-        </Text>
-        <Text>
-            When it came near enough he perceived that it was not grass; there
-            were no blades, but only purple roots. The roots were revolving, for
-            each small plant in the whole patch, like the spokes of a rimless
-            wheel.
-        </Text>
-        <Text variant="h2">A Visual Type Scale</Text>
-        <Text>
-            What looked like a small patch of purple grass, above five feet
-            square, was moving across the sand in their direction.
-        </Text>
-        <Text>
-            When it came near enough he perceived that it was not grass; there
-            were no blades, but only purple roots. The roots were revolving, for
-            each small plant in the whole patch, like the spokes of a rimless
-            wheel.
-        </Text>
-        <Text variant="h3">A Visual Type Scale</Text>
-        <Text>
-            What looked like a small patch of purple grass, above five feet
-            square, was moving across the sand in their direction.
-        </Text>
-        <Text>
-            When it came near enough he perceived that it was not grass; there
-            were no blades, but only purple roots. The roots were revolving, for
-            each small plant in the whole patch, like the spokes of a rimless
-            wheel.
-        </Text>
-        <Text variant="h4">A Visual Type Scale</Text>
-        <Text>
-            What looked like a small patch of purple grass, above five feet
-            square, was moving across the sand in their direction.
-        </Text>
-        <Text>
-            When it came near enough he perceived that it was not grass; there
-            were no blades, but only purple roots. The roots were revolving, for
-            each small plant in the whole patch, like the spokes of a rimless
-            wheel.
-        </Text>
-        <Text variant="h5">A Visual Type Scale</Text>
-        <Text>
-            What looked like a small patch of purple grass, above five feet
-            square, was moving across the sand in their direction.
-        </Text>
-        <Text>
-            When it came near enough he perceived that it was not grass; there
-            were no blades, but only purple roots. The roots were revolving, for
-            each small plant in the whole patch, like the spokes of a rimless
-            wheel.
-        </Text>
-        <Text variant="h6">A Visual Type Scale</Text>
-        <Text>
-            What looked like a small patch of purple grass, above five feet
-            square, was moving across the sand in their direction.
-        </Text>
-        <Text>
-            When it came near enough he perceived that it was not grass; there
-            were no blades, but only purple roots. The roots were revolving, for
-            each small plant in the whole patch, like the spokes of a rimless
-            wheel.
-        </Text>
-        <Text variant="label1">A Visual Type Scale</Text>
-        <Text>
-            What looked like a small patch of purple grass, above five feet
-            square, was moving across the sand in their direction.
-        </Text>
-        <Text>
-            When it came near enough he perceived that it was not grass; there
-            were no blades, but only purple roots. The roots were revolving, for
-            each small plant in the whole patch, like the spokes of a rimless
-            wheel.
-        </Text>
-        <Text variant="label2">A Visual Type Scale</Text>
-        <Text>
-            What looked like a small patch of purple grass, above five feet
-            square, was moving across the sand in their direction.
-        </Text>
-        <Text>
-            When it came near enough he perceived that it was not grass; there
-            were no blades, but only purple roots. The roots were revolving, for
-            each small plant in the whole patch, like the spokes of a rimless
-            wheel.
-        </Text>
+        <HeroSection />
+        <GridSection title="Projects">
+            <ProjectGrid projects={projects.slice(0, 4)} />
+            {
+                projects.length > 4 && (
+                    <div class="pt-6 text-center">
+                        <LinkButton url="/projects" label="View all projects" />
+                    </div>
+                )
+            }
+        </GridSection>
     </div>
 </BaseLayout>

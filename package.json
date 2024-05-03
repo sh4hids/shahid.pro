@@ -25,14 +25,22 @@
     },
     "devDependencies": {
         "@tailwindcss/typography": "^0.5.10",
+        "@types/inquirer": "^9.0.7",
+        "@types/json-to-pretty-yaml": "^1.2.1",
         "@typescript-eslint/parser": "^7.1.0",
+        "chalk": "^5.3.0",
+        "date-fns": "^3.6.0",
         "eslint": "^8.57.0",
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-astro": "^0.31.4",
         "eslint-plugin-jsx-a11y": "^6.8.0",
+        "inquirer": "^9.2.18",
+        "json-to-pretty-yaml": "^1.2.2",
         "prettier": "^3.2.5",
         "prettier-plugin-astro": "^0.13.0",
         "prettier-plugin-tailwindcss": "^0.5.11",
-        "tailwind-merge": "^2.2.1"
+        "tailwind-merge": "^2.2.1",
+        "title-case": "^4.3.1",
+        "yamljs": "^0.3.0"
     }
 }

@@ -1,0 +1,17 @@
+---
+import { ArrowRight } from '@phosphor-icons/react';
+import type { CollectionEntry } from 'astro:content';
+import Text from './Text.astro';
+import LinkButton from './LinkButton.astro';
+
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<section>
+    <Text class="pb-6 text-center" variant="h3">{title}</Text>
+    <slot />
+</section>

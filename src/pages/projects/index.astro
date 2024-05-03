@@ -1,0 +1,17 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import GridSection from '@/components/GridSection.astro';
+import ProjectGrid from '@/components/ProjectGrid.astro';
+
+import { getAllProjects } from '@/data/projects';
+
+const projects = await getAllProjects();
+---
+
+<BaseLayout meta={{ title: 'All Projects' }}>
+    <div class="mx-auto my-8 max-w-3xl">
+        <GridSection title="All Projects">
+            <ProjectGrid projects={projects} />
+        </GridSection>
+    </div>
+</BaseLayout>
