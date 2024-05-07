@@ -1,8 +1,6 @@
 ---
-import { ArrowRight } from '@phosphor-icons/react';
 import type { CollectionEntry } from 'astro:content';
-import Text from './Text.astro';
-import LinkButton from './LinkButton.astro';
+import ProjectCard from './ProjectCard.astro';
 
 interface Props {
     projects: Array<CollectionEntry<'projects'>>;
@@ -12,36 +10,5 @@ const { projects } = Astro.props;
 ---
 
 <div class="grid grid-cols-2 gap-6">
-    {
-        projects.map((project) => (
-            <div class="rounded-md border bg-surface-1 p-6">
-                <Text class="pt-0" variant="h6">
-                    {project.data.name}
-                </Text>
-                <Text>{project.data.description}</Text>
-                <div class="flex items-center justify-between pt-4">
-                    {project.data.github && (
-                        <div>
-                            <a href={project.data.github} target="_blank">
-                                <img
-                                    src={`https://img.shields.io/github/stars/${project.data.github?.split('github.com/')[1]}.svg`}
-                                    alt="Project Link"
-                                    class="h-6 w-auto"
-                                />
-                            </a>
-                        </div>
-                    )}
-                    <div>
-                        <LinkButton
-                            label="View Project"
-                            url={project.data.url}
-                            target="_blank"
-                        >
-                            <ArrowRight className="inline relative top-[-1px]" />
-                        </LinkButton>
-                    </div>
-                </div>
-            </div>
-        ))
-    }
+    {projects.map((project) => <ProjectCard project={project} />)}
 </div>

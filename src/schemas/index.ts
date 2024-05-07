@@ -1,2 +1,2 @@
-export * from './blog.schema';
+export * from './post.schema';
 export * from './project.schema';

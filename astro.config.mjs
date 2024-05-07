@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
+import { remarkPostMeta } from './src/utils/remark-post-meta.mjs';
 
 import react from '@astrojs/react';
 
@@ -12,5 +13,7 @@ export default defineConfig({
         }),
         react(),
     ],
+    markdown: {
+        remarkPlugins: [remarkPostMeta],
+    },
 });
-

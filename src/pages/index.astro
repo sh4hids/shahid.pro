@@ -3,15 +3,18 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import HeroSection from '@/components/HeroSection.astro';
 import GridSection from '@/components/GridSection.astro';
 import ProjectGrid from '@/components/ProjectGrid.astro';
+import PostGrid from '@/components/PostGrid.astro';
 
-import { getAllProjects } from '@/data/projects';
+import { getAllProjects, getAllPosts, sortPostByDate } from '@/data';
 import LinkButton from '@/components/LinkButton.astro';
 
 const projects = await getAllProjects();
+const posts = await getAllPosts();
+const sortedPosts = sortPostByDate(posts);
 ---
 
 <BaseLayout meta={{ title: 'Home' }}>
-    <div class="mx-auto my-8 max-w-3xl">
+    <div class="mx-auto max-w-3xl">
         <HeroSection />
         <GridSection title="Projects">
             <ProjectGrid projects={projects.slice(0, 4)} />
@@ -19,6 +22,16 @@ const projects = await getAllProjects();
                 projects.length > 4 && (
                     <div class="pt-6 text-center">
                         <LinkButton url="/projects" label="View all projects" />
+                    </div>
+                )
+            }
+        </GridSection>
+        <GridSection title="Recent Posts">
+            <PostGrid posts={sortedPosts.slice(0, 4)} />
+            {
+                sortedPosts.length > 4 && (
+                    <div class="pt-6 text-center">
+                        <LinkButton url="/blog" label="View all posts" />
                     </div>
                 )
             }

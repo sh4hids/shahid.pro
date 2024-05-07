@@ -1,0 +1,43 @@
+---
+import Text from './Text.astro';
+import LinkButton from './LinkButton.astro';
+import { ArrowRight } from '@phosphor-icons/react';
+import { CollectionEntry } from 'astro:content';
+
+interface Props {
+    project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+---
+
+<div class="rounded-md border bg-surface-1 p-6">
+    <Text class="pt-0" variant="h5">
+        {project.data.name}
+    </Text>
+    <Text>{project.data.description}</Text>
+    <div class="flex items-center justify-between pt-4">
+        {
+            project.data.github && (
+                <div>
+                    <a href={project.data.github} target="_blank">
+                        <img
+                            src={`https://img.shields.io/github/stars/${project.data.github?.split('github.com/')[1]}.svg`}
+                            alt="Project Link"
+                            class="h-6 w-auto"
+                        />
+                    </a>
+                </div>
+            )
+        }
+        <div>
+            <LinkButton
+                label="View Project"
+                url={project.data.url}
+                target="_blank"
+            >
+                <ArrowRight className="relative top-[-1px] inline" />
+            </LinkButton>
+        </div>
+    </div>
+</div>

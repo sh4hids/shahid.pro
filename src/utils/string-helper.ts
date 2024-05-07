@@ -1,5 +1,6 @@
 export const BrandNames = {
     aws: 'AWS',
+    s3: 'S3',
     github: 'GitHub',
     javascript: 'JavaScript',
 } as const;
@@ -10,4 +11,12 @@ export function replaceAll(text: string, correctWords: Record<string, string>) {
     return text.replace(pattern, function (matched) {
         return correctWords[matched.toLowerCase()];
     });
+}
+
+export function generateSlug(text: string) {
+    return `${text
+        .trim()
+        .replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '')
+        .replace(/\s+/g, '-')
+        .toLowerCase()}`;
 }

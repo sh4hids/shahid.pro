@@ -126,6 +126,34 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
+"completely-delete-objects-from-versioned-s3-bucket.md": {
+	id: "completely-delete-objects-from-versioned-s3-bucket.md";
+  slug: "2024/01/07/completely-delete-objects-from-versioned-s3-bucket";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"how-to-generate-api-key-and-secret-to-protect-api.md": {
+	id: "how-to-generate-api-key-and-secret-to-protect-api.md";
+  slug: "2024/05/07/how-to-generate-api-key-and-secret-to-protect-api";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"release-electron-app-to-github-using-semantic-release-and-electron-builder.md": {
+	id: "release-electron-app-to-github-using-semantic-release-and-electron-builder.md";
+  slug: "2023/02/20/release-electron-app-to-github-using-semantic-release-and-electron-builder";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"setting-up-eslint-and-prettier-in-a-node-project.md": {
+	id: "setting-up-eslint-and-prettier-in-a-node-project.md";
+  slug: "2021/10/29/setting-up-eslint-and-prettier-in-a-node-project";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 };
 
 	};

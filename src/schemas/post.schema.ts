@@ -1,12 +1,10 @@
 import { z } from 'astro:content';
 
-export const blogSchema = z.object({
+export const postSchema = z.object({
     title: z.string(),
-    description: z.string(),
     isPublished: z.boolean().default(false),
-    createdAt: z.string().transform((str) => new Date(str)),
-    updatedAt: z.string().transform((str) => new Date(str)),
-    tags: z.array(z.string()).optional(),
+    publishedAt: z.string().transform((str) => new Date(str)),
+    tags: z.array(z.string()).optional().default([]),
     metaInfo: z
         .object({
             description: z.string(),
