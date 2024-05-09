@@ -3,6 +3,8 @@ import { Calendar, CaretRight, Clock } from '@phosphor-icons/react';
 import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Text from '@/components/Text.astro';
+import Breadcrumb from '@/components/Breadcrumb.astro';
+import PageHeader from '@/components/PageHeader.astro';
 
 import { getAllPosts } from '@/data/posts';
 import { format } from 'date-fns';
@@ -19,10 +21,6 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { entry } = Astro.props;
 const { Content, remarkPluginFrontmatter } = await entry.render();
-
-console.log({
-    remarkPluginFrontmatter,
-});
 ---
 
 <BaseLayout
@@ -31,30 +29,31 @@ console.log({
         description: entry.data.metaInfo.description,
     }}
 >
-    <div class="border-b bg-surface-1 py-12">
-        <div class="mx-auto max-w-3xl">
-            <ul class="flex gap-2 font-bold text-fg-2">
-                <li>
-                    <a href="/" class="text-fg-2 no-underline">Home</a>
-                    <CaretRight className="inline-block" />
-                </li>
-                <li>
-                    <a href="/blog" class="text-fg-2 no-underline">Blog</a>
-                </li>
-            </ul>
-            <Text variant="h2">{entry.data.title}</Text>
-            <div class="flex gap-6 pt-4 text-fg-2">
-                <div class="flex items-center gap-2">
-                    <Calendar className="h-4 w-4" />
-                    {format(entry.data.publishedAt, 'MMMM dd, yyyy')}
-                </div>
-                <div class="flex items-center gap-2">
-                    <Clock className="h-4 w-4" />
-                    {remarkPluginFrontmatter.minutesRead}
-                </div>
+    <PageHeader
+        title={entry.data.title}
+        breadcrumbItems={[
+            {
+                url: '/',
+                label: 'Home',
+            },
+            {
+                url: '/blog',
+                label: 'Blog',
+            },
+        ]}
+    >
+        <div class="flex gap-6 pt-4 text-fg-2">
+            <div class="flex items-center gap-2">
+                <Calendar className="h-4 w-4" />
+                {format(entry.data.publishedAt, 'MMMM dd, yyyy')}
+            </div>
+            <div class="flex items-center gap-2">
+                <Clock className="h-4 w-4" />
+                {remarkPluginFrontmatter.minutesRead}
             </div>
         </div>
-    </div>
+    </PageHeader>
+
     <div class="mx-auto max-w-3xl">
         <section
             class="prose max-w-none pt-6 prose-h2:text-fg-1 prose-p:text-fg-1

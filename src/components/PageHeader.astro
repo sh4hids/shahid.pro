@@ -1,0 +1,20 @@
+---
+import Text from '@/components/Text.astro';
+import Breadcrumb from '@/components/Breadcrumb.astro';
+import { type BreadcrumbItem } from '@/components/types';
+
+interface Props {
+    title: string;
+    breadcrumbItems: BreadcrumbItem[];
+}
+
+const { title, breadcrumbItems } = Astro.props;
+---
+
+<div class="border-b bg-surface-1 py-12">
+    <div class="mx-auto max-w-3xl">
+        <Breadcrumb items={breadcrumbItems} />
+        <Text variant="h2">{title}</Text>
+        <slot />
+    </div>
+</div>

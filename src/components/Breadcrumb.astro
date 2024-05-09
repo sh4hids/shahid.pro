@@ -1,0 +1,28 @@
+---
+import { CaretRight } from '@phosphor-icons/react';
+import type { BreadcrumbItem } from '@/components/types';
+
+interface Props {
+    items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<ul class="flex gap-2 font-bold text-fg-2">
+    {
+        items.map((item, index) => (
+            <li>
+                <a
+                    href={item.url}
+                    class={`no-underline ${item.isCurrentPage ? `pointer-events-none text-fg-2/90` : `text-fg-2`} `}
+                >
+                    {item.label}
+                </a>
+                {index !== items.length - 1 && (
+                    <CaretRight className="inline-block" />
+                )}
+            </li>
+        ))
+    }
+</ul>

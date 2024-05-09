@@ -1,13 +1,13 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "compilerOptions": {
-    "baseUrl": "/Users/shahid/Desktop/Projects/Personal/websites/shahid.pro",
-    "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    },
-    "jsx": "react-jsx",
-    "jsxImportSource": "react"
-  }
+    "extends": "astro/tsconfigs/strict",
+    "compilerOptions": {
+        "baseUrl": "/Users/shahid/Desktop/Projects/Personal/websites/shahid.pro",
+        "paths": {
+            "@/*": ["src/*"]
+        },
+        "jsx": "react-jsx",
+        "jsxImportSource": "react",
+        "allowJs": true
+    }
 }
+
