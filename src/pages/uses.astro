@@ -1,57 +1,104 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Text from '@/components/Text.astro';
+import PageHeader from '@/components/PageHeader.astro';
+import List from '@/components/List.astro';
+import {
+    Browsers,
+    DesktopTower,
+    Kanban,
+    TerminalWindow,
+    WebhooksLogo,
+    Layout,
+    AppWindow,
+} from '@phosphor-icons/react';
 ---
 
-<BaseLayout meta={{ title: 'About' }}>
+<BaseLayout meta={{ title: 'Uses' }}>
+    <PageHeader
+        title="Uses"
+        breadcrumbItems={[
+            {
+                url: '/',
+                label: 'Home',
+            },
+            {
+                url: '/uses',
+                label: 'Uses',
+                isCurrentPage: true,
+            },
+        ]}
+    />
     <div class="mx-auto max-w-3xl">
-        <Text variant="h2" class="py-8 text-center">About Me</Text>
         <Text>
-            I am a fullstack JavaScript Developer from Dhaka, Bangladesh. I love
-            to work with Node, React, MySQL, MongoDB and all other related
-            technologies. When I am not coding, I like to read books, do
-            gardening and spend time with my family and friends.
+            Following are some of the tools I regularly use as a developer. As
+            technology moves very fast, some of these might get replaced by some
+            other new shiny ones. I'll try o keep this list updated.
         </Text>
-        <Text variant="h4">Childhood & Education</Text>
-        <Text>
-            I was born in a small town called Feni in Bangladesh. I grew up and
-            completed my early education there. After that, I moved to Dhaka for
-            higher education. I completed my Bachelor of Science in Computer
-            Science and Engineering from BRAC University.
+        <Text variant="h4">
+            <DesktopTower className="inline-block" />
+            Workstation
         </Text>
-        <Text variant="h4">Work Experience</Text>
-        <Text>
-            I started working part-time during the last year of my graduation. I
-            worked as UI/UX designer on my first job (which helps me build up my
-            basic UI/UX knowledge). Then I worked as a JavaScript developer for
-            a short time in e small startup and developed a desktop app using
-            Electron.
+        <List>
+            <li>MacBook Pro (14-inch, 2021)</li>
+        </List>
+        <Text variant="h4">
+            <TerminalWindow className="inline-block" />
+            Editors, Shell & Fonts
         </Text>
-        <Text>
-            I started working full-time after completing my graduation. Since
-            then, I have worked for several companies in different fields in
-            different positions. So far, I have worked on social networking
-            platforms for businesses, freelancing platforms, and lead generation
-            tools.
+        <List>
+            <li>Wezterm (Theme: Horizon)</li>
+            <li>Neovim (LazyVim, Theme: Gruvbox)</li>
+            <li>VS Code (Theme: Horizon)</li>
+            <li>Zsh (with oh-my-zsh)</li>
+            <li>Tmux</li>
+            <li>Font: Fira Code</li>
+        </List>
+        <Text variant="h4">
+            <Kanban className="inline-block" />
+            Personal Management
         </Text>
-        <Text variant="h4">Technical Experties</Text>
-        <Text>
-            I have been writing JavaScript for about six and a half years. I
-            have written API services with Express, Koa, MongoDB, MySQL, and
-            DynamoDB. For client apps, I used React, Redux, After.js, Next.js,
-            Gatsby, Styled Components, MaterialUI, etc.
+        <List>
+            <li>Google Keep (for shopping lists, short notes)</li>
+            <li>Obsidian (for todos, notes, writings and cheetsheet)</li>
+            <li>Syncthing (to sync files between devices in local network)</li>
+            <li>Joplin</li>
+        </List>
+        <Text variant="h4">
+            <Browsers className="inline-block" />
+            Browsers
         </Text>
-        <Text>
-            I also worked on AWS infrastructure, especially with Elastic
-            Beanstalk, Lambda, API Gateway, SQS, DynamoDB, Cloudwatch,
-            Codebuild.
+        <List>
+            <li>Brave (my goto browser)</li>
+            <li>Arc (still testing)</li>
+            <li>Chrome (use it only for testing)</li>
+        </List>
+        <Text variant="h4">
+            <WebhooksLogo className="inline-block" />
+            API Debugging
         </Text>
-        <Text variant="h4">Hobbies & Other Activities</Text>
-        <Text>
-            I like to spend my free time with my family (that's why my future
-            goal is to join a fully remote team). My favorite hobby is
-            gardening, and I also like to keep pets. I have a rooftop garden.
-            Every day I spend some time in the morning and evening in my garden.
+        <List>
+            <li>Bruno</li>
+            <li>Postman</li>
+        </List>
+        <Text variant="h4">
+            <Layout className="inline-block" />
+            Designing
         </Text>
+        <List>
+            <li>Figma (for UI/UX design)</li>
+            <li>Gimp (for photo manipulation)</li>
+            <li>Inkscape (for vector design)</li>
+        </List>
+        <Text variant="h4">
+            <AppWindow className="inline-block" />
+            Misc
+        </Text>
+        <List>
+            <li>yabai (tiling window manager)</li>
+            <li>Bitwarden (password manager)</li>
+            <li>Authenticator (2FA)</li>
+            <li>Foxit Reader (PDF reader)</li>
+        </List>
     </div>
 </BaseLayout>

@@ -11,7 +11,7 @@ const posts = await getAllPosts();
 const sortedPosts = sortPostByDate(posts);
 ---
 
-<BaseLayout meta={{ title: 'About' }}>
+<BaseLayout meta={{ title: 'Blog (Page #1)' }}>
     <div class="mx-auto max-w-3xl">
         <GridSection title="Recent Posts">
             <PostGrid posts={sortedPosts.slice(0, PAGE_SIZE)} />

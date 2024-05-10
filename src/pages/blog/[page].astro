@@ -9,16 +9,14 @@ import { PAGE_SIZE } from '@/config';
 export async function getStaticPaths({ paginate }) {
     const posts = await getAllPosts();
     const sortedPosts = sortPostByDate(posts);
-    // Generate pages from our array of astronauts, with 2 to a page
+
     return paginate(sortedPosts, { pageSize: PAGE_SIZE });
 }
-// All paginated data is passed on the "page" prop
-const { page } = Astro.props;
 
-console.log(page);
+const { page } = Astro.props;
 ---
 
-<BaseLayout meta={{ title: 'About' }}>
+<BaseLayout meta={{ title: `Blog (Page #${page.currentPage})` }}>
     <div class="mx-auto max-w-3xl">
         <GridSection title="Recent Posts">
             <PostGrid posts={page.data} />
