@@ -140,6 +140,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"load-google-analytics-gtag-efficiently-in-gatsby-site.md": {
+	id: "load-google-analytics-gtag-efficiently-in-gatsby-site.md";
+  slug: "2021/09/11/load-google-analytics-gtag-efficiently-in-gatsby-site";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "release-electron-app-to-github-using-semantic-release-and-electron-builder.md": {
 	id: "release-electron-app-to-github-using-semantic-release-and-electron-builder.md";
   slug: "2023/02/20/release-electron-app-to-github-using-semantic-release-and-electron-builder";

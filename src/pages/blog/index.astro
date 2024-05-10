@@ -1,23 +1,28 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import Text from '@/components/Text.astro';
 
-import { getAllPosts } from '@/data/posts';
+import { getAllPosts, sortPostByDate } from '@/data/posts';
+import { PAGE_SIZE } from '@/config';
+import GridSection from '@/components/GridSection.astro';
+import PostGrid from '@/components/PostGrid.astro';
+import LinkButton from '@/components/LinkButton.astro';
 
-const allPosts = await getAllPosts();
-
-console.log(allPosts);
+const posts = await getAllPosts();
+const sortedPosts = sortPostByDate(posts);
 ---
 
 <BaseLayout meta={{ title: 'About' }}>
     <div class="mx-auto max-w-3xl">
-        <Text>All Posts ({allPosts.length})</Text>
-        {
-            allPosts.map((post) => (
-                <Text>
-                    <a href={`/blog/${post.slug}`}>{post.data.title}</a>
-                </Text>
-            ))
-        }
+        <GridSection title="Recent Posts">
+            <PostGrid posts={sortedPosts.slice(0, PAGE_SIZE)} />
+            <div class="pt-6 text-center">
+                <LinkButton disabled={true} url="/blog" label="Previous page" />
+                <LinkButton
+                    disabled={sortedPosts.length <= PAGE_SIZE}
+                    url="/blog/2"
+                    label="Next page"
+                />
+            </div>
+        </GridSection>
     </div>
 </BaseLayout>

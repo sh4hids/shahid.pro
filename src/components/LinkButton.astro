@@ -2,17 +2,18 @@
 interface Props {
     label: string;
     url: string;
+    disabled?: boolean;
     target?: '_blank' | '_self' | '_parent' | '_top';
 }
 
-const { label, url, target } = Astro.props;
+const { label, url, target, disabled } = Astro.props;
 ---
 
 <a
     href={url}
     target={target}
     rel="noopener noreferrer"
-    class="inline-block rounded-md border bg-surface-2 px-3 py-1 text-zinc-100 no-underline duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-zinc-100"
+    class={`inline-block rounded-md border  px-3 py-1 ${disabled ? 'pointer-events-none bg-surface-2/60 text-zinc-100/60' : 'bg-surface-2 text-zinc-100'} no-underline duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-zinc-100`}
 >
     <span>{label}</span>
     <slot />

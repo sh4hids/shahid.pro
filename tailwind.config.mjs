@@ -18,6 +18,15 @@ export default {
     },
     theme: {
         extend: {
+            typography: () => ({
+                DEFAULT: {
+                    css: {
+                        code: {
+                            color: 'rgb(var(--theme-fg-1))',
+                        },
+                    },
+                },
+            }),
             colors: {
                 'surface-0': 'rgb(var(--theme-bg-0) / <alpha-value>)',
                 'surface-1': 'rgb(var(--theme-bg-1) / <alpha-value>)',
