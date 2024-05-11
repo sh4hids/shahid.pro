@@ -1,0 +1,15 @@
+---
+interface Props {
+    href: string;
+    isActive?: boolean;
+    isLastItem?: boolean;
+}
+
+const { href, isActive, isLastItem } = Astro.props;
+---
+
+<a
+    href={href}
+    class={`inline-block text-lg no-underline ${isActive ? 'text-accent-0' : 'text-fg-0'} ${isLastItem ? '' : 'mr-6'}`}
+    ><slot /></a
+>
