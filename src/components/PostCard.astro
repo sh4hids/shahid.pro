@@ -1,8 +1,9 @@
 ---
-import { format } from 'date-fns';
 import { ArrowRight, Calendar, Clock } from '@phosphor-icons/react';
-import Text from './Text.astro';
 import { type CollectionEntry } from 'astro:content';
+import { format } from 'date-fns';
+
+import Text from './Text.astro';
 
 interface Props {
     post: CollectionEntry<'blog'>;

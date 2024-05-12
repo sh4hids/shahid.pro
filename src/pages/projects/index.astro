@@ -1,9 +1,8 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
 import GridSection from '@/components/GridSection.astro';
 import ProjectGrid from '@/components/ProjectGrid.astro';
-
 import { getAllProjects } from '@/data/projects';
+import BaseLayout from '@/layouts/BaseLayout.astro';
 
 const projects = await getAllProjects();
 ---

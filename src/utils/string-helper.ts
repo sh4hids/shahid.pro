@@ -16,6 +16,7 @@ export function replaceAll(text: string, correctWords: Record<string, string>) {
 export function generateSlug(text: string) {
     return `${text
         .trim()
+        // eslint-disable-next-line no-useless-escape
         .replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '')
         .replace(/\s+/g, '-')
         .toLowerCase()}`;

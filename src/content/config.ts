@@ -1,5 +1,6 @@
 import { defineCollection } from 'astro:content';
-import { projectSchema, postSchema } from '@/schemas';
+
+import { postSchema, projectSchema } from '@/schemas';
 
 const projectCollection = defineCollection({
     type: 'data',

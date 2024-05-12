@@ -1,11 +1,12 @@
 ---
 import type { GetStaticPaths } from 'astro';
-import { getAllPosts, sortPostByDate } from '@/data/posts';
+
 import GridSection from '@/components/GridSection.astro';
-import PostGrid from '@/components/PostGrid.astro';
 import LinkButton from '@/components/LinkButton.astro';
-import BaseLayout from '@/layouts/BaseLayout.astro';
+import PostGrid from '@/components/PostGrid.astro';
 import { PAGE_SIZE } from '@/config';
+import { getAllPosts, sortPostByDate } from '@/data/posts';
+import BaseLayout from '@/layouts/BaseLayout.astro';
 
 export const getStaticPaths = (async ({ paginate }) => {
     const posts = await getAllPosts();

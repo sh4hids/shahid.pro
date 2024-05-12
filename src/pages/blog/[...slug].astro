@@ -1,11 +1,11 @@
 ---
 import { Calendar, Clock } from '@phosphor-icons/react';
 import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import PageHeader from '@/components/PageHeader.astro';
-
-import { getAllPosts } from '@/data/posts';
 import { format } from 'date-fns';
+
+import PageHeader from '@/components/PageHeader.astro';
+import { getAllPosts } from '@/data/posts';
+import BaseLayout from '@/layouts/BaseLayout.astro';
 
 export const getStaticPaths = (async () => {
     const blogEntries = await getAllPosts();

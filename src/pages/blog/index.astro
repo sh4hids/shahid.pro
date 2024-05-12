@@ -1,11 +1,10 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
-
-import { getAllPosts, sortPostByDate } from '@/data/posts';
-import { PAGE_SIZE } from '@/config';
 import GridSection from '@/components/GridSection.astro';
-import PostGrid from '@/components/PostGrid.astro';
 import LinkButton from '@/components/LinkButton.astro';
+import PostGrid from '@/components/PostGrid.astro';
+import { PAGE_SIZE } from '@/config';
+import { getAllPosts, sortPostByDate } from '@/data/posts';
+import BaseLayout from '@/layouts/BaseLayout.astro';
 
 const posts = await getAllPosts();
 const sortedPosts = sortPostByDate(posts);

@@ -1,10 +1,11 @@
 ---
-import { siteConfig, type SiteMeta } from '../config';
-import '../styles/base.css';
+import '@/styles/base.css';
+
+import { siteConfig, type SiteMeta } from '@/config';
 
 type Props = SiteMeta;
 
-const { title, description, ogImage, createdAt, updatedAt } = Astro.props;
+const { title, description, createdAt, updatedAt } = Astro.props;
 
 const titleSeparator = '|';
 const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`;

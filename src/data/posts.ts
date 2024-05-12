@@ -1,6 +1,8 @@
 import { type CollectionEntry, getCollection } from 'astro:content';
-import type { ItemWithCount } from './projects';
+
 import { generateSlug } from '@/utils/string-helper';
+
+import type { ItemWithCount } from './projects';
 
 export const getAllPosts = async () => {
     return await getCollection('blog', ({ data }) => {

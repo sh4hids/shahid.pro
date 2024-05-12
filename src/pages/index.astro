@@ -1,12 +1,11 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import HeroSection from '@/components/HeroSection.astro';
 import GridSection from '@/components/GridSection.astro';
-import ProjectGrid from '@/components/ProjectGrid.astro';
-import PostGrid from '@/components/PostGrid.astro';
-
-import { getAllProjects, getAllPosts, sortPostByDate } from '@/data';
+import HeroSection from '@/components/HeroSection.astro';
 import LinkButton from '@/components/LinkButton.astro';
+import PostGrid from '@/components/PostGrid.astro';
+import ProjectGrid from '@/components/ProjectGrid.astro';
+import { getAllPosts, getAllProjects, sortPostByDate } from '@/data';
+import BaseLayout from '@/layouts/BaseLayout.astro';
 
 const projects = await getAllProjects();
 const posts = await getAllPosts();

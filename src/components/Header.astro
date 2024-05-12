@@ -1,15 +1,12 @@
 ---
 import { Image } from 'astro:assets';
 
+import logo from '@/assets/images/logo-base.svg';
+import HeaderLink from '@/components/HeaderLink.astro';
+import ToggleTheme from '@/components/ThemeToggle.astro';
 import { isActivePath } from '@/utils';
 
-import ToggleTheme from './ThemeToggle.astro';
-import logo from '../assets/images/logo-base.svg';
-import HeaderLink from '@/components/HeaderLink.astro';
-
 const currentPath = Astro.url.pathname;
-
-console.log(currentPath);
 ---
 
 <header
