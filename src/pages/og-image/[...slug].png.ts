@@ -1,38 +1,33 @@
 import { Resvg } from '@resvg/resvg-js';
-import type { APIContext, InferGetStaticPropsType } from 'astro';
+import type {
+    APIContext,
+    InferGetStaticParamsType,
+    InferGetStaticPropsType,
+} from 'astro';
 import { format } from 'date-fns';
 import { readFileSync } from 'fs';
 import satori, { type SatoriOptions } from 'satori';
 import { html } from 'satori-html';
 
-import { siteConfig } from '@/config';
 import { getAllPosts } from '@/data';
+import { commonMarkup } from '@/utils/ogHelper';
 
 const fontFilePath = `${process.cwd()}/public/fonts/RecMonoSemicasual-Bold.ttf`;
 const fontFile = readFileSync(fontFilePath);
 
 const ogOptions: SatoriOptions = {
-    // debug: true,
     fonts: [
         {
             data: fontFile,
             name: 'Rec Mono Semicasual',
             style: 'normal',
-            weight: 400,
+            weight: 700,
         },
-        // {
-        //     data: Buffer.from(RobotoMonoBold),
-        //     name: 'Roboto Mono',
-        //     style: 'normal',
-        //     weight: 700,
-        // },
     ],
     height: 630,
     width: 1200,
 };
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
 const markup = (title: string, publishedAt: Date, minutesRead: string) => html`
     <div tw="flex h-full w-full bg-[#18181b] text-[#f4f4f5] relative">
         <div tw="flex flex-col mx-auto my-auto max-w-3xl">
@@ -144,14 +139,18 @@ const markup = (title: string, publishedAt: Date, minutesRead: string) => html`
 `;
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+type ParamsType = InferGetStaticParamsType<typeof getStaticPaths>;
 
 export async function GET(context: APIContext) {
     const { publishedAt, title, minutesRead } = context.props as Props;
+    const { slug } = context.params as ParamsType;
 
-    const svg = await satori(
-        markup(title, publishedAt, minutesRead),
-        ogOptions
-    );
+    const html = ['common'].includes(slug)
+        ? commonMarkup()
+        : markup(title, publishedAt, minutesRead);
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-nocheck
+    const svg = await satori(html, ogOptions);
     const png = new Resvg(svg).render().asPng();
     return new Response(png, {
         headers: {
@@ -163,7 +162,16 @@ export async function GET(context: APIContext) {
 
 export async function getStaticPaths() {
     const posts = await getAllPosts();
-    const formatted = [];
+    const formatted = [
+        {
+            params: { slug: 'common' },
+            props: {
+                publishedAt: new Date(),
+                title: 'Shahidul Islam Majumder',
+                minutesRead: '0 min read',
+            },
+        },
+    ];
     for (const post of posts) {
         const { remarkPluginFrontmatter } = await post.render();
         formatted.push({

@@ -19,12 +19,14 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { entry } = Astro.props;
 const { Content, remarkPluginFrontmatter } = await entry.render();
+const socialImage = `/og-image/${entry.slug}.png`;
 ---
 
 <BaseLayout
     meta={{
         title: entry.data.title,
         description: entry.data.metaInfo.description,
+        ogImage: socialImage,
     }}
 >
     <PageHeader
