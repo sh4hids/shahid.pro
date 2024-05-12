@@ -1,4 +1,3 @@
-import { format } from 'date-fns';
 import { html } from 'satori-html';
 
 export const commonMarkup = () => html`

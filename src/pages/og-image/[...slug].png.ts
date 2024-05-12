@@ -6,6 +6,7 @@ import type {
 } from 'astro';
 import { format } from 'date-fns';
 import { readFileSync } from 'fs';
+import type { ReactNode } from 'react';
 import satori, { type SatoriOptions } from 'satori';
 import { html } from 'satori-html';
 
@@ -148,9 +149,7 @@ export async function GET(context: APIContext) {
     const html = ['common'].includes(slug)
         ? commonMarkup()
         : markup(title, publishedAt, minutesRead);
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-nocheck
-    const svg = await satori(html, ogOptions);
+    const svg = await satori(html as ReactNode, ogOptions);
     const png = new Resvg(svg).render().asPng();
     return new Response(png, {
         headers: {
