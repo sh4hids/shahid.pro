@@ -1,13 +1,20 @@
 ---
+import {
+    Envelope,
+    FacebookLogo,
+    GithubLogo,
+    LinkedinLogo,
+    TwitterLogo,
+} from '@phosphor-icons/react';
+
 import PageHeader from '@/components/PageHeader.astro';
 import Text from '@/components/Text.astro';
-import Timer from '@/components/Timer.tsx';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 ---
 
 <BaseLayout meta={{ title: 'Contact' }}>
     <PageHeader
-        title="About"
+        title="Contact"
         breadcrumbItems={[
             {
                 url: '/',
@@ -21,53 +28,49 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
         ]}
     />
     <div class="mx-auto max-w-3xl pb-16 pt-6">
+        <Text variant="h4">Email</Text>
         <Text>
-            I am a fullstack JavaScript Developer from Dhaka, Bangladesh (🇧🇩). I
-            love to work with Node, React, MySQL, MongoDB and all other related
-            technologies. When I am not coding, I like to read books, do
-            gardening and spend time with my family and friends.
+            <Envelope className="inline h-4 w-4" />
+            <a href="mailto:hello@shahid.pro">hello@shahid.pro</a>
         </Text>
-        <Text variant="h4">Childhood & Education</Text>
-        <Text>
-            I was born in a small town called Feni in Bangladesh. I grew up and
-            completed my early education there. After that, I moved to Dhaka for
-            higher education. I completed my Bachelor of Science in Computer
-            Science and Engineering from BRAC University.
-        </Text>
-        <Text variant="h4">Work Experience</Text>
-        <Timer client:load />
-        <Text>
-            I started working part-time during the last year of my graduation
-            (in 2017). I worked as UI/UX designer on my first job (which helps
-            me build up my basic UI/UX knowledge). Then I worked as a JavaScript
-            developer for a short time in e small startup and developed a
-            desktop app using Electron.
-        </Text>
-        <Text>
-            I started working full-time after completing my graduation (from
-            January 1, 2018). Since then, I have worked for several companies in
-            different fields in different positions. So far, I have worked on
-            social networking platforms for businesses, freelancing platforms,
-            and lead generation tools.
-        </Text>
-        <Text variant="h4">Technical Experties</Text>
-        <Text>
-            I have been writing JavaScript for about six and a half years. I
-            have written API services with Express, Koa, MongoDB, MySQL, and
-            DynamoDB. For client apps, I used React, Redux, After.js, Next.js,
-            Gatsby, Styled Components, MaterialUI, etc.
-        </Text>
-        <Text>
-            I also worked on AWS infrastructure, especially with Elastic
-            Beanstalk, Lambda, API Gateway, SQS, DynamoDB, Cloudwatch,
-            Codebuild.
-        </Text>
-        <Text variant="h4">Hobbies & Other Activities</Text>
-        <Text>
-            I like to spend my free time with my family (that's why my future
-            goal is to join a fully remote team). My favorite hobby is
-            gardening, and I also like to keep pets. I have a rooftop garden.
-            Every day I spend some time in the morning and evening in my garden.
-        </Text>
+        <Text variant="h4">Social Media Links</Text>
+        <ul class="pt-4 text-base *:pb-2 last:*:pb-0">
+            <li>
+                <GithubLogo className="inline h-4 w-4" />
+                <a
+                    class="text-textColor"
+                    href="https://github.com/sh4hids"
+                    target="_blank"
+                    rel="noopener noreferrer">github.com/sh4hids</a
+                >
+            </li>
+            <li>
+                <TwitterLogo className="inline h-4 w-4" />
+                <a
+                    class="text-textColor"
+                    href="https://twitter.com/sh4hids"
+                    target="_blank"
+                    rel="noopener noreferrer">twitter.com/sh4hids</a
+                >
+            </li>
+            <li>
+                <FacebookLogo className="inline h-4 w-4" />
+                <a
+                    class="text-textColor"
+                    href="https://fb.com/sh4hids"
+                    target="_blank"
+                    rel="noopener noreferrer">facebook.com/sh4hids</a
+                >
+            </li>
+            <li>
+                <LinkedinLogo className="inline h-4 w-4" />
+                <a
+                    class="text-textColor"
+                    href="https://www.linkedin.com/in/sh4hids/"
+                    target="_blank"
+                    rel="noopener noreferrer">linkedin.com/in/sh4hids</a
+                >
+            </li>
+        </ul>
     </div>
 </BaseLayout>
