@@ -3,6 +3,7 @@ import { Calendar, Clock } from '@phosphor-icons/react';
 import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
 import { format } from 'date-fns';
 
+import Comment from '@/components/Comment.astro';
 import PageHeader from '@/components/PageHeader.astro';
 import { getAllPosts } from '@/data/posts';
 import BaseLayout from '@/layouts/BaseLayout.astro';
@@ -60,6 +61,9 @@ const socialImage = `/og-image/${entry.slug}.png`;
       prose-a:text-fg-1"
         >
             <Content />
+        </section>
+        <section>
+            <Comment />
         </section>
     </div>
 </BaseLayout>

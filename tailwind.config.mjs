@@ -21,6 +21,9 @@ export default {
             typography: () => ({
                 DEFAULT: {
                     css: {
+                        li: {
+                            color: 'rgb(var(--theme-fg-1))',
+                        },
                         code: {
                             color: 'rgb(var(--theme-fg-1))',
                         },
