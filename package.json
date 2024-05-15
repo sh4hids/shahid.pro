@@ -9,6 +9,7 @@
         "preview": "astro preview",
         "astro": "astro",
         "create:post": "node scripts/createPost.mjs",
+        "create:project": "node scripts/createProject.mjs",
         "check:lint": "eslint --ignore-path .gitignore .",
         "lint": "eslint --ignore-path .gitignore --fix .",
         "check:format": "prettier --list-different  \"**/*.{js,jsx,ts,tsx,md,mdx,astro}\"",
