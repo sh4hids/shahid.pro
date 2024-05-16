@@ -1,6 +1,6 @@
 ---
 title: 'How To Generate API Key And Secret To Protect API'
-slug: '2024/05/07/how-to-generate-api-key-and-secret-to-protect-api'
+slug: '2021/09/22/how-to-generate-api-key-and-secret-to-protect-api'
 isPublished: true
 publishedAt: '2021-09-22T03:45:29.958Z'
 tags:
