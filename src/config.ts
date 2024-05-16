@@ -24,7 +24,8 @@ export const siteConfig: SiteConfig = {
     // Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
     title: 'Shahidul Islam Majumder',
     // Meta property used as the default description meta property
-    description: 'A fullstack software engineer from Feni, Bangladesh',
+    description:
+        'Portfolio website of Shahidul Islam Majumder, a full stack software engineer from Feni, Bangladesh.',
     // HTML lang property, found in src/layouts/Base.astro L:18
     lang: 'en',
     // Meta property, found in src/components/BaseHead.astro L:42

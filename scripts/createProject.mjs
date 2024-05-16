@@ -1,8 +1,6 @@
 import chalk from 'chalk';
-import { format } from 'date-fns';
 import { writeFileSync } from 'fs';
 import inquirer from 'inquirer';
-import { stringify } from 'json-to-pretty-yaml';
 import path from 'path';
 import { format as _format } from 'prettier';
 import { titleCase } from 'title-case';
