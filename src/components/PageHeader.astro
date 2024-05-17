@@ -11,7 +11,7 @@ interface Props {
 const { title, breadcrumbItems } = Astro.props;
 ---
 
-<div class="border-b bg-surface-1 py-12">
+<div class="border-b bg-surface-1 px-4 py-12 lg:px-0">
     <div class="mx-auto max-w-3xl">
         <Breadcrumb items={breadcrumbItems} />
         <Text variant="h2">{title}</Text>

@@ -20,7 +20,7 @@ const { page } = Astro.props;
 
 <BaseLayout meta={{ title: `Blog (Page #${page.currentPage})` }}>
     <div class="mx-auto max-w-3xl">
-        <GridSection title="Recent Posts">
+        <GridSection title={`Blog (Page #${page.currentPage})`}>
             <PostGrid posts={page.data} />
             <div class="pt-6 text-center">
                 <LinkButton
