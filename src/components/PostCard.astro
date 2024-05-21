@@ -14,7 +14,7 @@ const { remarkPluginFrontmatter } = await post.render();
 ---
 
 <div class="rounded-md border bg-surface-1 p-4 md:p-6">
-    <Text class="pt-0 md:pt-0" variant="h5">
+    <Text class="pt-0 md:pt-0" variant="h4">
         <a href={`/blog/${post.slug}`} class="text-fg-0 no-underline">
             {post.data.title}
         </a>
@@ -31,8 +31,8 @@ const { remarkPluginFrontmatter } = await post.render();
     </div>
     <Text>
         {remarkPluginFrontmatter.excerpt}
-        <a href={`/blog/${post.slug}`} class="no-underline">
-            {`read more `}<ArrowRight className="inline-block" />
+        <a href={`/blog/${post.slug}`}>
+            {`read the post `}<ArrowRight className="inline-block" />
         </a>
     </Text>
 </div>
