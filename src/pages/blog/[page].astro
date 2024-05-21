@@ -19,10 +19,10 @@ const { page } = Astro.props;
 ---
 
 <BaseLayout meta={{ title: `Blog (Page #${page.currentPage})` }}>
-    <div class="mx-auto max-w-3xl">
+    <div class="mx-auto px-4 md:max-w-2xl lg:max-w-3xl">
         <GridSection title={`Blog (Page #${page.currentPage})`}>
             <PostGrid posts={page.data} />
-            <div class="pt-6 text-center">
+            <div class="pt-4 text-center md:pt-6">
                 <LinkButton
                     disabled={!page.url.prev}
                     url={page.currentPage === 2 ? '/blog' : `${page.url.prev}`}

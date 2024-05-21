@@ -13,13 +13,13 @@ const { post } = Astro.props;
 const { remarkPluginFrontmatter } = await post.render();
 ---
 
-<div class="rounded-md border bg-surface-1 p-6">
-    <Text class="pt-0" variant="h5">
+<div class="rounded-md border bg-surface-1 p-4 md:p-6">
+    <Text class="pt-0 md:pt-0" variant="h5">
         <a href={`/blog/${post.slug}`} class="text-fg-0 no-underline">
             {post.data.title}
         </a>
     </Text>
-    <div class="flex gap-6 pt-4 text-fg-2">
+    <div class="flex flex-col gap-2 pt-4 text-fg-2 md:flex-row md:gap-6">
         <div class="flex items-center gap-2">
             <Calendar className="h-4 w-4" />
             {format(post.data.publishedAt, 'MMMM dd, yyyy')}

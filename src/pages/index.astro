@@ -13,13 +13,13 @@ const sortedPosts = sortPostByDate(posts);
 ---
 
 <BaseLayout meta={{ title: 'Home' }}>
-    <div class="mx-auto max-w-3xl px-4 lg:px-0">
+    <div class="mx-auto px-4 md:max-w-2xl lg:max-w-3xl lg:px-0">
         <HeroSection />
         <GridSection title="Projects">
             <ProjectGrid projects={projects.slice(0, 4)} />
             {
                 projects.length > 4 && (
-                    <div class="pt-6 text-center">
+                    <div class="pt-4 text-center md:pt-6">
                         <LinkButton url="/projects" label="View all projects" />
                     </div>
                 )

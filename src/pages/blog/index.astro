@@ -11,10 +11,10 @@ const sortedPosts = sortPostByDate(posts);
 ---
 
 <BaseLayout meta={{ title: 'Blog (Page #1)' }}>
-    <div class="mx-auto max-w-3xl">
+    <div class="mx-auto px-4 md:max-w-2xl lg:max-w-3xl">
         <GridSection title="Blog (Page #1)">
             <PostGrid posts={sortedPosts.slice(0, PAGE_SIZE)} />
-            <div class="pt-6 text-center">
+            <div class="pt-4 text-center md:pt-6">
                 <LinkButton disabled={true} url="/blog" label="Previous page" />
                 <LinkButton
                     disabled={sortedPosts.length <= PAGE_SIZE}

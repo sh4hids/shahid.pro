@@ -35,4 +35,4 @@ export const siteConfig: SiteConfig = {
     },
 };
 
-export const PAGE_SIZE = 10;
+export const PAGE_SIZE = 2;

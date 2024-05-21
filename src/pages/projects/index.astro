@@ -8,7 +8,7 @@ const projects = await getAllProjects();
 ---
 
 <BaseLayout meta={{ title: 'All Projects' }}>
-    <div class="mx-auto my-8 max-w-3xl">
+    <div class="mx-auto my-8 px-4 md:max-w-2xl lg:max-w-3xl">
         <GridSection title="All Projects">
             <ProjectGrid projects={projects} />
         </GridSection>

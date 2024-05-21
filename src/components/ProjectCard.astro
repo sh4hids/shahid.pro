@@ -12,12 +12,14 @@ interface Props {
 const { project } = Astro.props;
 ---
 
-<div class="rounded-md border bg-surface-1 p-6">
-    <Text class="pt-0" variant="h5">
+<div class="rounded-md border bg-surface-1 p-4 md:p-6">
+    <Text class="pt-0 md:pt-0" variant="h5">
         {project.data.name}
     </Text>
     <Text>{project.data.description}</Text>
-    <div class="flex items-center justify-between pt-4">
+    <div
+        class="flex flex-col justify-between gap-4 pt-4 lg:flex-row lg:items-center lg:gap-0"
+    >
         {
             project.data.github && (
                 <div>
