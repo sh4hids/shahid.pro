@@ -1,0 +1,105 @@
+---
+import {
+    AppWindow,
+    Browsers,
+    DesktopTower,
+    Kanban,
+    Layout,
+    TerminalWindow,
+    WebhooksLogo,
+} from '@phosphor-icons/react';
+
+import List from '@/components/List.astro';
+import PageHeader from '@/components/PageHeader.astro';
+import Text from '@/components/Text.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout meta={{ title: 'Uses' }}>
+    <PageHeader
+        title="Uses"
+        breadcrumbItems={[
+            {
+                url: '/',
+                label: 'Home',
+            },
+            {
+                url: '/uses',
+                label: 'Uses',
+                isCurrentPage: true,
+            },
+        ]}
+    />
+    <div class="mx-auto px-4 pb-16 pt-6 md:max-w-2xl lg:max-w-3xl">
+        <Text>
+            Following are some of the tools I regularly use as a developer. As
+            technology moves very fast, some of these might get replaced by some
+            other new shiny ones. I'll try o keep this list updated.
+        </Text>
+        <Text variant="h3">
+            <DesktopTower className="inline-block" />
+            Workstation
+        </Text>
+        <List>
+            <li>MacBook Pro (14-inch, 2021)</li>
+        </List>
+        <Text variant="h3">
+            <TerminalWindow className="inline-block" />
+            Editors, Shell & Fonts
+        </Text>
+        <List>
+            <li>Wezterm (Theme: Horizon)</li>
+            <li>Neovim (LazyVim, Theme: Gruvbox)</li>
+            <li>VS Code (Theme: Horizon)</li>
+            <li>Zsh (with oh-my-zsh)</li>
+            <li>Tmux</li>
+            <li>Font: Fira Code</li>
+        </List>
+        <Text variant="h3">
+            <Kanban className="inline-block" />
+            Personal Management
+        </Text>
+        <List>
+            <li>Google Keep (for shopping lists, short notes)</li>
+            <li>Obsidian (for todos, notes, writings and cheetsheet)</li>
+            <li>Syncthing (to sync files between devices in local network)</li>
+            <li>Joplin</li>
+        </List>
+        <Text variant="h3">
+            <Browsers className="inline-block" />
+            Browsers
+        </Text>
+        <List>
+            <li>Brave (my goto browser)</li>
+            <li>Arc (still testing)</li>
+            <li>Chrome (use it only for testing)</li>
+        </List>
+        <Text variant="h3">
+            <WebhooksLogo className="inline-block" />
+            API Debugging
+        </Text>
+        <List>
+            <li>Bruno</li>
+            <li>Postman</li>
+        </List>
+        <Text variant="h3">
+            <Layout className="inline-block" />
+            Designing
+        </Text>
+        <List>
+            <li>Figma (for UI/UX design)</li>
+            <li>Gimp (for photo manipulation)</li>
+            <li>Inkscape (for vector design)</li>
+        </List>
+        <Text variant="h3">
+            <AppWindow className="inline-block" />
+            Misc
+        </Text>
+        <List>
+            <li>yabai (tiling window manager)</li>
+            <li>Bitwarden (password manager)</li>
+            <li>Authenticator (2FA)</li>
+            <li>Foxit Reader (PDF reader)</li>
+        </List>
+    </div>
+</BaseLayout>

@@ -1,0 +1,69 @@
+---
+import { Image } from 'astro:assets';
+
+import HeaderLink from '@/components/HeaderLink.astro';
+import MobileNavbar from '@/components/MobileNavbar.astro';
+import Search from '@/components/Search.astro';
+import ToggleTheme from '@/components/ThemeToggle.astro';
+import { isActivePath } from '@/utils';
+
+import logo from '../assets/images/logo-base.svg';
+
+const currentPath = Astro.url.pathname;
+---
+
+<header
+    class="supports-backdrop-blur:bg-surface-1/80 sticky top-0 z-40 w-full border-b bg-surface-0/80 py-4 backdrop-blur lg:py-8"
+>
+    <div
+        class="mx-auto flex justify-between px-4 md:max-w-2xl lg:max-w-4xl lg:px-0"
+    >
+        <a
+            href={`/`}
+            class="hover:text-accent flex items-center text-lg text-fg-0 no-underline"
+        >
+            <Image src={logo} alt="logo" class="size-6" />hahid</a
+        >
+        <nav class="hidden lg:flex">
+            <HeaderLink href={`/`} isActive={isActivePath(currentPath, '')}>
+                Home
+            </HeaderLink>
+            <HeaderLink
+                href={`/about`}
+                isActive={isActivePath(currentPath, 'about')}
+            >
+                About
+            </HeaderLink>
+            <HeaderLink
+                href={`/projects`}
+                isActive={isActivePath(currentPath, 'projects')}
+            >
+                Projects
+            </HeaderLink>
+            <HeaderLink
+                href={`/blog`}
+                isActive={isActivePath(currentPath, 'blog')}
+            >
+                Blog
+            </HeaderLink>
+            <HeaderLink
+                href={`/uses`}
+                isActive={isActivePath(currentPath, 'uses')}
+            >
+                Uses
+            </HeaderLink>
+            <HeaderLink
+                href={`/contact`}
+                isActive={isActivePath(currentPath, 'contact')}
+                isLastItem={true}
+            >
+                Contact
+            </HeaderLink>
+        </nav>
+        <div class="flex items-center *:pr-4 last:*:pr-0">
+            <Search />
+            <ToggleTheme />
+            <MobileNavbar />
+        </div>
+    </div>
+</header>

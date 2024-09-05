@@ -1,0 +1,99 @@
+---
+import {
+    Coffee,
+    Copyright,
+    FacebookLogo,
+    GithubLogo,
+    LinkedinLogo,
+    TwitterLogo,
+} from '@phosphor-icons/react';
+
+import FooterYear from '@/components/FooterYear';
+import Text from '@/components/Text.astro';
+import { BrandNames, replaceAll } from '@/utils/string-helper';
+---
+
+<footer
+    class="supports-backdrop-blur:bg-nutral-1/95 bg-nutral-0/90 mt-6 w-full border-t py-6 md:py-16"
+>
+    <div
+        class="mx-auto grid grid-cols-12 gap-4 px-4 md:max-w-2xl md:gap-6 lg:max-w-4xl lg:px-0"
+    >
+        <div class="col-span-12 md:col-span-7">
+            <Text class="pt-4 text-lg font-bold leading-snug text-fg-1 md:pt-6">
+                Word of Thanks
+            </Text>
+            <Text
+                >Hello there, thank you very much for visiting my site. If you
+                like anything on this site and want to know how it’s made, you
+                can check the source code on <a
+                    href="https://github.com/sh4hids"
+                    >{replaceAll('github', BrandNames)}</a
+                >.</Text
+            >
+            <Text
+                >Like anything in my site and want to buy me a coffee? please
+                follow the link 👇</Text
+            >
+            <a
+                href="https://www.buymeacoffee.com/sh4hids"
+                target="_blank"
+                rel="noreferrer"
+                class="mt-4 inline-block w-auto rounded-md bg-primary px-4 py-2 no-underline *:text-zinc-50 md:mt-6"
+            >
+                <Coffee className="relative top-[-2px] mr-1 inline h-4 w-4" />
+                <Text class="inline pt-0">Buy me a coffee</Text>
+            </a>
+        </div>
+        <div class="col-span-5 hidden md:block">
+            <Text class="pt-4 text-lg font-bold leading-snug text-fg-1 md:pt-6">
+                Social Links
+            </Text>
+            <ul class="pt-4 text-base *:pb-2 last:*:pb-0">
+                <li>
+                    <GithubLogo className="inline h-4 w-4" />
+                    <a
+                        class="text-textColor"
+                        href="https://github.com/sh4hids"
+                        target="_blank"
+                        rel="noopener noreferrer">github.com/sh4hids</a
+                    >
+                </li>
+                <li>
+                    <TwitterLogo className="inline h-4 w-4" />
+                    <a
+                        class="text-textColor"
+                        href="https://twitter.com/sh4hids"
+                        target="_blank"
+                        rel="noopener noreferrer">twitter.com/sh4hids</a
+                    >
+                </li>
+                <li>
+                    <FacebookLogo className="inline h-4 w-4" />
+                    <a
+                        class="text-textColor"
+                        href="https://fb.com/sh4hids"
+                        target="_blank"
+                        rel="noopener noreferrer">facebook.com/sh4hids</a
+                    >
+                </li>
+                <li>
+                    <LinkedinLogo className="inline h-4 w-4" />
+                    <a
+                        class="text-textColor"
+                        href="https://www.linkedin.com/in/sh4hids/"
+                        target="_blank"
+                        rel="noopener noreferrer">linkedin.com/in/sh4hids</a
+                    >
+                </li>
+            </ul>
+        </div>
+        <div class="col-span-12 md:pt-4">
+            <Text class="text-center md:text-left">
+                <Copyright className="relative top-[-2px] inline h-4 w-4" /> 2018
+                - <FooterYear client:visible /> Shahidul Islam Majumder. All Rights
+                Reserved.
+            </Text>
+        </div>
+    </div>
+</footer>

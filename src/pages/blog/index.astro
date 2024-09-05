@@ -1,0 +1,27 @@
+---
+import GridSection from '@/components/GridSection.astro';
+import LinkButton from '@/components/LinkButton.astro';
+import PostGrid from '@/components/PostGrid.astro';
+import { PAGE_SIZE } from '@/config';
+import { getAllPosts, sortPostByDate } from '@/data/posts';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const posts = await getAllPosts();
+const sortedPosts = sortPostByDate(posts);
+---
+
+<BaseLayout meta={{ title: 'Blog (Page #1)' }}>
+    <div class="mx-auto px-4 md:max-w-2xl lg:max-w-3xl">
+        <GridSection title="Blog (Page #1)">
+            <PostGrid posts={sortedPosts.slice(0, PAGE_SIZE)} />
+            <div class="pt-4 text-center md:pt-6">
+                <LinkButton disabled={true} url="/blog" label="Previous page" />
+                <LinkButton
+                    disabled={sortedPosts.length <= PAGE_SIZE}
+                    url="/blog/2"
+                    label="Next page"
+                />
+            </div>
+        </GridSection>
+    </div>
+</BaseLayout>

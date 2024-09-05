@@ -1,0 +1,35 @@
+{
+    "name": "Shahidul Islam Majumder",
+    "short_name": "sh4hids",
+    "description": "Portfolio site of Shahidul Islam Majumder",
+    "icons": [
+        {
+            "src": "/192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "/maskable_icon.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/hd_hi.ico",
+            "sizes": "72x72 96x96 128x128 256x256"
+        },
+        {
+            "src": "/hd_hi.svg",
+            "sizes": "any"
+        }
+    ],
+    "start_url": "/",
+    "background_color": "#18181b",
+    "theme_color": "#4F46E5",
+    "display": "standalone"
+}

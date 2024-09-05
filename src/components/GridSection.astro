@@ -1,0 +1,14 @@
+---
+import Text from '@/components/Text.astro';
+
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<section class="pb-4 md:pb-16">
+    <Text class="pb-4 text-center md:pb-6" variant="h3">{title}</Text>
+    <slot />
+</section>
