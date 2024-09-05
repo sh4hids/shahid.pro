@@ -1,0 +1,16 @@
+---
+interface Props {
+    href: string;
+    isActive?: boolean;
+    isLastItem?: boolean;
+}
+
+const { href, isActive, isLastItem } = Astro.props;
+---
+
+<a
+    href={href}
+    class={`block border-b lg:border-none text-center lg:text-left outline-none lg:inline-block text-lg no-underline py-4 lg:py-0 ${isActive ? 'text-accent-0' : 'text-fg-0'} ${isLastItem ? 'border-none' : 'lg:mr-6'}`}
+>
+    <slot />
+</a>

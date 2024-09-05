@@ -1,0 +1,39 @@
+---
+import PageHeader from '@/components/PageHeader.astro';
+import PlantImage from '@/components/PlantImage.astro';
+import { getAllPlants } from '@/data';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const plants = await getAllPlants();
+---
+
+<BaseLayout meta={{ title: 'Gallery' }}>
+    <PageHeader
+        title="Gallery"
+        breadcrumbItems={[
+            {
+                url: '/',
+                label: 'Home',
+            },
+            {
+                url: '/gallery',
+                label: 'Gallery',
+                isCurrentPage: true,
+            },
+        ]}
+    />
+    <div class="mx-auto max-w-3xl px-4 pb-16 pt-6 lg:px-0">
+        <div
+            class="columns-1 gap-4 sm:columns-3 md:gap-6 [&>img:not(:first-child)]:mt-4 sm:[&>img:not(:first-child)]:mt-6"
+        >
+            {
+                plants.map((plant) => (
+                    <PlantImage
+                        fileName={`/src/assets/images/${plant.data.fileName}`}
+                        name={plant.data.name}
+                    />
+                ))
+            }
+        </div>
+    </div>
+</BaseLayout>

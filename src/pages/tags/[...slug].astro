@@ -1,0 +1,45 @@
+---
+import GridSection from '@/components/GridSection.astro';
+import PostGrid from '@/components/PostGrid.astro';
+import {
+    getAllPosts,
+    getAllPostsByTag,
+    getUniqueTags,
+    sortPostByDate,
+} from '@/data/posts';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { BrandNames, generateSlug, replaceAll } from '@/utils/string-helper';
+
+export async function getStaticPaths() {
+    const allPosts = await getAllPosts();
+    const tags = getUniqueTags(allPosts);
+
+    return tags.map((tag) => ({
+        params: {
+            slug: generateSlug(tag),
+        },
+    }));
+}
+
+const { slug } = Astro.params;
+
+if (!slug) {
+    return Astro.redirect('/404');
+}
+
+const allPosts = await getAllPosts();
+const tags = getUniqueTags(allPosts);
+const currentTag = tags.find((tag) => generateSlug(tag) === slug) || '';
+const posts = getAllPostsByTag(allPosts, generateSlug(currentTag));
+const sortedPosts = sortPostByDate(posts);
+---
+
+<BaseLayout meta={{ title: 'Blog (Page #1)' }}>
+    <div class="mx-auto px-4 md:max-w-2xl lg:max-w-3xl">
+        <GridSection
+            title={`Posts tagged "${replaceAll(currentTag, BrandNames)}"`}
+        >
+            <PostGrid posts={sortedPosts} />
+        </GridSection>
+    </div>
+</BaseLayout>

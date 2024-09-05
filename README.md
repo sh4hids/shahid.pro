@@ -31,12 +31,12 @@ Open the current directory in your favorite code editor and start hacking the ki
 
 ## Available commands
 
-- `npm start` or `npm run develop` - will run develop server
-- `npm run build` - will create production build
-- `npm run serve` - will run the production build
-- `npm run clean` - will clear cache and other build files
-- `npm run format` - will format code using prettier
+-   `npm start` or `npm run develop` - will run develop server
+-   `npm run build` - will create production build
+-   `npm run serve` - will run the production build
+-   `npm run clean` - will clear cache and other build files
+-   `npm run format` - will format code using prettier
 
 ## Related projects
 
-- [gatsby-theme-open-sourcerer](https://github.com/sh4hids/gatsby-theme-open-sourcerer)
+-   [gatsby-theme-open-sourcerer](https://github.com/sh4hids/gatsby-theme-open-sourcerer)

@@ -1,0 +1,69 @@
+---
+import GridSection from '@/components/GridSection.astro';
+import HeroSection from '@/components/HeroSection.astro';
+import LinkButton from '@/components/LinkButton.astro';
+import PlantImage from '@/components/PlantImage.astro';
+import PostGrid from '@/components/PostGrid.astro';
+import ProjectGrid from '@/components/ProjectGrid.astro';
+import {
+    getAllPlants,
+    getAllPosts,
+    getAllProjects,
+    sortPostByDate,
+} from '@/data';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const projects = await getAllProjects();
+const posts = await getAllPosts();
+const plants = await getAllPlants();
+const sortedPosts = sortPostByDate(posts);
+---
+
+<BaseLayout meta={{ title: 'Home' }}>
+    <div class="mx-auto px-4 md:max-w-2xl lg:max-w-3xl lg:px-0">
+        <HeroSection />
+        <GridSection title="Projects">
+            <ProjectGrid projects={projects.slice(0, 4)} />
+            {
+                projects.length > 4 && (
+                    <div class="pt-4 text-center md:pt-6">
+                        <LinkButton url="/projects" label="View all projects" />
+                    </div>
+                )
+            }
+        </GridSection>
+        <GridSection title="Recent Posts">
+            <PostGrid posts={sortedPosts.slice(0, 4)} />
+            {
+                sortedPosts.length > 4 && (
+                    <div class="pt-6 text-center">
+                        <LinkButton url="/blog" label="View all posts" />
+                    </div>
+                )
+            }
+        </GridSection>
+        <GridSection title="Plants & Flowers">
+            <div
+                class="columns-3 gap-4 sm:gap-6 [&>img:not(:first-child)]:mt-4 sm:[&>img:not(:first-child)]:mt-6"
+            >
+                {
+                    plants
+                        .slice(0, 6)
+                        .map((plant) => (
+                            <PlantImage
+                                fileName={`/src/assets/images/${plant.data.fileName}`}
+                                name={plant.data.name}
+                            />
+                        ))
+                }
+            </div>
+            {
+                plants.length > 6 && (
+                    <div class="pt-6 text-center">
+                        <LinkButton url="/gallery" label="View all photos" />
+                    </div>
+                )
+            }
+        </GridSection>
+    </div>
+</BaseLayout>
