@@ -1,0 +1,183 @@
+---
+import '@pagefind/default-ui/css/ui.css';
+
+import { MagnifyingGlass } from '@phosphor-icons/react';
+
+import Text from '@/components/Text.astro';
+---
+
+<site-search id="search" class="mx-auto">
+    <button
+        data-open-modal
+        disabled
+        class="flex items-center justify-center outline-none transition-all"
+    >
+        <MagnifyingGlass className="relative top-[2px] h-5 w-5" />
+        <span class="sr-only">Search</span>
+    </button>
+    <dialog
+        aria-label="search"
+        class="fixed inset-0 z-10 min-h-[50vh] w-full rounded outline-none backdrop:bg-surface-2 backdrop:bg-opacity-80 open:animate-fade-in md:max-w-2xl lg:max-w-3xl"
+    >
+        <div
+            class="flex items-center justify-between px-4 pt-4 md:px-6 md:pt-6"
+        >
+            <Text class="p-0 font-bold">Search</Text>
+            <button
+                data-close-modal
+                class="rounded border bg-surface-1 px-2 py-1 text-xs outline-none"
+            >
+                Esc
+            </button>
+        </div>
+        <div class="dialog-frame flex flex-col gap-4 p-4 md:p-6">
+            {
+                import.meta.env.DEV ? (
+                    <div class="mx-auto text-center">
+                        <p>
+                            Search is only available in production builds.{' '}
+                            <br />
+                            Try building and previewing the site to test it out
+                            locally.
+                        </p>
+                    </div>
+                ) : (
+                    <div class="search-container">
+                        <div id="blog__search" />
+                    </div>
+                )
+            }
+        </div>
+    </dialog>
+</site-search>
+
+<script>
+    class SiteSearch extends HTMLElement {
+        constructor() {
+            super();
+            const openBtn = this.querySelector<HTMLButtonElement>(
+                'button[data-open-modal]'
+            )!;
+            const closeBtn = this.querySelector<HTMLButtonElement>(
+                'button[data-close-modal]'
+            )!;
+            const dialog = this.querySelector('dialog')!;
+            const dialogFrame = this.querySelector('.dialog-frame')!;
+
+            const onWindowClick = (event: MouseEvent) => {
+                // check if it's a link
+                const isLink = 'href' in (event.target || {});
+                // make sure the click is either a link or outside of the dialog
+                if (
+                    isLink ||
+                    (document.body.contains(event.target as Node) &&
+                        !dialogFrame.contains(event.target as Node))
+                )
+                    closeModal();
+            };
+
+            const openModal = (event?: MouseEvent) => {
+                dialog.showModal();
+                this.querySelector('input')?.focus();
+                event?.stopPropagation();
+                window.addEventListener('click', onWindowClick);
+            };
+
+            const closeModal = () => {
+                if (dialog.open) {
+                    dialog.close();
+                    window.removeEventListener('click', onWindowClick);
+                }
+            };
+
+            openBtn.addEventListener('click', openModal);
+            openBtn.disabled = false;
+            closeBtn.addEventListener('click', closeModal);
+
+            // Listen for `/` keyboard shortcut
+            window.addEventListener('keydown', (e) => {
+                if (e.key === '/' && !dialog.open) {
+                    openModal();
+                    e.preventDefault();
+                }
+            });
+
+            function createUI() {
+                if (import.meta.env.DEV) return;
+
+                const onIdle =
+                    window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
+
+                onIdle(async () => {
+                    const { PagefindUI } = await import('@pagefind/default-ui');
+                    new PagefindUI({
+                        element: '#blog__search',
+                        baseUrl: import.meta.env.BASE_URL,
+                        bundlePath:
+                            import.meta.env.BASE_URL.replace(/\/$/, '') +
+                            '/pagefind/',
+                        showImages: false,
+                        showSubResults: true,
+                    });
+                });
+            }
+
+            if (document.readyState !== 'loading') {
+                createUI();
+            } else {
+                window.addEventListener('DOMContentLoaded', () => {
+                    createUI();
+                });
+            }
+
+            // close modal and clear input on view-transtion
+            document.addEventListener('astro:after-swap', () => {
+                // clear the search field
+                (
+                    document.querySelector(
+                        '.pagefind-ui__search-clear'
+                    ) as HTMLButtonElement
+                )?.click();
+                // close the modal & remove event listener on body
+                closeModal();
+            });
+        }
+    }
+
+    customElements.define('site-search', SiteSearch);
+</script>
+
+<style is:global>
+    #blog__search .pagefind-ui__search-input {
+        outline: none;
+    }
+
+    #blog__search .pagefind-ui__search-clear {
+        /* class="rounded border bg-surface-1 px-2 py-1 text-xs outline-none"
+ */
+        font-size: theme('fontSize.xs');
+        padding: 0.25rem 0.5rem;
+        background: theme('colors.surface-1');
+        height: auto;
+        top: 13px;
+        right: 16px;
+        border-radius: theme('borderRadius.DEFAULT');
+    }
+
+    #blog__search .pagefind-ui__result {
+        color: theme('colors.fg-1');
+    }
+
+    #blog__search .pagefind-ui__result-link {
+        color: theme('colors.accent-0');
+    }
+
+    #blog__search {
+        --pagefind-ui-font: theme('fontFamily.mono');
+        --pagefind-ui-text: theme('colors.fg-0');
+        --pagefind-ui-background: theme('colors.surface-0');
+        --pagefind-ui-primary: theme('colors.accent-0');
+        --pagefind-ui-border: theme('colors.fg-2');
+        --pagefind-ui-border-width: 1px;
+    }
+</style>

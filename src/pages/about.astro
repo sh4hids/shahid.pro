@@ -1,0 +1,74 @@
+---
+import PageHeader from '@/components/PageHeader.astro';
+import Text from '@/components/Text.astro';
+import Timer from '@/components/Timer.tsx';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout meta={{ title: 'About' }}>
+    <PageHeader
+        title="About"
+        breadcrumbItems={[
+            {
+                url: '/',
+                label: 'Home',
+            },
+            {
+                url: '/about',
+                label: 'About',
+                isCurrentPage: true,
+            },
+        ]}
+    />
+    <div class="mx-auto max-w-3xl px-4 pb-16 pt-6 lg:px-0">
+        <Text>
+            I am a full-stack software engineer working remotely from Feni,
+            Bangladesh (🇧🇩). I love to work with JavaScript (TypeScript) and all
+            the related technologies. When not programming, I like to read
+            books, do gardening, and spend time with my family.
+        </Text>
+        <Text variant="h3">Childhood & Education</Text>
+        <Text>
+            I was born in a small town called Feni in Bangladesh. I grew up and
+            completed my early education there. After that, I moved to Dhaka for
+            higher education. I completed my Bachelor of Science in Computer
+            Science and Engineering from BRAC University.
+        </Text>
+        <Text variant="h3">Work Experience</Text>
+        <Timer client:load />
+        <Text>
+            I started working part-time during the last year of my graduation
+            (in 2017). I worked as a UI/UX designer on my first job (which helps
+            me build up my basic UI/UX knowledge). Then I worked as a JavaScript
+            developer for a short time in e small startup and developed a
+            desktop app using Electron.
+        </Text>
+        <Text>
+            I started working full-time after completing my graduation (from
+            January 1, 2018). Since then, I have worked for several companies in
+            different fields in different positions. So far, I have worked on
+            social networking platforms for businesses, freelancing platform,
+            lead generation tools, and AI based platform for traffic monitoring.
+        </Text>
+        <Text variant="h3">Technical Experties</Text>
+        <Text>
+            I have been writing JavaScript for about six and a half years. I
+            have written API services with Express, Koa, AWS Lambda, MongoDB,
+            MySQL, and DynamoDB. For client apps, I used React, Redux, After.js,
+            Next.js, Gatsby, Astro, Styled Components, MaterialUI, Tailwind CSS
+            etc.
+        </Text>
+        <Text>
+            I also worked on AWS infrastructure, especially with Elastic
+            Beanstalk, Lambda, API Gateway, SQS, DynamoDB, Cloudwatch,
+            Codebuild.
+        </Text>
+        <Text variant="h3">Hobbies & Other Activities</Text>
+        <Text>
+            I like to spend my free time with my family (<i
+                >that's why I joined a fully remote team</i
+            >). My favorite hobby is gardening, and I also like to keep pets. I
+            have a rooftop garden. Every day I spend some time in my garden.
+        </Text>
+    </div>
+</BaseLayout>

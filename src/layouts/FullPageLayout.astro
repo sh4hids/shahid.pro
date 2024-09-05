@@ -1,0 +1,37 @@
+---
+import Head from '@/components/Head.astro';
+import ThemeProvider from '@/components/ThemeProvider.astro';
+import { siteConfig, type SiteMeta } from '@/config';
+
+interface Props {
+    meta: SiteMeta;
+}
+
+const {
+    meta: {
+        title,
+        description = siteConfig.description,
+        ogImage,
+        createdAt,
+        updatedAt,
+    },
+} = Astro.props;
+---
+
+<html lang={siteConfig.lang}>
+    <head>
+        <Head
+            title={title}
+            description={description}
+            ogImage={ogImage}
+            createdAt={createdAt}
+            updatedAt={updatedAt}
+        />
+    </head>
+    <body>
+        <ThemeProvider />
+        <main id="main" class="font-mono">
+            <slot />
+        </main>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+---
+import HeroImage from '@/components/HeroImage.astro';
+import Text from '@/components/Text.astro';
+---
+
+<div class="grid grid-cols-12 items-center py-6 md:gap-6 md:py-16">
+    <div
+        class="col-span-12 flex h-full items-center justify-center py-4 md:hidden"
+    >
+        <div class="h-auto w-[72vw]">
+            <HeroImage />
+        </div>
+    </div>
+    <div class="col-span-12 md:col-span-9">
+        <Text variant="h2" class="text-2xl md:text-3xl">Hi, I am Shahid..</Text>
+        <Text>
+            I am a full-stack software engineer working remotely from Feni,
+            Bangladesh (🇧🇩). I love to work with JavaScript (TypeScript) and all
+            the related technologies. When not programming, I like to read
+            books, do gardening, and spend time with my family.
+        </Text>
+    </div>
+    <div class="hidden h-full items-center md:col-span-3 md:flex">
+        <HeroImage />
+    </div>
+</div>

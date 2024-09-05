@@ -1,0 +1,43 @@
+---
+import Footer from '@/components/Footer.astro';
+import Head from '@/components/Head.astro';
+import Header from '@/components/Header.astro';
+import ThemeProvider from '@/components/ThemeProvider.astro';
+import { siteConfig, type SiteMeta } from '@/config';
+
+interface Props {
+    meta: SiteMeta;
+}
+
+const {
+    meta: {
+        title,
+        description = siteConfig.description,
+        ogImage,
+        createdAt,
+        updatedAt,
+    },
+} = Astro.props;
+---
+
+<html lang={siteConfig.lang}>
+    <head>
+        <Head
+            title={title}
+            description={description}
+            ogImage={ogImage}
+            createdAt={createdAt}
+            updatedAt={updatedAt}
+        />
+        <!-- <ViewTransitions /> -->
+    </head>
+    <body>
+        <ThemeProvider />
+        <!-- <SkipLink /> -->
+        <Header />
+        <main id="main" class="font-mono">
+            <slot />
+        </main>
+        <Footer />
+    </body>
+</html>

@@ -1,0 +1,39 @@
+---
+import type { GetStaticPaths } from 'astro';
+
+import GridSection from '@/components/GridSection.astro';
+import LinkButton from '@/components/LinkButton.astro';
+import PostGrid from '@/components/PostGrid.astro';
+import { PAGE_SIZE } from '@/config';
+import { getAllPosts, sortPostByDate } from '@/data/posts';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+export const getStaticPaths = (async ({ paginate }) => {
+    const posts = await getAllPosts();
+    const sortedPosts = sortPostByDate(posts);
+
+    return paginate(sortedPosts, { pageSize: PAGE_SIZE });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+---
+
+<BaseLayout meta={{ title: `Blog (Page #${page.currentPage})` }}>
+    <div class="mx-auto px-4 md:max-w-2xl lg:max-w-3xl">
+        <GridSection title={`Blog (Page #${page.currentPage})`}>
+            <PostGrid posts={page.data} />
+            <div class="pt-4 text-center md:pt-6">
+                <LinkButton
+                    disabled={!page.url.prev}
+                    url={page.currentPage === 2 ? '/blog' : `${page.url.prev}`}
+                    label="Previous page"
+                />
+                <LinkButton
+                    disabled={!page.url.next}
+                    url={`${page.url.next}`}
+                    label="Next page"
+                />
+            </div>
+        </GridSection>
+    </div>
+</BaseLayout>

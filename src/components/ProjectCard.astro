@@ -1,0 +1,52 @@
+---
+import { ArrowRight } from '@phosphor-icons/react';
+import type { CollectionEntry } from 'astro:content';
+
+import GithubStargazer from '@/components/GitHubStargazer';
+import LinkButton from '@/components/LinkButton.astro';
+import Text from '@/components/Text.astro';
+
+interface Props {
+    project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+---
+
+<div
+    class="flex flex-col justify-between rounded-md border bg-surface-1 p-4 md:p-6"
+>
+    <Text class="pt-0 md:pt-0" variant="h4">
+        {project.data.name}
+    </Text>
+    <Text>{project.data.description}</Text>
+    <div class="flex justify-between gap-4 pt-4 lg:items-center lg:gap-0">
+        {
+            project.data.github && (
+                <div>
+                    <LinkButton
+                        label=""
+                        url={project.data.github}
+                        target="_blank"
+                    >
+                        <GithubStargazer
+                            repository={
+                                project.data.github?.split('github.com/')[1]
+                            }
+                            client:load
+                        />
+                    </LinkButton>
+                </div>
+            )
+        }
+        <div>
+            <LinkButton
+                label="View Project"
+                url={project.data.url}
+                target="_blank"
+            >
+                <ArrowRight className="relative top-[-1px] inline" />
+            </LinkButton>
+        </div>
+    </div>
+</div>

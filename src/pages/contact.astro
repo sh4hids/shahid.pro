@@ -1,0 +1,76 @@
+---
+import {
+    Envelope,
+    FacebookLogo,
+    GithubLogo,
+    LinkedinLogo,
+    TwitterLogo,
+} from '@phosphor-icons/react';
+
+import PageHeader from '@/components/PageHeader.astro';
+import Text from '@/components/Text.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout meta={{ title: 'Contact' }}>
+    <PageHeader
+        title="Contact"
+        breadcrumbItems={[
+            {
+                url: '/',
+                label: 'Home',
+            },
+            {
+                url: '/contact',
+                label: 'Contact',
+                isCurrentPage: true,
+            },
+        ]}
+    />
+    <div class="mx-auto px-4 pb-16 pt-6 md:max-w-2xl lg:max-w-3xl">
+        <Text variant="h3">Email</Text>
+        <Text>
+            <Envelope className="inline h-4 w-4" />
+            <a href="mailto:hello@shahid.pro">hello@shahid.pro</a>
+        </Text>
+        <Text variant="h3">Social Media Links</Text>
+        <ul class="pt-4 text-base *:pb-2 last:*:pb-0">
+            <li>
+                <GithubLogo className="inline h-4 w-4" />
+                <a
+                    class="text-textColor"
+                    href="https://github.com/sh4hids"
+                    target="_blank"
+                    rel="noopener noreferrer">github.com/sh4hids</a
+                >
+            </li>
+            <li>
+                <TwitterLogo className="inline h-4 w-4" />
+                <a
+                    class="text-textColor"
+                    href="https://twitter.com/sh4hids"
+                    target="_blank"
+                    rel="noopener noreferrer">twitter.com/sh4hids</a
+                >
+            </li>
+            <li>
+                <FacebookLogo className="inline h-4 w-4" />
+                <a
+                    class="text-textColor"
+                    href="https://fb.com/sh4hids"
+                    target="_blank"
+                    rel="noopener noreferrer">facebook.com/sh4hids</a
+                >
+            </li>
+            <li>
+                <LinkedinLogo className="inline h-4 w-4" />
+                <a
+                    class="text-textColor"
+                    href="https://www.linkedin.com/in/sh4hids/"
+                    target="_blank"
+                    rel="noopener noreferrer">linkedin.com/in/sh4hids</a
+                >
+            </li>
+        </ul>
+    </div>
+</BaseLayout>

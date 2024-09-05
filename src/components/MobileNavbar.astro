@@ -1,0 +1,125 @@
+---
+import { List } from '@phosphor-icons/react';
+
+import HeaderLink from '@/components/HeaderLink.astro';
+import { isActivePath } from '@/utils';
+
+const currentPath = Astro.url.pathname;
+---
+
+<mobile-navbar class="lg:hidden">
+    <List className="relative top-0.5 ml-1 h-5 w-5 " data-open-menu />
+    <dialog
+        data-mobile-navbar
+        aria-label="mobile-menu"
+        class="fixed inset-0 z-10 w-full rounded outline-none backdrop:bg-surface-2 backdrop:bg-opacity-80 open:animate-fade-in"
+    >
+        <nav class="menu-dialog-frame block">
+            <button
+                data-close-menu
+                class="absolute right-5 top-5 rounded border bg-surface-1 px-2 py-1 text-xs outline-none"
+            >
+                Esc
+            </button>
+            <HeaderLink href={`/`} isActive={isActivePath(currentPath, '')}>
+                Home
+            </HeaderLink>
+            <HeaderLink
+                href={`/about`}
+                isActive={isActivePath(currentPath, 'about')}
+            >
+                About
+            </HeaderLink>
+            <HeaderLink
+                href={`/projects`}
+                isActive={isActivePath(currentPath, 'projects')}
+            >
+                Projects
+            </HeaderLink>
+            <HeaderLink
+                href={`/blog`}
+                isActive={isActivePath(currentPath, 'blog')}
+            >
+                Blog
+            </HeaderLink>
+            <HeaderLink
+                href={`/uses`}
+                isActive={isActivePath(currentPath, 'uses')}
+            >
+                Uses
+            </HeaderLink>
+            <HeaderLink
+                href={`/contact`}
+                isActive={isActivePath(currentPath, 'contact')}
+                isLastItem={true}
+            >
+                Contact
+            </HeaderLink>
+        </nav>
+    </dialog>
+</mobile-navbar>
+
+<script>
+    class MobileNavbar extends HTMLElement {
+        constructor() {
+            super();
+
+            const openBtn = this.querySelector<HTMLButtonElement>(
+                'svg[data-open-menu]'
+            )!;
+            const closeBtn = this.querySelector<HTMLButtonElement>(
+                'button[data-close-menu]'
+            )!;
+            const dialog = this.querySelector<HTMLDialogElement>(
+                'dialog[data-mobile-navbar]'
+            )!;
+            const dialogFrame = this.querySelector('.menu-dialog-frame')!;
+
+            const onWindowClick = (event: MouseEvent) => {
+                // check if it's a link
+                const isLink = 'href' in (event.target || {});
+                // make sure the click is either a link or outside of the dialog
+                if (
+                    isLink ||
+                    (document.body.contains(event.target as Node) &&
+                        !dialogFrame.contains(event.target as Node))
+                )
+                    closeModal();
+            };
+
+            const openModal = (event?: MouseEvent) => {
+                dialog.showModal();
+                // this.querySelector('input')?.focus();
+                event?.stopPropagation();
+                window.addEventListener('click', onWindowClick);
+            };
+
+            const closeModal = () => {
+                if (dialog.open) {
+                    dialog.close();
+                    window.removeEventListener('click', onWindowClick);
+                }
+            };
+
+            openBtn.addEventListener('click', openModal);
+            openBtn.disabled = false;
+            closeBtn.addEventListener('click', closeModal);
+
+            // Listen for `/` keyboard shortcut
+            window.addEventListener('keydown', (e) => {
+                if (e.key === '/' && !dialog.open) {
+                    openModal();
+                    e.preventDefault();
+                }
+            });
+
+            // close modal and clear input on view-transtion
+            document.addEventListener('astro:after-swap', () => {
+                // close the modal & remove event listener on body
+                closeModal();
+            });
+        }
+    }
+
+    customElements.define('mobile-navbar', MobileNavbar);
+</script>
