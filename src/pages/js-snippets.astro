@@ -1,0 +1,86 @@
+---
+import { Code } from 'astro:components';
+
+import PageHeader from '@/components/PageHeader.astro';
+import Text from '@/components/Text.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+    meta={{
+        title: 'JavaScript Snippets',
+        description: 'Some useful JavaScript snippets',
+    }}
+>
+    <PageHeader
+        title="JavaScript Snippets"
+        breadcrumbItems={[
+            {
+                url: '/',
+                label: 'Home',
+            },
+            {
+                url: '/js-snippets',
+                label: 'JavaScript Snippets',
+                isCurrentPage: true,
+            },
+        ]}
+    />
+    <div class="mx-auto max-w-3xl px-4 pb-16 pt-6 lg:px-0">
+        <Text
+            >Following are some of the useful JavaScript snippets I used on some
+            of my projects.</Text
+        >
+        <Text variant="h3">Generate slug</Text>
+        <Code
+            code={`function generateSlug(text: string) {
+    return \`\${text
+        .trim()
+        .replace(/[\`~!@#$%^&*()_|+\\-=?;:'",.<>\\{\\\}\\[\\]\\\\\\\/]/gi, '')
+        .replace(/\\s+/g, '-')
+        .toLowerCase()}\`;
+}
+
+const postHeader = "Load Google Analytics (Gtag) Efficiently In Gatsby Site";
+const slug = generateSlug(postHeader);
+
+console.log(slug);
+
+// Output: load-google-analytics-gtag-efficiently-in-gatsby-site`}
+            lang="ts"
+            wrap
+            themes={{ light: 'snazzy-light', dark: 'tokyo-night' }}
+            class="my-4 rounded p-4"
+        />
+        <Text variant="h3">Replace multiple words</Text>
+        <Code
+            code={`const correctNames = {
+    aws: 'AWS',
+    s3: 'S3',
+    github: 'GitHub',
+    javascript: 'JavaScript',
+    gatsby: 'Gatsby',
+} as const;
+
+function replaceWithCorrectNames(text: string, correctWords: Record<string, string>) {
+    const pattern = new RegExp(Object.keys(correctWords).join('|'), 'gi');
+
+    return text.replace(pattern, function (matched) {
+        return correctWords[matched.toLowerCase()];
+    });
+}
+
+const myString = "This article is about how we can use github action to deploy a gatsby site written in javascript to aws s3.";
+
+const correctedString = replaceWithCorrectNames(myString, correctNames);
+
+console.log(correctedString);
+
+// Output: This article is about how we can use GitHub action to deploy a Gatsby site written in JavaScript to AWS S3.`}
+            lang="ts"
+            wrap
+            themes={{ light: 'snazzy-light', dark: 'tokyo-night' }}
+            class="my-4 rounded p-4"
+        />
+    </div>
+</BaseLayout>
