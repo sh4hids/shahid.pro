@@ -4,7 +4,7 @@ function FooterYear() {
     const [year, setYear] = useState(new Date().getFullYear());
 
     useEffect(() => {
-        const intervalId = setInterval(() => {
+        const intervalId = window.setInterval(() => {
             setYear(new Date().getFullYear());
         }, 1000);
 

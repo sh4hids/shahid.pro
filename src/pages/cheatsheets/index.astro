@@ -1,0 +1,25 @@
+---
+import GridSection from '@/components/GridSection.astro';
+import { getAllCheatsheets } from '@/data';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const cheatsheets = await getAllCheatsheets();
+---
+
+<BaseLayout meta={{ title: 'All Cheat Sheets' }}>
+    <div class="mx-auto px-4 md:max-w-2xl lg:max-w-3xl">
+        <GridSection title="All Cheat Sheets">
+            <ul class="list-disc">
+                {
+                    cheatsheets.map((cheatsheet) => (
+                        <li>
+                            <a href={`/cheatsheets/${cheatsheet.slug}`}>
+                                {cheatsheet.data.title}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </GridSection>
+    </div>
+</BaseLayout>

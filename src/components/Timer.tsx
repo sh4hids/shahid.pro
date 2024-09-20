@@ -6,7 +6,7 @@ function Timer() {
     const startTime = new Date('2018-01-01').getTime();
 
     useEffect(() => {
-        const intervalId = setInterval(() => {
+        const intervalId = window.setInterval(() => {
             setTime(Date.now());
         }, 1000);
 
