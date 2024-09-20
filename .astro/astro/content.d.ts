@@ -184,6 +184,15 @@ declare module 'astro:content' {
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 };
+"cheatsheets": {
+"tmux.md": {
+	id: "tmux.md";
+  slug: "tmux";
+  body: string;
+  collection: "cheatsheets";
+  data: InferEntrySchema<"cheatsheets">
+} & { render(): Render[".md"] };
+};
 
 	};
 

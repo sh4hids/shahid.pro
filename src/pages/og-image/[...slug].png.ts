@@ -10,7 +10,7 @@ import type { ReactNode } from 'react';
 import satori, { type SatoriOptions } from 'satori';
 import { html } from 'satori-html';
 
-import { getAllPosts } from '@/data';
+import { getAllCheatsheets, getAllPosts } from '@/data';
 import { commonMarkup } from '@/utils/ogHelper';
 
 const fontFilePath = `${process.cwd()}/public/fonts/RecMonoSemicasual-Bold.ttf`;
@@ -99,7 +99,11 @@ const markup = (title: string, publishedAt: Date, minutesRead: string) => html`
                             ></path>
                         </svg>
                     </li>
-                    <li>Blog</li>
+                    <li>
+                        ${title.toLowerCase().includes('cheat sheet')
+                            ? 'Cheatsheets'
+                            : 'Blog'}
+                    </li>
                 </ul>
             </div>
             <h2 tw="text-[40px] font-bold pt-6 leading-snug">${title}</h2>
@@ -161,6 +165,7 @@ export async function GET(context: APIContext) {
 
 export async function getStaticPaths() {
     const posts = await getAllPosts();
+    const cheatsheets = await getAllCheatsheets();
     const formatted = [
         {
             params: { slug: 'common' },
@@ -171,6 +176,7 @@ export async function getStaticPaths() {
             },
         },
     ];
+
     for (const post of posts) {
         const { remarkPluginFrontmatter } = await post.render();
         formatted.push({
@@ -182,5 +188,18 @@ export async function getStaticPaths() {
             },
         });
     }
+
+    for (const cheatsheet of cheatsheets) {
+        const { remarkPluginFrontmatter } = await cheatsheet.render();
+        formatted.push({
+            params: { slug: cheatsheet.slug },
+            props: {
+                publishedAt: cheatsheet.data.publishedAt,
+                title: cheatsheet.data.title,
+                minutesRead: remarkPluginFrontmatter.minutesRead + '',
+            },
+        });
+    }
+
     return formatted;
 }

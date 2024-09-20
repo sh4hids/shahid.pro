@@ -1,6 +1,11 @@
 import { defineCollection } from 'astro:content';
 
-import { plantSchema, postSchema, projectSchema } from '@/schemas';
+import {
+    cheatsheetSchema,
+    plantSchema,
+    postSchema,
+    projectSchema,
+} from '@/schemas';
 
 const projectCollection = defineCollection({
     type: 'data',
@@ -17,8 +22,14 @@ const plantCollection = defineCollection({
     schema: plantSchema,
 });
 
+const cheatsheetCollection = defineCollection({
+    type: 'content',
+    schema: cheatsheetSchema,
+});
+
 export const collections = {
     projects: projectCollection,
     blog: postCollection,
     plants: plantCollection,
+    cheatsheets: cheatsheetCollection,
 };
