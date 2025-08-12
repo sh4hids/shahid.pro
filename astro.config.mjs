@@ -1,6 +1,7 @@
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import playformInline from '@playform/inline';
+import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
 
 import { remarkPostMeta } from './src/utils/remark-post-meta.mjs';
@@ -9,6 +10,9 @@ import { remarkPostMeta } from './src/utils/remark-post-meta.mjs';
 export default defineConfig({
     site: 'https://shahid.pro/',
     base: '/',
+    vite: {
+        plugins: [tailwindcss()],
+    },
     integrations: [react(), sitemap(), playformInline()],
     markdown: {
         remarkPlugins: [remarkPostMeta],

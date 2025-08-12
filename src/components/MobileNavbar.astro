@@ -12,12 +12,12 @@ const currentPath = Astro.url.pathname;
     <dialog
         data-mobile-navbar
         aria-label="mobile-menu"
-        class="fixed inset-0 z-10 w-full rounded outline-none backdrop:bg-surface-2 backdrop:bg-opacity-80 open:animate-fade-in"
+        class="fixed inset-0 z-10 w-full rounded-sm outline-hidden backdrop:bg-surface-2 backdrop:bg-opacity-80 open:animate-fade-in"
     >
         <nav class="menu-dialog-frame block">
             <button
                 data-close-menu
-                class="absolute right-5 top-5 rounded border bg-surface-1 px-2 py-1 text-xs outline-none"
+                class="absolute right-5 top-5 rounded-sm border bg-surface-1 px-2 py-1 text-xs outline-hidden"
             >
                 Esc
             </button>

@@ -10,14 +10,14 @@ import Text from '@/components/Text.astro';
     <button
         data-open-modal
         disabled
-        class="flex items-center justify-center outline-none transition-all"
+        class="flex items-center justify-center outline-hidden transition-all"
     >
         <MagnifyingGlass className="relative top-[2px] h-5 w-5" />
         <span class="sr-only">Search</span>
     </button>
     <dialog
         aria-label="search"
-        class="fixed inset-0 z-10 min-h-[50vh] w-full rounded outline-none backdrop:bg-surface-2 backdrop:bg-opacity-80 open:animate-fade-in md:max-w-2xl lg:max-w-3xl"
+        class="backdrop:bg-surface-2 backdrop:bg-opacity-80 open:animate-fade-in fixed inset-0 z-10 m-auto min-h-[50vh] w-full rounded-sm outline-hidden md:max-w-2xl lg:max-w-3xl"
     >
         <div
             class="flex items-center justify-between px-4 pt-4 md:px-6 md:pt-6"
@@ -25,7 +25,7 @@ import Text from '@/components/Text.astro';
             <Text class="p-0 font-bold">Search</Text>
             <button
                 data-close-modal
-                class="rounded border bg-surface-1 px-2 py-1 text-xs outline-none"
+                class="bg-surface-1 rounded-sm border px-2 py-1 text-xs outline-hidden"
             >
                 Esc
             </button>
@@ -153,11 +153,11 @@ import Text from '@/components/Text.astro';
     }
 
     #blog__search .pagefind-ui__search-clear {
-        /* class="rounded border bg-surface-1 px-2 py-1 text-xs outline-none"
+        /* class="rounded-sm border bg-surface-1 px-2 py-1 text-xs outline-hidden"
  */
         font-size: theme('fontSize.xs');
         padding: 0.25rem 0.5rem;
-        background: theme('colors.surface-1');
+        background: var(--color-surface-1);
         height: auto;
         top: 13px;
         right: 16px;
@@ -165,19 +165,19 @@ import Text from '@/components/Text.astro';
     }
 
     #blog__search .pagefind-ui__result {
-        color: theme('colors.fg-1');
+        color: var(--color-fg-1);
     }
 
     #blog__search .pagefind-ui__result-link {
-        color: theme('colors.accent-0');
+        color: var(--color-accent-0);
     }
 
     #blog__search {
         --pagefind-ui-font: theme('fontFamily.mono');
-        --pagefind-ui-text: theme('colors.fg-0');
-        --pagefind-ui-background: theme('colors.surface-0');
-        --pagefind-ui-primary: theme('colors.accent-0');
-        --pagefind-ui-border: theme('colors.fg-2');
+        --pagefind-ui-text: var(--color-fg-0);
+        --pagefind-ui-background: var(--color-surface-0);
+        --pagefind-ui-primary: var(--color-accent-0);
+        --pagefind-ui-border: var(--color-fg-2);
         --pagefind-ui-border-width: 1px;
     }
 </style>
