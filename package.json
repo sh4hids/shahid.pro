@@ -25,7 +25,6 @@
         "@astrojs/react": "^4.3.0",
         "@astrojs/rss": "^4.0.12",
         "@astrojs/sitemap": "^3.4.2",
-        "@astrojs/tailwind": "^6.0.2",
         "@phosphor-icons/react": "^2.1.10",
         "@playform/inline": "^0.0.3",
         "@types/react": "^18.3.23",
