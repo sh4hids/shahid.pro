@@ -27,11 +27,11 @@ function Timer() {
 
     return (
         <p
-            className="pt-4 font-bold italic text-accent-0"
+            className="text-accent-0 pt-4 font-bold italic"
             suppressHydrationWarning
         >
             {`${years} year${years > 1 ? 's' : ''} ${months} month${months > 1 ? 's' : ''} ${days} day${days > 1 ? 's' : ''} ${hours || 0} hour${hours > 1 ? 's' : ''} ${minutes} minute${minutes > 1 ? 's' : ''} ${seconds} second${seconds > 1 ? 's' : ''}`}
-            <span className="text-xs not-italic text-fg-2">{` (to be exact)`}</span>
+            <span className="text-fg-2 text-xs not-italic">{` (to be exact)`}</span>
         </p>
     );
 }

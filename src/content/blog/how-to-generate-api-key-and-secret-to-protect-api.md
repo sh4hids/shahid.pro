@@ -65,10 +65,10 @@ I hope you've got a general guideline about generating API keys and secrets. To 
 
 Resources:
 
--   [The Client ID and Secret](https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/)
--   [How services generate and use public and secret API keys?](https://stackoverflow.com/questions/55009503/how-services-generate-and-use-public-and-secret-api-keys)
--   [What's the best approach for generating a new API key?](https://stackoverflow.com/questions/14412132/whats-the-best-approach-for-generating-a-new-api-key)
--   [Do I need to hash or encrypt API keys before storing them in a database?](https://security.stackexchange.com/questions/180345/do-i-need-to-hash-or-encrypt-api-keys-before-storing-them-in-a-database)
--   [Need advices on API key & secret generation?](https://security.stackexchange.com/questions/180367/need-advices-on-api-key-secret-generation)
--   [Best practices for building secure API Keys](https://www.freecodecamp.org/news/best-practices-for-building-api-keys-97c26eabfea9/)
--   [Crypto](https://nodejs.org/api/crypto.html)
+- [The Client ID and Secret](https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/)
+- [How services generate and use public and secret API keys?](https://stackoverflow.com/questions/55009503/how-services-generate-and-use-public-and-secret-api-keys)
+- [What's the best approach for generating a new API key?](https://stackoverflow.com/questions/14412132/whats-the-best-approach-for-generating-a-new-api-key)
+- [Do I need to hash or encrypt API keys before storing them in a database?](https://security.stackexchange.com/questions/180345/do-i-need-to-hash-or-encrypt-api-keys-before-storing-them-in-a-database)
+- [Need advices on API key & secret generation?](https://security.stackexchange.com/questions/180367/need-advices-on-api-key-secret-generation)
+- [Best practices for building secure API Keys](https://www.freecodecamp.org/news/best-practices-for-building-api-keys-97c26eabfea9/)
+- [Crypto](https://nodejs.org/api/crypto.html)

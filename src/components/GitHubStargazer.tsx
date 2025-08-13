@@ -1,4 +1,4 @@
-import { GithubLogo, Infinity } from '@phosphor-icons/react';
+import { GithubLogoIcon, InfinityIcon } from '@phosphor-icons/react';
 import { format } from 'date-fns';
 import { useEffect, useState } from 'react';
 
@@ -34,9 +34,9 @@ function GitHubStargazer({ repository }: { repository: string }) {
 
     return (
         <span className="flex items-center gap-2">
-            <GithubLogo className="h-5 w-5" />
+            <GithubLogoIcon className="h-5 w-5" />
             {stars < 1 ? (
-                <Infinity className="h-4 w-4" />
+                <InfinityIcon className="h-4 w-4" />
             ) : (
                 Intl.NumberFormat('en', {
                     notation: 'compact',

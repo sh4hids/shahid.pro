@@ -43,7 +43,7 @@ import { Moon, Sun } from '@phosphor-icons/react';
                 'click',
                 () => {
                     // invert theme
-                    let themeChangeEvent = new CustomEvent('theme-change', {
+                    const themeChangeEvent = new CustomEvent('theme-change', {
                         detail: {
                             theme: rootInDarkMode() ? 'light' : 'dark',
                         },

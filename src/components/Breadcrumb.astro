@@ -10,13 +10,13 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<ul class="flex gap-2 font-bold text-fg-2">
+<ul class="text-fg-2 flex gap-2 font-bold">
     {
         items.map((item, index) => (
             <li>
                 <a
                     href={item.url}
-                    class={`no-underline ${item.isCurrentPage ? `pointer-events-none text-fg-2/90` : `text-fg-2`} `}
+                    class={`no-underline ${item.isCurrentPage ? `text-fg-2/90 pointer-events-none` : `text-fg-2`} `}
                 >
                     {item.label}
                 </a>
