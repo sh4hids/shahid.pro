@@ -9,7 +9,7 @@ const cheatsheets = await getAllCheatsheets();
 <BaseLayout meta={{ title: 'All Cheat Sheets' }}>
     <div class="mx-auto px-4 md:max-w-2xl lg:max-w-3xl">
         <GridSection title="All Cheat Sheets">
-            <ul class="list-disc">
+            <ul class="list-disc *:mt-2 *:first:mt-0">
                 {
                     cheatsheets.map((cheatsheet) => (
                         <li>

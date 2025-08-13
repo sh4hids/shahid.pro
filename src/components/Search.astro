@@ -17,7 +17,7 @@ import Text from '@/components/Text.astro';
     </button>
     <dialog
         aria-label="search"
-        class="backdrop:bg-surface-2 backdrop:bg-opacity-80 open:animate-fade-in fixed inset-0 z-10 m-auto min-h-[50vh] w-full rounded-sm outline-hidden md:max-w-2xl lg:max-w-3xl"
+        class="backdrop:bg-surface-2/80 open:animate-fade-in fixed inset-0 z-10 m-auto min-h-[50vh] w-full rounded-sm outline-hidden md:max-w-2xl lg:max-w-3xl"
     >
         <div
             class="flex items-center justify-between px-4 pt-4 md:px-6 md:pt-6"
@@ -155,12 +155,12 @@ import Text from '@/components/Text.astro';
     #blog__search .pagefind-ui__search-clear {
         /* class="rounded-sm border bg-surface-1 px-2 py-1 text-xs outline-hidden"
  */
-        font-size: theme('fontSize.xs');
+        font-size: var(--text-xs);
         padding: 0.25rem 0.5rem;
-        background: var(--color-surface-1);
+        background: rgb(var(--theme-surface-1) / 1);
         height: auto;
-        top: 13px;
-        right: 16px;
+        top: 8px;
+        right: 12px;
         border-radius: theme('borderRadius.DEFAULT');
     }
 
@@ -169,15 +169,15 @@ import Text from '@/components/Text.astro';
     }
 
     #blog__search .pagefind-ui__result-link {
-        color: var(--color-accent-0);
+        color: rgb(var(--theme-accent-0) / 1);
     }
 
     #blog__search {
-        --pagefind-ui-font: theme('fontFamily.mono');
-        --pagefind-ui-text: var(--color-fg-0);
-        --pagefind-ui-background: var(--color-surface-0);
-        --pagefind-ui-primary: var(--color-accent-0);
-        --pagefind-ui-border: var(--color-fg-2);
+        --pagefind-ui-font: var(--font-mono);
+        --pagefind-ui-text: rgb(var(--theme-fg-0) / 1);
+        --pagefind-ui-background: rgb(var(--theme-surface-0) / 1);
+        --pagefind-ui-primary: rgb(var(--theme-accent-0) / 1);
+        --pagefind-ui-border: rgb(var(--theme-fg-2) / 0.4);
         --pagefind-ui-border-width: 1px;
     }
 </style>
