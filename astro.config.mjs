@@ -18,7 +18,7 @@ export default defineConfig({
         remarkPlugins: [remarkPostMeta],
         shikiConfig: {
             themes: {
-                light: 'snazzy-light',
+                light: 'catppuccin-latte',
                 dark: 'tokyo-night',
             },
             langs: [],
