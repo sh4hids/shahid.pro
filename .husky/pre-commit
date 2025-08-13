@@ -1,0 +1,4 @@
+pnpm format
+pnpm validate
+pnpm lint-staged
+
