@@ -1,11 +1,11 @@
 ---
 import {
-    Coffee,
-    Copyright,
-    FacebookLogo,
-    GithubLogo,
-    LinkedinLogo,
-    TwitterLogo,
+    CoffeeIcon,
+    CopyrightIcon,
+    FacebookLogoIcon,
+    GithubLogoIcon,
+    LinkedinLogoIcon,
+    TwitterLogoIcon,
 } from '@phosphor-icons/react';
 
 import FooterYear from '@/components/FooterYear';
@@ -41,7 +41,9 @@ import { BrandNames, replaceAll } from '@/utils/string-helper';
                 rel="noreferrer"
                 class="bg-primary mt-4 inline-block w-auto rounded-md px-4 py-2 no-underline *:text-zinc-50 md:mt-6"
             >
-                <Coffee className="relative top-[-2px] mr-1 inline h-4 w-4" />
+                <CoffeeIcon
+                    className="relative top-[-2px] mr-1 inline h-4 w-4"
+                />
                 <Text class="inline pt-0">Buy me a coffee</Text>
             </a>
         </div>
@@ -51,7 +53,7 @@ import { BrandNames, replaceAll } from '@/utils/string-helper';
             </Text>
             <ul class="pt-4 text-base *:pb-2 *:last:pb-0">
                 <li>
-                    <GithubLogo className="inline h-4 w-4" />
+                    <GithubLogoIcon className="inline h-4 w-4" />
                     <a
                         class="text-textColor"
                         href="https://github.com/sh4hids"
@@ -60,7 +62,7 @@ import { BrandNames, replaceAll } from '@/utils/string-helper';
                     >
                 </li>
                 <li>
-                    <TwitterLogo className="inline h-4 w-4" />
+                    <TwitterLogoIcon className="inline h-4 w-4" />
                     <a
                         class="text-textColor"
                         href="https://twitter.com/sh4hids"
@@ -69,7 +71,7 @@ import { BrandNames, replaceAll } from '@/utils/string-helper';
                     >
                 </li>
                 <li>
-                    <FacebookLogo className="inline h-4 w-4" />
+                    <FacebookLogoIcon className="inline h-4 w-4" />
                     <a
                         class="text-textColor"
                         href="https://fb.com/sh4hids"
@@ -78,7 +80,7 @@ import { BrandNames, replaceAll } from '@/utils/string-helper';
                     >
                 </li>
                 <li>
-                    <LinkedinLogo className="inline h-4 w-4" />
+                    <LinkedinLogoIcon className="inline h-4 w-4" />
                     <a
                         class="text-textColor"
                         href="https://www.linkedin.com/in/sh4hids/"
@@ -90,9 +92,9 @@ import { BrandNames, replaceAll } from '@/utils/string-helper';
         </div>
         <div class="col-span-12 md:pt-4">
             <Text class="text-center md:text-left">
-                <Copyright className="relative top-[-2px] inline h-4 w-4" /> 2018
-                - <FooterYear client:visible /> Shahidul Islam Majumder. All Rights
-                Reserved.
+                <CopyrightIcon className="relative top-[-2px] inline h-4 w-4" />
+                2018 - <FooterYear client:visible /> Shahidul Islam Majumder. All
+                Rights Reserved.
             </Text>
         </div>
     </div>

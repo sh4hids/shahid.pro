@@ -1,5 +1,5 @@
 ---
-import { ArrowRight, Calendar, Clock } from '@phosphor-icons/react';
+import { ArrowRightIcon, CalendarIcon, ClockIcon } from '@phosphor-icons/react';
 import { type CollectionEntry } from 'astro:content';
 import { format } from 'date-fns';
 
@@ -21,18 +21,18 @@ const { remarkPluginFrontmatter } = await post.render();
     </Text>
     <div class="text-fg-2 flex flex-col gap-2 pt-4 md:flex-row md:gap-6">
         <div class="flex items-center gap-2">
-            <Calendar className="h-4 w-4" />
+            <CalendarIcon className="h-4 w-4" />
             {format(post.data.publishedAt, 'MMMM dd, yyyy')}
         </div>
         <div class="flex items-center gap-2">
-            <Clock className="h-4 w-4" />
+            <ClockIcon className="h-4 w-4" />
             {remarkPluginFrontmatter.minutesRead}
         </div>
     </div>
     <Text>
         {remarkPluginFrontmatter.excerpt}
         <a href={`/blog/${post.slug}`}>
-            {`read the post `}<ArrowRight className="inline-block" />
+            {`read the post `}<ArrowRightIcon className="inline-block" />
         </a>
     </Text>
 </div>
