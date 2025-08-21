@@ -25,13 +25,13 @@
         "@astrojs/check": "^0.9.4",
         "@astrojs/react": "^4.3.0",
         "@astrojs/rss": "^4.0.12",
-        "@astrojs/sitemap": "^3.4.2",
+        "@astrojs/sitemap": "^3.5.0",
         "@phosphor-icons/react": "^2.1.10",
         "@playform/inline": "^0.0.3",
-        "@tailwindcss/vite": "^4.1.11",
+        "@tailwindcss/vite": "^4.1.12",
         "@types/react": "^18.3.23",
         "@types/react-dom": "^18.3.7",
-        "astro": "^5.12.9",
+        "astro": "^5.13.2",
         "clsx": "^2.1.1",
         "mdast-util-to-string": "^4.0.0",
         "react": "^18.3.1",
@@ -40,7 +40,7 @@
         "satori": "^0.10.14",
         "satori-html": "^0.3.2",
         "sharp": "^0.33.5",
-        "tailwindcss": "^4.1.11",
+        "tailwindcss": "^4.1.12",
         "tm-themes": "^1.10.7"
     },
     "devDependencies": {
@@ -51,7 +51,7 @@
         "@tailwindcss/typography": "^0.5.16",
         "@types/inquirer": "^9.0.9",
         "@types/json-to-pretty-yaml": "^1.2.1",
-        "chalk": "^5.5.0",
+        "chalk": "^5.6.0",
         "date-fns": "^3.6.0",
         "eslint": "^9.33.0",
         "eslint-config-prettier": "^10.1.8",
@@ -69,7 +69,7 @@
         "tailwind-merge": "^2.6.0",
         "title-case": "^4.3.2",
         "typescript": "^5.9.2",
-        "typescript-eslint": "^8.39.1",
+        "typescript-eslint": "^8.40.0",
         "yamljs": "^0.3.0"
     }
 }
