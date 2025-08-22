@@ -1,20 +1,20 @@
 ---
-import { Moon, Sun } from '@phosphor-icons/react';
+import { MoonIcon, SunIcon } from '@phosphor-icons/react';
 ---
 
 <theme-toggle>
     <button
-        class="flex items-center justify-center outline-none transition-all"
+        class="flex items-center justify-center outline-hidden transition-all"
         type="button"
     >
         <span class="sr-only">Dark Theme</span>
-        <Sun
+        <SunIcon
             id="sun-svg"
             focusable="false"
             aria-hidden="true"
             className="relative top-[2px] block h-5 w-5 scale-100 opacity-100 dark:hidden dark:opacity-0"
         />
-        <Moon
+        <MoonIcon
             id="moon-svg"
             focusable="false"
             aria-hidden="true"
@@ -43,7 +43,7 @@ import { Moon, Sun } from '@phosphor-icons/react';
                 'click',
                 () => {
                     // invert theme
-                    let themeChangeEvent = new CustomEvent('theme-change', {
+                    const themeChangeEvent = new CustomEvent('theme-change', {
                         detail: {
                             theme: rootInDarkMode() ? 'light' : 'dark',
                         },

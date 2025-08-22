@@ -16,9 +16,9 @@ The template I was following to structure the project uses electron builder to b
 
 I started exploring a solution. I found an [electron release plugin](https://github.com/mystster/semantic-release-github-electron-builder) for the semantic release package but found it complicated. I decided to hack the semantic release process and use it only to update the version number (it can publish) and push the tag to GitHub. Electron builder can publish the release to GitHub, so I don't need any extra hacking to publish the release. The process looks like this:
 
--   Configure semantic release
--   Prepare the npm script
--   Configure GitHub action
+- Configure semantic release
+- Prepare the npm script
+- Configure GitHub action
 
 Let's explore the process in detail.
 
@@ -73,9 +73,9 @@ In the `release` script, we added `--publish always` to tell electron builder to
 
 Now we will configure our GitHub workflow to combine all the steps.
 
--   First, we will set up a job to run semantic-release in dry mode to expose the upcoming version number (if releasable) to the GitHub action environment (job name `get-next-version`)
--   Then, we will create a release draft with a release note (job name `draft`)
--   Finally, we will build the production release and upload the artifacts to GitHub (job name `upload_artifacts`).
+- First, we will set up a job to run semantic-release in dry mode to expose the upcoming version number (if releasable) to the GitHub action environment (job name `get-next-version`)
+- Then, we will create a release draft with a release note (job name `draft`)
+- Finally, we will build the production release and upload the artifacts to GitHub (job name `upload_artifacts`).
 
 Before building the production release, we will run the `updateVersion` script we defined earlier. It will generate the upcoming version number and tag and push the version tag to GitHub. Then we will put the version number in a file named `meta.json` inside our `buildResources` folder at the root of our project. Finally, we will build our project for production and run the `release` script to release the app to GitHub. Following is the complete workflow configuration:
 

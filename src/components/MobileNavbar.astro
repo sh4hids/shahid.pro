@@ -1,5 +1,5 @@
 ---
-import { List } from '@phosphor-icons/react';
+import { ListIcon } from '@phosphor-icons/react';
 
 import HeaderLink from '@/components/HeaderLink.astro';
 import { isActivePath } from '@/utils';
@@ -8,16 +8,16 @@ const currentPath = Astro.url.pathname;
 ---
 
 <mobile-navbar class="lg:hidden">
-    <List className="relative top-0.5 ml-1 h-5 w-5 " data-open-menu />
+    <ListIcon className="relative top-0.5 ml-1 h-5 w-5" data-open-menu />
     <dialog
         data-mobile-navbar
         aria-label="mobile-menu"
-        class="fixed inset-0 z-10 w-full rounded outline-none backdrop:bg-surface-2 backdrop:bg-opacity-80 open:animate-fade-in"
+        class="backdrop:bg-surface-2 backdrop:bg-opacity-80 open:animate-fade-in fixed inset-0 z-10 w-full rounded-sm outline-hidden"
     >
         <nav class="menu-dialog-frame block">
             <button
                 data-close-menu
-                class="absolute right-5 top-5 rounded border bg-surface-1 px-2 py-1 text-xs outline-none"
+                class="bg-surface-1 absolute top-5 right-5 rounded-sm border px-2 py-1 text-xs outline-hidden"
             >
                 Esc
             </button>

@@ -1,6 +1,4 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
+pnpm format
+pnpm validate
+pnpm lint-staged
 
-npm run format
-npm run validate
-npm run lint-staged
