@@ -11,7 +11,7 @@
         "prepreview": "pnpm run build",
         "preview": "astro preview",
         "astro": "astro",
-        "create:post": "node scripts/createPost.mjs",
+        "post": "node scripts/createPost.mjs",
         "create:project": "node scripts/createProject.mjs",
         "check:lint": "eslint .",
         "lint": "eslint --fix .",
