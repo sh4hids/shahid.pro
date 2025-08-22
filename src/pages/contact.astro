@@ -1,10 +1,10 @@
 ---
 import {
-    Envelope,
-    FacebookLogo,
-    GithubLogo,
-    LinkedinLogo,
-    TwitterLogo,
+    EnvelopeIcon,
+    FacebookLogoIcon,
+    GithubLogoIcon,
+    LinkedinLogoIcon,
+    TwitterLogoIcon,
 } from '@phosphor-icons/react';
 
 import PageHeader from '@/components/PageHeader.astro';
@@ -27,16 +27,16 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
             },
         ]}
     />
-    <div class="mx-auto px-4 pb-16 pt-6 md:max-w-2xl lg:max-w-3xl">
+    <div class="mx-auto px-4 pt-6 pb-16 md:max-w-2xl lg:max-w-3xl">
         <Text variant="h3">Email</Text>
         <Text>
-            <Envelope className="inline h-4 w-4" />
+            <EnvelopeIcon className="inline h-4 w-4" />
             <a href="mailto:hello@shahid.pro">hello@shahid.pro</a>
         </Text>
         <Text variant="h3">Social Media Links</Text>
-        <ul class="pt-4 text-base *:pb-2 last:*:pb-0">
+        <ul class="pt-4 text-base *:pb-2 *:last:pb-0">
             <li>
-                <GithubLogo className="inline h-4 w-4" />
+                <GithubLogoIcon className="inline h-4 w-4" />
                 <a
                     class="text-textColor"
                     href="https://github.com/sh4hids"
@@ -45,7 +45,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
                 >
             </li>
             <li>
-                <TwitterLogo className="inline h-4 w-4" />
+                <TwitterLogoIcon className="inline h-4 w-4" />
                 <a
                     class="text-textColor"
                     href="https://twitter.com/sh4hids"
@@ -54,7 +54,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
                 >
             </li>
             <li>
-                <FacebookLogo className="inline h-4 w-4" />
+                <FacebookLogoIcon className="inline h-4 w-4" />
                 <a
                     class="text-textColor"
                     href="https://fb.com/sh4hids"
@@ -63,7 +63,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
                 >
             </li>
             <li>
-                <LinkedinLogo className="inline h-4 w-4" />
+                <LinkedinLogoIcon className="inline h-4 w-4" />
                 <a
                     class="text-textColor"
                     href="https://www.linkedin.com/in/sh4hids/"

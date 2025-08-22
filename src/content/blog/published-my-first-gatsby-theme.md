@@ -22,11 +22,11 @@ Now let's have a look at the theme.
 
 ## Features
 
--   minimal in design
--   markdown support for writing post
--   page contents in `YAML` format
--   open-source project showcasing with GitHub star count
--   fully customizable
+- minimal in design
+- markdown support for writing post
+- page contents in `YAML` format
+- open-source project showcasing with GitHub star count
+- fully customizable
 
 ## Installation
 

@@ -51,6 +51,7 @@ const success = chalk.bold.green.inverse;
         const publishedAt = new Date();
         const slug = `${title
             .trim()
+            // eslint-disable-next-line no-useless-escape
             .replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '')
             .replace(/\s+/g, '-')
             .toLowerCase()}`;

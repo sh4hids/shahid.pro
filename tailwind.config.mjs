@@ -83,35 +83,36 @@ export default {
         },
     },
     plugins: [
+        // eslint-disable-next-line @typescript-eslint/no-require-imports
         require('@tailwindcss/typography'),
         plugin(function ({ addBase, theme }) {
             addBase({
                 p: {
-                    fontSize: theme('fontSize.base'),
+                    'font-size': theme('fontSize.base'),
                     lineHeight: theme('lineHeight.relaxed'),
                 },
                 h1: {
-                    fontSize: theme('fontSize.4xl'),
+                    'font-size': theme('fontSize.4xl'),
                     lineHeight: theme('lineHeight.snug'),
                 },
                 h2: {
-                    fontSize: theme('fontSize.3xl'),
+                    'font-size': theme('fontSize.3xl'),
                     lineHeight: theme('lineHeight.snug'),
                 },
                 h3: {
-                    fontSize: theme('fontSize.2xl'),
+                    'font-size': theme('fontSize.2xl'),
                     lineHeight: theme('lineHeight.snug'),
                 },
                 h4: {
-                    fontSize: theme('fontSize.xl'),
+                    'font-size': theme('fontSize.xl'),
                     lineHeight: theme('lineHeight.snug'),
                 },
                 h5: {
-                    fontSize: theme('fontSize.lg'),
+                    'font-size': theme('fontSize.lg'),
                     lineHeight: theme('lineHeight.snug'),
                 },
                 h6: {
-                    fontSize: theme('fontSize.base'),
+                    'font-size': theme('fontSize.base'),
                     lineHeight: theme('lineHeight.snug'),
                 },
             });

@@ -1,5 +1,5 @@
 ---
-import { ArrowRight } from '@phosphor-icons/react';
+import { ArrowRightIcon } from '@phosphor-icons/react';
 import type { CollectionEntry } from 'astro:content';
 
 import GithubStargazer from '@/components/GitHubStargazer';
@@ -14,7 +14,7 @@ const { project } = Astro.props;
 ---
 
 <div
-    class="flex flex-col justify-between rounded-md border bg-surface-1 p-4 md:p-6"
+    class="bg-surface-1 flex flex-col justify-between rounded-md border p-4 md:p-6"
 >
     <Text class="pt-0 md:pt-0" variant="h4">
         {project.data.name}
@@ -45,7 +45,7 @@ const { project } = Astro.props;
                 url={project.data.url}
                 target="_blank"
             >
-                <ArrowRight className="relative top-[-1px] inline" />
+                <ArrowRightIcon className="relative -top-px inline" />
             </LinkButton>
         </div>
     </div>

@@ -103,3 +103,6 @@ dist
 .tern-port
 
 *.DS_Store
+
+# generated types
+.astro/
