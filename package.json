@@ -16,7 +16,7 @@
         "lint": "eslint --fix .",
         "check:format": "prettier --list-different  \"**/*.{js,jsx,ts,tsx,md,mdx,astro}\"",
         "format": "prettier --write  \"**/*.{js,jsx,ts,tsx,md,mdx,astro}\"",
-        "validate": "npm-run-all --parallel check:*",
+        "validate": "npm-run-all --parallel check:* build",
         "postbuild": "pagefind",
         "prepare": "husky"
     },
