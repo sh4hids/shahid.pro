@@ -1,0 +1,31 @@
+name: Test
+
+on:
+    pull_request:
+        branches:
+            - main
+            - develop
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v4
+
+            - uses: pnpm/action-setup@v4
+              name: Install pnpm
+              with:
+                  version: 10
+                  run_install: false
+
+            - name: Use latest Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: lts/*
+                  cache: 'pnpm'
+
+            - name: Installing dependencies
+              run: pnpm install
+            - name: Validating build
+              run: npm run validate
