@@ -30,7 +30,7 @@
         "@tailwindcss/vite": "^4.1.12",
         "@types/react": "^19.1.10",
         "@types/react-dom": "^19.1.7",
-        "astro": "^5.13.2",
+        "astro": "^5.14.3",
         "clsx": "^2.1.1",
         "mdast-util-to-string": "^4.0.0",
         "react": "^19.1.1",
